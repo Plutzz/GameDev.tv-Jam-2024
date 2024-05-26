@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerMovingSOBase : PlayerStateSOBase
 {
     protected PlayerStateMachine stateMachine;
-    protected Rigidbody rb;
+    protected Rigidbody2D rb;
     protected GameObject gameObject;
-    protected Vector2 inputVector;
 
     public virtual void Initialize(GameObject gameObject, PlayerStateMachine stateMachine)
     {
@@ -20,7 +19,7 @@ public class PlayerMovingSOBase : PlayerStateSOBase
     public override void CheckTransitions()
     {
         // Moving => Idle
-        if (stateMachine.inputManager.MoveInput == Vector2.zero)
+        if (stateMachine.inputManager.MoveInput == 0)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
         }

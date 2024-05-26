@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerIdleSOBase : PlayerStateSOBase
 {
     protected PlayerStateMachine stateMachine;
-    protected Rigidbody rb;
+    protected Rigidbody2D rb;
     protected GameObject gameObject;
 
     public virtual void Initialize(GameObject gameObject, PlayerStateMachine stateMachine)
@@ -16,7 +17,7 @@ public class PlayerIdleSOBase : PlayerStateSOBase
     }
     public override void CheckTransitions()
     {
-        if (stateMachine.inputManager.MoveInput != Vector2.zero)
+        if (stateMachine.inputManager.MoveInput != 0)
         {
             stateMachine.ChangeState(stateMachine.MovingState);
         }

@@ -27,12 +27,11 @@ public class PlayerStateMachine : MonoBehaviour
     #endregion
 
     #region Player Variables
-    public Rigidbody rb { get; private set; }
+    public Rigidbody2D rb { get; private set; }
     public InputManager inputManager { get; private set; }
 
     [SerializeField] private LayerMask groundLayer;
-    public float moveSpeed = 5f;
-    public Transform player;
+    public Transform graphics;
     [SerializeField] private float playerHeight;
 
 
@@ -42,12 +41,14 @@ public class PlayerStateMachine : MonoBehaviour
     private void Awake()
     {
 
-        rb = GetComponentInChildren<Rigidbody>();
+        rb = GetComponentInChildren<Rigidbody2D>();
         inputManager = GetComponent<InputManager>();
-        //playerAnim = GetComponent<PlayerAnim>();
 
-        PlayerIdleBaseInstance = Instantiate(playerIdleBase);
-        PlayerMovingBaseInstance = Instantiate(playerMovingBase);
+        //PlayerIdleBaseInstance = Instantiate(playerIdleBase);
+        //PlayerMovingBaseInstance = Instantiate(playerMovingBase);
+
+        PlayerIdleBaseInstance = playerIdleBase;
+        PlayerMovingBaseInstance = playerMovingBase;
 
         IdleState = new PlayerIdleState(this);
         MovingState = new PlayerMovingState(this);
