@@ -10,14 +10,22 @@ public class PlayerAttacks : MonoBehaviour
     [SerializeField] private List<PlayerAttackSO> combo;
     [SerializeField] private float continueComboTimer = 0.2f;
     [SerializeField] private float timeBetweenCombos = 1f;
-    private float lastAttackTime;
+    
     private float lastComboEnd;
     private int comboCounter;
 
-    [SerializeField] private PlayerStateMachine stateMachine;
+    [Header("Attacks")]
     [SerializeField] private float attackCooldown = 0.5f;
+    [SerializeField] private float attackBufferWindow = 0.2f;
+    private bool bufferedAttack;
+    private float lastBufferedAttack;
+    private float lastAttackTime;
     public GameObject AttackPoint;
+
+    [Header("Misc.")]
+    [SerializeField] private PlayerStateMachine stateMachine;
     private Animator anim;
+    
 
 
     private void Start()
@@ -33,6 +41,18 @@ public class PlayerAttacks : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
+        }
+
+        // Handle buffered attacks
+        if(bufferedAttack && Time.time - lastBufferedAttack > attackBufferWindow)
+        {
+            bufferedAttack = false;
+        }
+
+        if(bufferedAttack && Time.time - lastComboEnd > timeBetweenCombos && Time.time - lastAttackTime >= attackCooldown)
+        {
+            Attack();
+            bufferedAttack = false;
         }
 
         ExitAttack();
@@ -59,7 +79,18 @@ public class PlayerAttacks : MonoBehaviour
                 }
                 lastAttackTime = Time.time;
             }
+            else
+            {
+                bufferedAttack = true;
+                lastBufferedAttack = Time.time;
+            }
         }
+        else
+        {
+            bufferedAttack = true;
+            lastBufferedAttack = Time.time;
+        }
+
     }
 
     void ExitAttack()

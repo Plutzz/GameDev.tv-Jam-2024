@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: AttackState-Ben
   m_EditorClassIdentifier: 
   attackTime: 0.5
-  attackMoveAmount: 2
+  attackMoveAmount: 30
+  groundDrag: 50
