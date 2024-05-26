@@ -10,6 +10,7 @@ public class PlayerIdleBen : PlayerIdleSOBase
         base.DoEnterLogic();
         Debug.Log("Idleing");
         stateMachine.GetComponentInChildren<Animator>().Play("Idle");
+        rb.velocity = Vector2.zero;
     }
 
 }

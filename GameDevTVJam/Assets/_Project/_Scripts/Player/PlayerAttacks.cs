@@ -67,7 +67,15 @@ public class PlayerAttacks : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f && anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             Invoke("EndCombo", continueComboTimer);
-            stateMachine.ChangeState(stateMachine.IdleState);
+
+            if (stateMachine.inputManager.MoveInput == 0)
+            {
+                stateMachine.ChangeState(stateMachine.IdleState);
+            }
+            else
+            {
+                stateMachine.ChangeState(stateMachine.MovingState);
+            }
         }
     }
 

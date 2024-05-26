@@ -14,6 +14,7 @@ public class PlayerStateMachine : MonoBehaviour
     public PlayerIdleState IdleState;
     public PlayerMovingState MovingState;
     public PlayerAttackState AttackState;
+    public PlayerRollState RollState;
 
 
     #region ScriptableObject Variables
@@ -21,10 +22,12 @@ public class PlayerStateMachine : MonoBehaviour
     [SerializeField] private PlayerIdleSOBase playerIdleBase;
     [SerializeField] private PlayerMovingSOBase playerMovingBase;
     [SerializeField] private PlayerAttackSOBase playerAttackBase;
+    [SerializeField] private PlayerRollSOBase playerRollBase;
 
     public PlayerIdleSOBase PlayerIdleBaseInstance { get; private set; }
     public PlayerMovingSOBase PlayerMovingBaseInstance { get; private set; }
     public PlayerAttackSOBase PlayerAttackBaseInstance { get; private set; }
+    public PlayerRollSOBase PlayerRollBaseInstance { get; private set; }
 
     #endregion
 
@@ -48,20 +51,20 @@ public class PlayerStateMachine : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerAttacks = GetComponent<PlayerAttacks>();
 
-        //PlayerIdleBaseInstance = Instantiate(playerIdleBase);
-        //PlayerMovingBaseInstance = Instantiate(playerMovingBase);
-
         PlayerIdleBaseInstance = playerIdleBase;
         PlayerMovingBaseInstance = playerMovingBase;
         PlayerAttackBaseInstance = playerAttackBase;
+        PlayerRollBaseInstance = playerRollBase;
 
         IdleState = new PlayerIdleState(this);
         MovingState = new PlayerMovingState(this);
         AttackState = new PlayerAttackState(this);
+        RollState = new PlayerRollState(this);
 
         PlayerIdleBaseInstance.Initialize(gameObject, this);
         PlayerMovingBaseInstance.Initialize(gameObject, this);
         PlayerAttackBaseInstance.Initialize(gameObject, this);
+        PlayerRollBaseInstance.Initialize(gameObject, this);
 
         initialState = IdleState;
     }
@@ -79,6 +82,11 @@ public class PlayerStateMachine : MonoBehaviour
     private void Update()
     {
         currentState.UpdateState();
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && currentState != AttackState)
+        {
+            ChangeState(RollState);
+        }
     }
     private void FixedUpdate()
     {
@@ -97,13 +105,6 @@ public class PlayerStateMachine : MonoBehaviour
 
     #region Logic Checks
 
-    //Consider adding core functionalities here
-    // Ex: GroundedCheck
-    public bool GroundedCheck()
-    {
-        Debug.DrawRay(transform.position, Vector3.down * playerHeight * 0.5f + Vector3.down * 0.2f);
-        return Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
-    }
 
     #endregion
 }
