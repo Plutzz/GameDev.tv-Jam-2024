@@ -488,7 +488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2547474811822506469, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: combo.Array.size
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547474811822506469, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: timeBetweenCombos
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2547474811822506469, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: combo.Array.data[0]
@@ -501,6 +505,14 @@ PrefabInstance:
     - target: {fileID: 2547474811822506469, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: combo.Array.data[2]
       value: 
+      objectReference: {fileID: 11400000, guid: 299c477b005bcfe47aedb569a205e6d0, type: 2}
+    - target: {fileID: 2547474811822506469, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: combo.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: cb4a09baaaaa0e04997cc9ea43beaf90, type: 2}
+    - target: {fileID: 2547474811822506469, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: combo.Array.data[4]
+      value: 
       objectReference: {fileID: 11400000, guid: c976deaedcb878141a86f7c6aaf3d0a5, type: 2}
     - target: {fileID: 5361620815393659762, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: pivot
@@ -511,9 +523,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6373621460069302577, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373621460069302577, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373621460069302577, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -74207946, guid: 62ddaba28aaca7f40943a9feef45fb3e, type: 3}
+      objectReference: {fileID: -1526541301, guid: 12516a9faff9b60438de87bc4b6c3c0d, type: 3}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
