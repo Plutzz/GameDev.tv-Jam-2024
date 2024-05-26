@@ -9,7 +9,7 @@ public class PlayerIdleBen : PlayerIdleSOBase
     {
         base.DoEnterLogic();
         Debug.Log("Idleing");
-        stateMachine.GetComponentInChildren<Animator>().Play("HeroKnight_Idle");
+        stateMachine.GetComponentInChildren<Animator>().Play("Idle");
     }
 
 }

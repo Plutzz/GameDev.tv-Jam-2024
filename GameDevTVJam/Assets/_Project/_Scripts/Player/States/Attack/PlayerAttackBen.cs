@@ -13,7 +13,7 @@ public class PlayerAttackBen : PlayerAttackSOBase
         stateMachine.playerAttacks.AttackPoint.SetActive(true);
         base.DoEnterLogic();
         timer = attackTime;
-        stateMachine.GetComponentInChildren<Animator>().Play("HeroKnight_Attack1");
+        //stateMachine.GetComponentInChildren<Animator>().Play("Attack");
         rb.velocity = Vector2.zero;
         rb.AddForce(Vector2.right * attackMoveAmount * stateMachine.pivot.localScale.x, ForceMode2D.Impulse);
     }
@@ -27,10 +27,10 @@ public class PlayerAttackBen : PlayerAttackSOBase
     public override void DoUpdateState()
     {
         base.DoUpdateState();
-        timer -= Time.deltaTime;
-        if(timer < 0f)
-        {
-            stateMachine.ChangeState(stateMachine.IdleState);
-        }
+        //timer -= Time.deltaTime;
+        //if(timer < 0f)
+        //{
+        //    stateMachine.ChangeState(stateMachine.IdleState);
+        //}
     }
 }
