@@ -11,6 +11,7 @@ public class PlayerMovingBen : PlayerMovingSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
+        Debug.Log("Moving");
         stateMachine.GetComponentInChildren<Animator>().Play("HeroKnight_Run");
     }
     public override void DoUpdateState()

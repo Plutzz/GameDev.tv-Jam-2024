@@ -19,7 +19,7 @@ public class PlayerMovingSOBase : PlayerStateSOBase
     public override void CheckTransitions()
     {
         // Moving => Idle
-        if (stateMachine.inputManager.MoveInput == 0)
+        if (stateMachine.inputManager.MoveInput == 0 && stateMachine.currentState != stateMachine.AttackState)
         {
             stateMachine.ChangeState(stateMachine.IdleState);
         }

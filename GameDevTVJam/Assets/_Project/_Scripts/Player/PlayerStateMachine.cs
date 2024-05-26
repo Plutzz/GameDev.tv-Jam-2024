@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using JetBrains.Annotations;
 
 
 public class PlayerStateMachine : MonoBehaviour
@@ -14,15 +13,18 @@ public class PlayerStateMachine : MonoBehaviour
     // References to all player states
     public PlayerIdleState IdleState;
     public PlayerMovingState MovingState;
+    public PlayerAttackState AttackState;
 
 
     #region ScriptableObject Variables
 
     [SerializeField] private PlayerIdleSOBase playerIdleBase;
     [SerializeField] private PlayerMovingSOBase playerMovingBase;
+    [SerializeField] private PlayerAttackSOBase playerAttackBase;
 
     public PlayerIdleSOBase PlayerIdleBaseInstance { get; private set; }
     public PlayerMovingSOBase PlayerMovingBaseInstance { get; private set; }
+    public PlayerAttackSOBase PlayerAttackBaseInstance { get; private set; }
 
     #endregion
 
@@ -49,12 +51,15 @@ public class PlayerStateMachine : MonoBehaviour
 
         PlayerIdleBaseInstance = playerIdleBase;
         PlayerMovingBaseInstance = playerMovingBase;
+        PlayerAttackBaseInstance = playerAttackBase;
 
         IdleState = new PlayerIdleState(this);
         MovingState = new PlayerMovingState(this);
+        AttackState = new PlayerAttackState(this);
 
         PlayerIdleBaseInstance.Initialize(gameObject, this);
         PlayerMovingBaseInstance.Initialize(gameObject, this);
+        PlayerAttackBaseInstance.Initialize(gameObject, this);
 
         initialState = IdleState;
     }
@@ -64,7 +69,6 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         currentState = initialState;
         currentState.EnterLogic();
     }
@@ -85,7 +89,6 @@ public class PlayerStateMachine : MonoBehaviour
         currentState.ExitLogic();
         previousState = currentState;
         currentState = newState;
-        //playerAnim.HandleAnimations(currentState);
         currentState.EnterLogic();
     }
 

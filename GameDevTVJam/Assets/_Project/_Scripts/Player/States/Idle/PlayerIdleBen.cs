@@ -8,6 +8,8 @@ public class PlayerIdleBen : PlayerIdleSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
+        Debug.Log("Idleing");
         stateMachine.GetComponentInChildren<Animator>().Play("HeroKnight_Idle");
     }
+
 }

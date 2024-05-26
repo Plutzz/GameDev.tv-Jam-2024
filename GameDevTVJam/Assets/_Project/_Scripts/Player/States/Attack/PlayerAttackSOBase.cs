@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerIdleSOBase : PlayerStateSOBase
+public class PlayerAttackSOBase : PlayerStateSOBase
 {
     protected PlayerStateMachine stateMachine;
     protected Rigidbody2D rb;
@@ -14,13 +14,6 @@ public class PlayerIdleSOBase : PlayerStateSOBase
         this.gameObject = gameObject;
         this.stateMachine = stateMachine;
         rb = stateMachine.rb;
-    }
-    public override void CheckTransitions()
-    {
-        if (stateMachine.inputManager.MoveInput != 0 && stateMachine.currentState != stateMachine.AttackState)
-        {
-            stateMachine.ChangeState(stateMachine.MovingState);
-        }
     }
 
 
