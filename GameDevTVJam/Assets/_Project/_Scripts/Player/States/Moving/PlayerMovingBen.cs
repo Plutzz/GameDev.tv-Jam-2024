@@ -21,11 +21,11 @@ public class PlayerMovingBen : PlayerMovingSOBase
 
         if(stateMachine.inputManager.MoveInput > 0)
         {
-            stateMachine.graphics.localScale = Vector2.one;
+            stateMachine.pivot.localScale = Vector2.one;
         }
         else if(stateMachine.inputManager.MoveInput < 0)
         {
-            stateMachine.graphics.localScale = new Vector3(-1, 1, 1);
+            stateMachine.pivot.localScale = new Vector3(-1, 1, 1);
         }
 
     }

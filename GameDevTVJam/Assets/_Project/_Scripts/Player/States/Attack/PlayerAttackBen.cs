@@ -10,11 +10,18 @@ public class PlayerAttackBen : PlayerAttackSOBase
     private float timer;
     public override void DoEnterLogic()
     {
+        stateMachine.playerAttacks.AttackPoint.SetActive(true);
         base.DoEnterLogic();
         timer = attackTime;
         stateMachine.GetComponentInChildren<Animator>().Play("HeroKnight_Attack1");
         rb.velocity = Vector2.zero;
-        rb.AddForce(Vector2.right * attackMoveAmount * stateMachine.graphics.localScale.x, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.right * attackMoveAmount * stateMachine.pivot.localScale.x, ForceMode2D.Impulse);
+    }
+
+    public override void DoExitLogic()
+    {
+        base.DoExitLogic();
+        stateMachine.playerAttacks.AttackPoint.SetActive(false);
     }
 
     public override void DoUpdateState()

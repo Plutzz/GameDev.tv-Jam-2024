@@ -33,7 +33,8 @@ public class PlayerStateMachine : MonoBehaviour
     public InputManager inputManager { get; private set; }
 
     [SerializeField] private LayerMask groundLayer;
-    public Transform graphics;
+    public Transform pivot;
+    [HideInInspector] public PlayerAttacks playerAttacks;
     [SerializeField] private float playerHeight;
 
 
@@ -45,6 +46,7 @@ public class PlayerStateMachine : MonoBehaviour
 
         rb = GetComponentInChildren<Rigidbody2D>();
         inputManager = GetComponent<InputManager>();
+        playerAttacks = GetComponent<PlayerAttacks>();
 
         //PlayerIdleBaseInstance = Instantiate(playerIdleBase);
         //PlayerMovingBaseInstance = Instantiate(playerMovingBase);
