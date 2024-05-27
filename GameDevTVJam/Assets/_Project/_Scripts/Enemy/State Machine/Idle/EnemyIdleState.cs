@@ -8,20 +8,20 @@ public class EnemyIdleState : EnemyState
 
     public override void EnterLogic()
     {
-        stateMachine.EnemyIdleBaseInstance.DoEnterLogic();
+        enemy.EnemyIdleBaseInstance.DoEnterLogic();
     }
 
     public override void ExitLogic()
     {
-        stateMachine.EnemyIdleBaseInstance.DoExitLogic();
+        enemy.EnemyIdleBaseInstance.DoExitLogic();
     }
 
     public override void UpdateState()
     {
-        stateMachine.EnemyIdleBaseInstance.DoUpdateState();
+        enemy.EnemyIdleBaseInstance.DoUpdateState();
     }
     public override void FixedUpdateState()
     {
-        stateMachine.EnemyIdleBaseInstance.DoFixedUpdateState();
+        enemy.EnemyIdleBaseInstance.DoFixedUpdateState();
     }
 }
