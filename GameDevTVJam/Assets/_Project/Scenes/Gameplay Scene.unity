@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &242538285
 Transform:
   m_ObjectHideFlags: 0
@@ -190,6 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d91f755a26e8e429e780657a38b819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 30
+  knockback: 20
 --- !u!1 &1837100350
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.28
       objectReference: {fileID: 0}
+    - target: {fileID: 1373450586638943171, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1702839685178571138, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.966
@@ -522,6 +528,10 @@ PrefabInstance:
       propertyPath: pivot
       value: 
       objectReference: {fileID: 961460744}
+    - target: {fileID: 5361620815393659762, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: rollCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5361620815393659762, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: playerRollBase
       value: 

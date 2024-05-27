@@ -6,5 +6,6 @@ using UnityEngine;
 public class PlayerAttackSO : ScriptableObject
 {
     public AnimatorOverrideController animatorOV;
-    public float damage;
+    public int damage;
+    public float knockback;
 }

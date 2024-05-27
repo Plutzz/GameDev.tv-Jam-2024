@@ -11,10 +11,18 @@ public class PlayerAttackBen : PlayerAttackSOBase
     private float timer;
     public override void DoEnterLogic()
     {
-        stateMachine.playerAttacks.AttackPoint.SetActive(true);
+        
         base.DoEnterLogic();
         timer = attackTime;
-        //stateMachine.GetComponentInChildren<Animator>().Play("Attack");
+        stateMachine.playerAttacks.AttackPoint.SetActive(true);
+        if(stateMachine.inputManager.MoveInput > 0)
+        {
+            stateMachine.pivot.localScale = Vector3.one;
+        }
+        else if(stateMachine.inputManager.MoveInput < 0)
+        {
+            stateMachine.pivot.localScale = new Vector3(-1, 1, 1);
+        }
         rb.drag = groundDrag;
         rb.velocity = Vector2.zero;
         rb.AddForce(Vector2.right * attackMoveAmount * stateMachine.pivot.localScale.x, ForceMode2D.Impulse);
@@ -25,6 +33,11 @@ public class PlayerAttackBen : PlayerAttackSOBase
         base.DoExitLogic();
         stateMachine.playerAttacks.AttackPoint.SetActive(false);
         rb.drag = 0;
+    }
+
+    private void EnableHitbox()
+    {
+
     }
 
     public override void DoUpdateState()

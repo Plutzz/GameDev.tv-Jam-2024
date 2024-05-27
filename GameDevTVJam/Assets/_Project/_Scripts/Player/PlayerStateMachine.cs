@@ -34,11 +34,14 @@ public class PlayerStateMachine : MonoBehaviour
     #region Player Variables
     public Rigidbody2D rb { get; private set; }
     public InputManager inputManager { get; private set; }
-
     [SerializeField] private LayerMask groundLayer;
     public Transform pivot;
     [HideInInspector] public PlayerAttacks playerAttacks;
     [SerializeField] private float playerHeight;
+
+    [Header("Roll")]
+    [SerializeField] private float rollCooldown = 1f;
+    private float rollTimer;
 
 
     #endregion
@@ -83,9 +86,12 @@ public class PlayerStateMachine : MonoBehaviour
     {
         currentState.UpdateState();
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && currentState != AttackState)
+        rollTimer -= Time.deltaTime;
+
+        if(rollTimer < 0 && Input.GetKeyDown(KeyCode.LeftShift))
         {
             ChangeState(RollState);
+            rollTimer = rollCooldown;
         }
     }
     private void FixedUpdate()

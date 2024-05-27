@@ -24,6 +24,7 @@ public class PlayerAttacks : MonoBehaviour
 
     [Header("Misc.")]
     [SerializeField] private PlayerStateMachine stateMachine;
+    private PlayerAttackHitbox attackHitbox;
     private Animator anim;
     
 
@@ -31,6 +32,7 @@ public class PlayerAttacks : MonoBehaviour
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        attackHitbox = GetComponentInChildren<PlayerAttackHitbox>(true);
     }
 
     public void Update()
@@ -63,14 +65,15 @@ public class PlayerAttacks : MonoBehaviour
     {
         if(Time.time - lastComboEnd > timeBetweenCombos && comboCounter <= combo.Count)
         {
-            CancelInvoke("EndCombo");
+            CancelInvoke("IncompleteCombo");
 
             if (Time.time - lastAttackTime >= attackCooldown)
             {
                 
                 stateMachine.ChangeState(stateMachine.AttackState);
                 anim.runtimeAnimatorController = combo[comboCounter].animatorOV;
-                // Add damage changing
+                attackHitbox.damage = combo[comboCounter].damage;
+                attackHitbox.knockback = combo[comboCounter].knockback;
                 anim.Play("Attack", 0, 0);
                 comboCounter++;
                 if(comboCounter >= combo.Count)
@@ -97,7 +100,7 @@ public class PlayerAttacks : MonoBehaviour
     {
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f && anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
-            Invoke("EndCombo", continueComboTimer);
+            Invoke("IncompleteCombo", continueComboTimer);
 
             if (stateMachine.inputManager.MoveInput == 0)
             {
@@ -114,5 +117,10 @@ public class PlayerAttacks : MonoBehaviour
     {
         comboCounter = 0;
         lastComboEnd = lastAttackTime;
+    }
+
+    void IncompleteCombo()
+    {
+        comboCounter = 0;
     }
 }

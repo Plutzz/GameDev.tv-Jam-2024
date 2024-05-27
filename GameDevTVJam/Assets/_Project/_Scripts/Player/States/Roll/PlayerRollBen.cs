@@ -14,6 +14,14 @@ public class PlayerRollBen : PlayerRollSOBase
     {
         base.DoEnterLogic();
         timer = rollTime;
+        if (stateMachine.inputManager.MoveInput > 0)
+        {
+            stateMachine.pivot.localScale = Vector3.one;
+        }
+        else if (stateMachine.inputManager.MoveInput < 0)
+        {
+            stateMachine.pivot.localScale = new Vector3(-1, 1, 1);
+        }
         stateMachine.GetComponentInChildren<Animator>().Play("Roll");
         rb.velocity = Vector2.right * rollVelocity * stateMachine.pivot.localScale.x;
         stateMachine.GetComponent<Collider2D>().excludeLayers = enemyLayer;
