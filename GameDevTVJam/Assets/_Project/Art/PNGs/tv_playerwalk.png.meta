@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12516a9faff9b60438de87bc4b6c3c0d
+guid: a6a47d1e112795a44bd163671426c3ee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_0
+      name: tv_playerwalk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a2bc540b5a3a1b4aa18e04909888750
-      internalID: -1526541301
+      spriteID: 7b4b4f2b1f4506b4185ce718795f2c39
+      internalID: 2090184384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_1
+      name: tv_playerwalk_1
       rect:
         serializedVersion: 2
         x: 32
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0833ed448d4d16441be2cf1a6ab9625f
-      internalID: -1231981293
+      spriteID: cc74fc1b9867e92419009a86e692448c
+      internalID: -541418066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_2
+      name: tv_playerwalk_2
       rect:
         serializedVersion: 2
         x: 64
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4235e88f851be8e429fb60943ae27801
-      internalID: -1245577835
+      spriteID: 8d4b8be9ad49b674db291f41774a2da2
+      internalID: -1469768020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_3
+      name: tv_playerwalk_3
       rect:
         serializedVersion: 2
         x: 96
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31a7094606718ed479d4af3c66b53f52
-      internalID: 888168554
+      spriteID: 0256a34383e82cd499f8e057a8fec6e8
+      internalID: 984253607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_4
+      name: tv_playerwalk_4
       rect:
         serializedVersion: 2
         x: 128
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 705c4645e5b6aab42886d50186991276
-      internalID: 1652958479
+      spriteID: a378b922a8bc20d4e86d2d5760cd67c0
+      internalID: 1699642264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_5
+      name: tv_playerwalk_5
       rect:
         serializedVersion: 2
         x: 160
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f98a535ccb873804c91772906590eaaf
-      internalID: -9308507
+      spriteID: 634710b95f201004e9cba89234165808
+      internalID: -1964677026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_6
+      name: tv_playerwalk_6
       rect:
         serializedVersion: 2
         x: 192
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba0539ba67532094db32041e755fa8e5
-      internalID: -755709169
+      spriteID: 85a2782e840e6944591ba23a6ae6bbb5
+      internalID: 1279398535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_7
+      name: tv_playerwalk_7
       rect:
         serializedVersion: 2
         x: 224
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bf3b328016717a45bccfa58d0dfbcbe
-      internalID: 996669276
+      spriteID: 7512a0316da326e42880b6c7e8289bd0
+      internalID: 137251409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_8
+      name: tv_playerwalk_8
       rect:
         serializedVersion: 2
         x: 256
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab81f88c3fc673c4eae7ed2fdb3b0ffb
-      internalID: -610183814
+      spriteID: ca50785eebb083f41b395e264150a6eb
+      internalID: 866917435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_9
+      name: tv_playerwalk_9
       rect:
         serializedVersion: 2
         x: 288
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 110a2ef2e8238ea45b4898b1d59cc45c
-      internalID: 736997831
+      spriteID: 0220ba7c0dfbff345a77423f191084dc
+      internalID: 362172160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_10
+      name: tv_playerwalk_10
       rect:
         serializedVersion: 2
         x: 320
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e025b73fc39b4c4c9204e211aa9d58b
-      internalID: 1276724764
+      spriteID: f528254a4a1f04441b58086b44473f64
+      internalID: 839451190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_playeridle_pipe_anim_11
+      name: tv_playerwalk_11
       rect:
         serializedVersion: 2
         x: 352
@@ -355,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28f9f035cdf36454fabb0bbcf8a13c57
-      internalID: 209961378
+      spriteID: 6ffa84b6b749b2141b0c94f2d89c2bd4
+      internalID: 754488637
       vertices: []
       indices: 
       edges: []
@@ -372,18 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tv_playeridle_pipe_anim_0: -1526541301
-      tv_playeridle_pipe_anim_1: -1231981293
-      tv_playeridle_pipe_anim_10: 1276724764
-      tv_playeridle_pipe_anim_11: 209961378
-      tv_playeridle_pipe_anim_2: -1245577835
-      tv_playeridle_pipe_anim_3: 888168554
-      tv_playeridle_pipe_anim_4: 1652958479
-      tv_playeridle_pipe_anim_5: -9308507
-      tv_playeridle_pipe_anim_6: -755709169
-      tv_playeridle_pipe_anim_7: 996669276
-      tv_playeridle_pipe_anim_8: -610183814
-      tv_playeridle_pipe_anim_9: 736997831
+      tv_playerwalk_0: 2090184384
+      tv_playerwalk_1: -541418066
+      tv_playerwalk_10: 839451190
+      tv_playerwalk_11: 754488637
+      tv_playerwalk_2: -1469768020
+      tv_playerwalk_3: 984253607
+      tv_playerwalk_4: 1699642264
+      tv_playerwalk_5: -1964677026
+      tv_playerwalk_6: 1279398535
+      tv_playerwalk_7: 137251409
+      tv_playerwalk_8: 866917435
+      tv_playerwalk_9: 362172160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,7 +12,7 @@ public class PlayerMovingBen : PlayerMovingSOBase
     {
         base.DoEnterLogic();
         Debug.Log("Moving");
-        stateMachine.GetComponentInChildren<Animator>().Play("Walk");
+        stateMachine.GetComponentInChildren<Animator>().Play("PlayerWalk");
     }
     public override void DoUpdateState()
     {
