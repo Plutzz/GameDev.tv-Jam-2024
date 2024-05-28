@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dbc5819b31b394ab845a6524db9b1d, type: 3}
   m_Name: Chase Reacher
   m_EditorClassIdentifier: 
-  windupTime: 0.1
+  xVelocity: 5
+  windupTime: 2
   jumpTime: 2
   jumpXVelocity: 10
-  jumpYVelocity: 10
+  jumpYVelocity: 7
   jumpDrag: 1
+  spacingBetweenPlayer: 5

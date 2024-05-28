@@ -7,11 +7,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Enemy States/Chase/Reacher")]
 public class EnemyChaseReacher : EnemyChaseSOBase
 {
+    [SerializeField] private float xVelocity = 2f;
     [SerializeField] private float windupTime = 2f;
     [SerializeField] private float jumpTime = 2f;
     [SerializeField] private float jumpXVelocity = 5f;
     [SerializeField] private float jumpYVelocity = 5f;
     [SerializeField] private float jumpDrag = 10f;
+    [SerializeField] private float spacingBetweenPlayer = 6f;
     private bool jumpReady;
     private float timer;
     private int jumpDirection;
@@ -19,8 +21,9 @@ public class EnemyChaseReacher : EnemyChaseSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
+        //jumpReady = false;
         timer = windupTime;
-        rb.drag = 100f;
+        rb.drag = 0f;
         jumpDirection = 1;
 
         // If player is to the left, flip charge direction
@@ -33,6 +36,15 @@ public class EnemyChaseReacher : EnemyChaseSOBase
     public override void DoUpdateState()
     {
         base.DoUpdateState();
+
+        if (Mathf.Abs(enemy.player.transform.position.x - enemy.transform.position.x) < spacingBetweenPlayer && !jumpReady)
+        {
+            rb.velocity = -jumpDirection * new Vector2(xVelocity, 0f);
+        } else if (Mathf.Abs(enemy.player.transform.position.x - enemy.transform.position.x) >= spacingBetweenPlayer && !jumpReady)
+        {
+            rb.velocity = Vector2.zero;
+        }
+
         timer -= Time.deltaTime;
 
         if (timer < 0f && !jumpReady)
