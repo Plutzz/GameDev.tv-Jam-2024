@@ -202,8 +202,8 @@ MonoBehaviour:
   knockbackDrag: 25
   <maxHealth>k__BackingField: 100
   enemyIdleBase: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
-  enemyChaseBase: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
-  enemyAttackBase: {fileID: 0}
+  enemyChaseBase: {fileID: 11400000, guid: b93800c7d0c12504da289e7d87feef2c, type: 2}
+  enemyAttackBase: {fileID: 11400000, guid: 5a10a999ad79db64099b69e1346353ca, type: 2}
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0

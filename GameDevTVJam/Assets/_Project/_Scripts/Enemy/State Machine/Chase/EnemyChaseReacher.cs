@@ -9,23 +9,24 @@ public class EnemyChaseReacher : EnemyChaseSOBase
 {
     [SerializeField] private float windupTime = 2f;
     [SerializeField] private float jumpTime = 2f;
-    [SerializeField] private float chargeVelocity = 10f;
-    [SerializeField] private float chargeDrag = 10f;
+    [SerializeField] private float jumpXVelocity = 5f;
+    [SerializeField] private float jumpYVelocity = 5f;
+    [SerializeField] private float jumpDrag = 10f;
     private bool chargeReady;
     private float timer;
-    private int chargeDirection;
+    private int jumpDirection;
 
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
         timer = windupTime;
         rb.drag = 100f;
-        chargeDirection = 1;
+        jumpDirection = 1;
 
         // If player is to the left, flip charge direction
         if (enemy.player.transform.position.x < enemy.transform.position.x)
         {
-            chargeDirection = -1;
+            jumpDirection = -1;
         }
     }
 
@@ -37,7 +38,7 @@ public class EnemyChaseReacher : EnemyChaseSOBase
         if (timer < 0f && !chargeReady)
         {
             chargeReady = true;
-            timer = chargeTime;
+            timer = jumpTime;
             Charge();
         }
         else if (timer < 0f && chargeReady)
@@ -49,9 +50,9 @@ public class EnemyChaseReacher : EnemyChaseSOBase
 
     private void Charge()
     {
-        rb.drag = chargeDrag;
+        rb.drag = jumpDrag;
 
-        rb.AddForce(new Vector2(chargeVelocity * chargeDirection, 0), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(jumpXVelocity * jumpDirection, jumpYVelocity), ForceMode2D.Impulse);
 
         enemy.CheckForLeftOrRightFacing(rb.velocity);
     }
