@@ -88,9 +88,9 @@ GameObject:
   - component: {fileID: 6728783708721918276}
   - component: {fileID: 8885673317815360242}
   - component: {fileID: 6653356382647036119}
-  - component: {fileID: -3234692128472568565}
+  - component: {fileID: 7667864968411807202}
   m_Layer: 7
-  m_Name: Reacher
+  m_Name: Wiggler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-3234692128472568565
+--- !u!114 &7667864968411807202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,15 +195,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4326009796753613826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e1dc1c46896ee94fb82f6bda247db90, type: 3}
+  m_Script: {fileID: 11500000, guid: 85049fd12551f174693a78ff5b4f0ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackTime: 0.1
-  knockbackDrag: 25
-  <maxHealth>k__BackingField: 100
-  enemyIdleBase: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
-  enemyChaseBase: {fileID: 11400000, guid: b93800c7d0c12504da289e7d87feef2c, type: 2}
-  enemyAttackBase: {fileID: 11400000, guid: 5a10a999ad79db64099b69e1346353ca, type: 2}
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0
