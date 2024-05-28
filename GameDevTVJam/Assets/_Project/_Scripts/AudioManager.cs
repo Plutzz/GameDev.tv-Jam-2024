@@ -29,8 +29,10 @@ public class AudioManager : SingletonPersistent<AudioManager>
 
 
 
-    public void Start()
+    protected override void Awake()
     {        
+        base.Awake();
+
         //masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
         //musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
         //ambienceVolume = PlayerPrefs.GetFloat("AmbienceVolume", 1f);
