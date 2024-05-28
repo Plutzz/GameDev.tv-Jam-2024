@@ -11,33 +11,24 @@ public class PlayerStateMachine : MonoBehaviour
     public PlayerState previousState { get; private set; } // State that player was previously in
 
     // References to all player states
-    public PlayerIdleState IdleState;
-    public PlayerMovingState MovingState;
-    public PlayerAttackState AttackState;
-    public PlayerRollState RollState;
-
-
+    public PlayerState IdleState;
+    public PlayerState MovingState;
+    public PlayerState AttackState;
+    public PlayerState RollState;
     #region ScriptableObject Variables
 
-    [SerializeField] private PlayerIdleSOBase playerIdleBase;
-    [SerializeField] private PlayerMovingSOBase playerMovingBase;
-    [SerializeField] private PlayerAttackSOBase playerAttackBase;
-    [SerializeField] private PlayerRollSOBase playerRollBase;
-
-    public PlayerIdleSOBase PlayerIdleBaseInstance { get; private set; }
-    public PlayerMovingSOBase PlayerMovingBaseInstance { get; private set; }
-    public PlayerAttackSOBase PlayerAttackBaseInstance { get; private set; }
-    public PlayerRollSOBase PlayerRollBaseInstance { get; private set; }
+    [SerializeField] private PlayerStateSOBase playerIdleSO;
+    [SerializeField] private PlayerStateSOBase playerMovingSO;
+    [SerializeField] private PlayerStateSOBase playerAttackSO;
+    [SerializeField] private PlayerStateSOBase playerRollSO;
 
     #endregion
 
     #region Player Variables
     public Rigidbody2D rb { get; private set; }
     public InputManager inputManager { get; private set; }
-    [SerializeField] private LayerMask groundLayer;
     public Transform pivot;
     [HideInInspector] public PlayerAttacks playerAttacks;
-    [SerializeField] private float playerHeight;
 
     [Header("Roll")]
     [SerializeField] private float rollCooldown = 1f;
@@ -54,26 +45,18 @@ public class PlayerStateMachine : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerAttacks = GetComponent<PlayerAttacks>();
 
-        PlayerIdleBaseInstance = playerIdleBase;
-        PlayerMovingBaseInstance = playerMovingBase;
-        PlayerAttackBaseInstance = playerAttackBase;
-        PlayerRollBaseInstance = playerRollBase;
+        IdleState = new PlayerState(this, playerIdleSO);
+        MovingState = new PlayerState(this, playerMovingSO);
+        AttackState = new PlayerState(this, playerAttackSO);
+        RollState = new PlayerState(this, playerRollSO);
 
-        IdleState = new PlayerIdleState(this);
-        MovingState = new PlayerMovingState(this);
-        AttackState = new PlayerAttackState(this);
-        RollState = new PlayerRollState(this);
-
-        PlayerIdleBaseInstance.Initialize(gameObject, this);
-        PlayerMovingBaseInstance.Initialize(gameObject, this);
-        PlayerAttackBaseInstance.Initialize(gameObject, this);
-        PlayerRollBaseInstance.Initialize(gameObject, this);
+        playerIdleSO.Initialize(gameObject, this);
+        playerMovingSO.Initialize(gameObject, this);
+        playerAttackSO.Initialize(gameObject, this);
+        playerRollSO.Initialize(gameObject, this);
 
         initialState = IdleState;
     }
-
-
-
 
     public void Start()
     {
@@ -101,7 +84,6 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void ChangeState(PlayerState newState)
     {
-        Debug.Log("Changing to: " + newState);
         currentState.ExitLogic();
         previousState = currentState;
         currentState = newState;

@@ -6,6 +6,7 @@ public class PlayerState
 {
     // Fields to be assigned during the Construct() methods
     protected PlayerStateMachine stateMachine;
+    protected PlayerStateSOBase stateInstance;
 
     /// <summary>
     /// Constructor used to pass references of the stateMachine
@@ -13,9 +14,10 @@ public class PlayerState
     /// </summary>
     /// <param name="stateMachine"></param>
     /// 
-    public PlayerState(PlayerStateMachine stateMachine)
+    public PlayerState(PlayerStateMachine stateMachine, PlayerStateSOBase stateInstance)
     {
         this.stateMachine = stateMachine;
+        this.stateInstance = stateInstance;
     }
 
 
@@ -25,7 +27,7 @@ public class PlayerState
     /// </summary>
     public virtual void EnterLogic()
     {
-
+        stateInstance.DoEnterLogic();
     }
 
     /// <summary>
@@ -33,7 +35,7 @@ public class PlayerState
     /// </summary>
     public virtual void ExitLogic()
     {
-
+        stateInstance.DoExitLogic();
     }
 
     /// <summary>
@@ -41,8 +43,8 @@ public class PlayerState
     /// Consider this the "Update" method of this state.
     /// </summary>
     public virtual void UpdateState()
-    { 
-    
+    {
+        stateInstance.DoUpdateState();
     }
 
     /// <summary>
@@ -51,7 +53,7 @@ public class PlayerState
     /// </summary>
     public virtual void FixedUpdateState()
     {
-
+        stateInstance.DoFixedUpdateState();
     }
     /// <summary>
     /// This method contains checks for all transitions from the current state.
@@ -59,6 +61,6 @@ public class PlayerState
     /// </summary>
     public virtual void CheckTransitions()
     {
-
+        stateInstance.CheckTransitions();
     }
 }

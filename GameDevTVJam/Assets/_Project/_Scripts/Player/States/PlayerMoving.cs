@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MovingState-Ben", menuName = "PlayerStates/MovingState")]
-public class PlayerMovingBen : PlayerMovingSOBase
+public class PlayerMoving : PlayerStateSOBase
 {
 
     [SerializeField] private float speed = 1f;

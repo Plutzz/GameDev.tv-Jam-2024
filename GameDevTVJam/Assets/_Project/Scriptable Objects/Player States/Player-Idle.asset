@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814d2f5854b87b442869af1d7219043d, type: 3}
-  m_Name: AttackState-Ben
+  m_Script: {fileID: 11500000, guid: e0044022bca7143498680961760848a7, type: 3}
+  m_Name: Player-Idle
   m_EditorClassIdentifier: 
-  attackTime: 0.5
-  attackMoveAmount: 30
-  groundDrag: 50

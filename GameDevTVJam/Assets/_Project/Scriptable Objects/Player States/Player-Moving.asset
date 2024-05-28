@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0044022bca7143498680961760848a7, type: 3}
-  m_Name: IdleState-Ben
+  m_Script: {fileID: 11500000, guid: 8de7246cdb6a17b40baba55e67f3dd51, type: 3}
+  m_Name: Player-Moving
   m_EditorClassIdentifier: 
+  speed: 3.5

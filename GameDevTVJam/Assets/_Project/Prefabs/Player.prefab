@@ -233,16 +233,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a959f07900f7954caa45cc55c00df9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIdleBase: {fileID: 11400000, guid: 61b661bf36c57d148a86a8578de0442c, type: 2}
-  playerMovingBase: {fileID: 11400000, guid: e674e6e2bca4a4048acb4fb14b9a8a9e, type: 2}
-  playerAttackBase: {fileID: 11400000, guid: 9e13f3d4e7976334a9f6a62a3e66515a, type: 2}
-  playerRollBase: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  playerIdleSO: {fileID: 11400000, guid: 61b661bf36c57d148a86a8578de0442c, type: 2}
+  playerMovingSO: {fileID: 11400000, guid: e674e6e2bca4a4048acb4fb14b9a8a9e, type: 2}
+  playerAttackSO: {fileID: 11400000, guid: 9e13f3d4e7976334a9f6a62a3e66515a, type: 2}
+  playerRollSO: {fileID: 11400000, guid: 09d85ac70b3a6f745bf3f9fc6c97a0d3, type: 2}
   pivot: {fileID: 7743646183294813566}
   playerAttacks: {fileID: 0}
-  playerHeight: 1
   rollCooldown: 1
 --- !u!114 &8978194419703227737
 MonoBehaviour:

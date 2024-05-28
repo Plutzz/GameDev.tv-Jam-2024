@@ -7,6 +7,17 @@ using UnityEngine;
 /// </summary>
 public class PlayerStateSOBase : ScriptableObject
 {
+    protected PlayerStateMachine stateMachine;
+    protected Rigidbody2D rb;
+    protected GameObject gameObject;
+
+    public void Initialize(GameObject gameObject, PlayerStateMachine stateMachine)
+    {
+        this.gameObject = gameObject;
+        this.stateMachine = stateMachine;
+        rb = stateMachine.rb;
+    }
+
     /// <summary>
     /// Setup state, e.g. starting animations.
     /// Consider this the "Start" method of this state.

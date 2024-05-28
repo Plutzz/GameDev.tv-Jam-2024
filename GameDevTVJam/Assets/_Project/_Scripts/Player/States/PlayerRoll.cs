@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PlayerStates/RollState")]
-public class PlayerRollBen : PlayerRollSOBase
+public class PlayerRoll : PlayerStateSOBase
 {
     [SerializeField] private float rollTime = 0.5f;
     [SerializeField] private float rollVelocity = 5f;
