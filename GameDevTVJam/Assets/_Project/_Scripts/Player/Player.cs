@@ -39,23 +39,12 @@ public class Player : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        stateMachine = new PlayerStateMachine();
-
         rb = GetComponentInChildren<Rigidbody2D>();
         inputManager = GetComponent<InputManager>();
         playerAttacks = GetComponent<PlayerAttacks>();
 
-        IdleState = new PlayerState(playerIdleSO);
-        MovingState = new PlayerState(playerMovingSO);
-        AttackState = new PlayerState(playerAttackSO);
-        RollState = new PlayerState(playerRollSO);
+        SetupStateMachine();
 
-        playerIdleSO.Initialize(gameObject, stateMachine, this);
-        playerMovingSO.Initialize(gameObject, stateMachine, this  );
-        playerAttackSO.Initialize(gameObject, stateMachine, this  );
-        playerRollSO.Initialize(gameObject, stateMachine, this);
-
-        stateMachine.Initialize(IdleState);
     }
     private void Update()
     {
@@ -75,5 +64,24 @@ public class Player : MonoBehaviour
         stateMachine.currentState.FixedUpdateState();
     }
 
+    #endregion
+
+    #region Helper Methods
+    private void SetupStateMachine()
+    {
+        stateMachine = new PlayerStateMachine();
+
+        IdleState = new PlayerState(playerIdleSO);
+        MovingState = new PlayerState(playerMovingSO);
+        AttackState = new PlayerState(playerAttackSO);
+        RollState = new PlayerState(playerRollSO);
+
+        playerIdleSO.Initialize(gameObject, stateMachine, this);
+        playerMovingSO.Initialize(gameObject, stateMachine, this);
+        playerAttackSO.Initialize(gameObject, stateMachine, this);
+        playerRollSO.Initialize(gameObject, stateMachine, this);
+
+        stateMachine.Initialize(IdleState);
+    }
     #endregion
 }
