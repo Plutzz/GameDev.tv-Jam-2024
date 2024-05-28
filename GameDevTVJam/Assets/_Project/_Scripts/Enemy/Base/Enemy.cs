@@ -25,21 +25,21 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
     #region State Machine Variables
 
     [Header("States")]
-    [SerializeField] private EnemyIdleSOBase enemyIdleBase;
-    [SerializeField] private EnemyChaseSOBase enemyChaseBase;
-    [SerializeField] private EnemyAttackSOBase enemyAttackBase;
+    [SerializeField] private EnemyStateSOBase enemyIdleBase;
+    [SerializeField] private EnemyStateSOBase enemyChaseBase;
+    [SerializeField] private EnemyStateSOBase enemyAttackBase;
 
     public EnemyStateMachine stateMachine { get; private set; }
 
     // States
-    public EnemyIdleState IdleState;
-    public EnemyChaseState ChaseState;
-    public EnemyAttackState AttackState;
+    public EnemyState IdleState;
+    public EnemyState ChaseState;
+    public EnemyState AttackState;
 
     // SO Instances
-    public EnemyIdleSOBase EnemyIdleBaseInstance { get; private set; }
-    public EnemyChaseSOBase EnemyChaseBaseInstance { get; private set; }
-    public EnemyAttackSOBase EnemyAttackBaseInstance { get; private set; }
+    public EnemyStateSOBase EnemyIdleBaseInstance { get; private set; }
+    public EnemyStateSOBase EnemyChaseBaseInstance { get; private set; }
+    public EnemyStateSOBase EnemyAttackBaseInstance { get; private set; }
 
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
@@ -58,17 +58,17 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
 
         // Idle
         EnemyIdleBaseInstance = Instantiate(enemyIdleBase);
-        IdleState = new EnemyIdleState(stateMachine, this);
+        IdleState = new EnemyState(EnemyIdleBaseInstance);
         EnemyIdleBaseInstance.Initialize(gameObject, stateMachine, this);
 
         // Chase
         EnemyChaseBaseInstance = Instantiate(enemyChaseBase);
-        ChaseState = new EnemyChaseState(stateMachine, this);
+        ChaseState = new EnemyState(EnemyChaseBaseInstance);
         EnemyChaseBaseInstance.Initialize(gameObject, stateMachine, this);
 
         // Attack
         EnemyAttackBaseInstance = Instantiate(enemyAttackBase);
-        AttackState = new EnemyAttackState(stateMachine, this);
+        AttackState = new EnemyState(EnemyAttackBaseInstance);
         EnemyAttackBaseInstance.Initialize(gameObject, stateMachine, this);
 
         stateMachine.Initialize(IdleState);

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerState
 {
     // Fields to be assigned during the Construct() methods
-    protected PlayerStateMachine stateMachine;
     protected PlayerStateSOBase stateInstance;
 
     /// <summary>
@@ -14,9 +13,8 @@ public class PlayerState
     /// </summary>
     /// <param name="stateMachine"></param>
     /// 
-    public PlayerState(PlayerStateMachine stateMachine, PlayerStateSOBase stateInstance)
+    public PlayerState(PlayerStateSOBase stateInstance)
     {
-        this.stateMachine = stateMachine;
         this.stateInstance = stateInstance;
     }
 

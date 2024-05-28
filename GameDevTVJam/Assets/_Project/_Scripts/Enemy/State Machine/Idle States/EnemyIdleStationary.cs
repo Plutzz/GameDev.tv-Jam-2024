@@ -6,7 +6,7 @@ using UnityEngine;
 // After which, the enemy will go into chase state or attack state depending on the distance to the player
 
 [CreateAssetMenu(menuName = "Enemy States/Idle/Stationary")]
-public class EnemyIdleStationary : EnemyIdleSOBase
+public class EnemyIdleStationary : EnemyStateSOBase
 {
     [SerializeField] private float maxIdleTime = 2f;
     private float idleTimer;

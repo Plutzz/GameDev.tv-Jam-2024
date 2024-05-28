@@ -11,6 +11,11 @@ public class PlayerStateSOBase : ScriptableObject
     protected Rigidbody2D rb;
     protected GameObject gameObject;
 
+    /// <summary>
+    /// Initialize paramaters that are commonly used in states
+    /// </summary>
+    /// <param name="gameObject"></param>
+    /// <param name="stateMachine"></param>
     public void Initialize(GameObject gameObject, PlayerStateMachine stateMachine)
     {
         this.gameObject = gameObject;

@@ -7,6 +7,26 @@ using UnityEngine;
 /// </summary>
 public class EnemyStateSOBase : ScriptableObject
 {
+
+    protected EnemyStateMachine stateMachine;
+    protected Rigidbody2D rb;
+    protected GameObject gameObject;
+    protected Enemy enemy;
+
+    /// <summary>
+    /// Initialize paramaters that are commonly used in states
+    /// </summary>
+    /// <param name="gameObject"></param>
+    /// <param name="stateMachine"></param>
+    /// <param name="enemy"></param>
+    public virtual void Initialize(GameObject gameObject, EnemyStateMachine stateMachine, Enemy enemy)
+    {
+        this.gameObject = gameObject;
+        this.stateMachine = stateMachine;
+        this.enemy = enemy;
+        rb = enemy.rb;
+    }
+
     /// <summary>
     /// Setup state, e.g. starting animations.
     /// Consider this the "Start" method of this state.

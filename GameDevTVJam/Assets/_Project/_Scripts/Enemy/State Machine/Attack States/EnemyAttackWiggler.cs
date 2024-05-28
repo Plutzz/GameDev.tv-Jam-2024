@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy States/Attack/Hatcher")]
-public class EnemyAttackHatcher : EnemyAttackSOBase
+[CreateAssetMenu(menuName = "Enemy States/Attack/Wiggler")]
+public class EnemyAttackWiggler : EnemyStateSOBase
 {
     public override void DoEnterLogic()
     {

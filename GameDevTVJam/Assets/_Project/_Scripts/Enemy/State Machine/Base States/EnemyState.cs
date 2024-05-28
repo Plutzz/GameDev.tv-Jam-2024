@@ -5,8 +5,7 @@ using UnityEngine;
 public class EnemyState
 {
     // Fields to be assigned during the Construct() methods
-    protected Enemy enemy;
-    protected EnemyStateMachine stateMachine;
+    protected EnemyStateSOBase stateInstance;
 
     /// <summary>
     /// Constructor used to pass references of the stateMachine
@@ -14,10 +13,9 @@ public class EnemyState
     /// </summary>
     /// <param name="stateMachine"></param>
     /// 
-    public EnemyState(EnemyStateMachine stateMachine, Enemy enemy)
+    public EnemyState(EnemyStateSOBase stateInstance)
     {
-        this.stateMachine = stateMachine;
-        this.enemy = enemy;
+        this.stateInstance = stateInstance;
     }
 
 
@@ -27,7 +25,7 @@ public class EnemyState
     /// </summary>
     public virtual void EnterLogic()
     {
-
+        stateInstance.DoEnterLogic();
     }
 
     /// <summary>
@@ -35,7 +33,7 @@ public class EnemyState
     /// </summary>
     public virtual void ExitLogic()
     {
-
+        stateInstance.DoExitLogic();
     }
 
     /// <summary>
@@ -43,8 +41,8 @@ public class EnemyState
     /// Consider this the "Update" method of this state.
     /// </summary>
     public virtual void UpdateState()
-    { 
-    
+    {
+        stateInstance.DoUpdateState();
     }
 
     /// <summary>
@@ -53,7 +51,7 @@ public class EnemyState
     /// </summary>
     public virtual void FixedUpdateState()
     {
-
+        stateInstance.DoFixedUpdateState();
     }
     /// <summary>
     /// This method contains checks for all transitions from the current state.
@@ -61,6 +59,6 @@ public class EnemyState
     /// </summary>
     public virtual void CheckTransitions()
     {
-
+        stateInstance.CheckTransitions();
     }
 }

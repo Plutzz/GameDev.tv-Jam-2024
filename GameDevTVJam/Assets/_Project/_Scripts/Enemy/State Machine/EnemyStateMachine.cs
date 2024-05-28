@@ -17,7 +17,6 @@ public class EnemyStateMachine
     }
     public void ChangeState(EnemyState newState)
     {
-        Debug.Log("Changing to: " + newState);
         currentState.ExitLogic();
         previousState = currentState;
         currentState = newState;

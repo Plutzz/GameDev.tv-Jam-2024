@@ -45,10 +45,10 @@ public class PlayerStateMachine : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerAttacks = GetComponent<PlayerAttacks>();
 
-        IdleState = new PlayerState(this, playerIdleSO);
-        MovingState = new PlayerState(this, playerMovingSO);
-        AttackState = new PlayerState(this, playerAttackSO);
-        RollState = new PlayerState(this, playerRollSO);
+        IdleState = new PlayerState(playerIdleSO);
+        MovingState = new PlayerState(playerMovingSO);
+        AttackState = new PlayerState(playerAttackSO);
+        RollState = new PlayerState(playerRollSO);
 
         playerIdleSO.Initialize(gameObject, this);
         playerMovingSO.Initialize(gameObject, this);

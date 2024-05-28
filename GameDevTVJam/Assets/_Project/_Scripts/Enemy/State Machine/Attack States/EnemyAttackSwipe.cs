@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy States/Attack/Swipe")]
-public class EnemyAttackSwipe : EnemyAttackSOBase
+public class EnemyAttackSwipe : EnemyStateSOBase
 {
     [SerializeField] private float attackChargeTime = 1f;
     private float timer;

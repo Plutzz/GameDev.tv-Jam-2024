@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Enemy States/Chase/Reacher")]
-public class EnemyChaseReacher : EnemyChaseSOBase
+public class EnemyChaseReacher : EnemyStateSOBase
 {
     [SerializeField] private float xVelocity = 2f;
     [SerializeField] private float windupTime = 2f;

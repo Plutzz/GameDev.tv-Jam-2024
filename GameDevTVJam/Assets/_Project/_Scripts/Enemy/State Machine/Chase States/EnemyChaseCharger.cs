@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy States/Chase/Charger")]
-public class EnemyChaseCharger : EnemyChaseSOBase
+public class EnemyChaseCharger : EnemyStateSOBase
 {
     [SerializeField] private float windupTime = 2f;
     [SerializeField] private float chargeTime = 2f;
