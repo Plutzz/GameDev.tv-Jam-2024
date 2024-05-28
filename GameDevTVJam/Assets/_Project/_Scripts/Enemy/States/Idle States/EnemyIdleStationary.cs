@@ -14,7 +14,7 @@ public class EnemyIdleStationary : EnemyStateSOBase
     {
         base.DoEnterLogic();
         Debug.Log("EnemyIdle");
-        enemy.anim.Play(stateAnimationClip?.name);
+        enemy.anim?.Play(stateAnimationClip?.name);
         idleTimer = maxIdleTime;
         rb.velocity = Vector2.zero;
     }
