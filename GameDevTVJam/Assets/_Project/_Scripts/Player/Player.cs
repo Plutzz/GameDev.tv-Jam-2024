@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
 
 
     #region States
-    public PlayerStateMachine stateMachine {  get; private set; }
+    public StateMachine stateMachine {  get; private set; }
 
     // References to all player states
-    public PlayerState IdleState;
-    public PlayerState MovingState;
-    public PlayerState AttackState;
-    public PlayerState RollState;
+    public State IdleState;
+    public State MovingState;
+    public State AttackState;
+    public State RollState;
     #endregion
 
     #region ScriptableObject Variables
@@ -69,12 +69,12 @@ public class Player : MonoBehaviour
     #region Helper Methods
     private void SetupStateMachine()
     {
-        stateMachine = new PlayerStateMachine();
+        stateMachine = new StateMachine();
 
-        IdleState = new PlayerState(playerIdleSO);
-        MovingState = new PlayerState(playerMovingSO);
-        AttackState = new PlayerState(playerAttackSO);
-        RollState = new PlayerState(playerRollSO);
+        IdleState = new State(playerIdleSO);
+        MovingState = new State(playerMovingSO);
+        AttackState = new State(playerAttackSO);
+        RollState = new State(playerRollSO);
 
         playerIdleSO.Initialize(gameObject, stateMachine, this);
         playerMovingSO.Initialize(gameObject, stateMachine, this);

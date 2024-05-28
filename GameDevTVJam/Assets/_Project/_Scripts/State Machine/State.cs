@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState
+public class State
+
 {
     // Fields to be assigned during the Construct() methods
-    protected EnemyStateSOBase stateInstance;
+    protected StateSOBase stateInstance;
 
     /// <summary>
     /// Constructor used to pass references of the stateMachine
@@ -13,7 +14,7 @@ public class EnemyState
     /// </summary>
     /// <param name="stateMachine"></param>
     /// 
-    public EnemyState(EnemyStateSOBase stateInstance)
+    public State(StateSOBase stateInstance)
     {
         this.stateInstance = stateInstance;
     }

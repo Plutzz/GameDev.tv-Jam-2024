@@ -29,12 +29,12 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
     [SerializeField] private EnemyStateSOBase enemyChaseBase;
     [SerializeField] private EnemyStateSOBase enemyAttackBase;
 
-    public EnemyStateMachine stateMachine { get; private set; }
+    public StateMachine stateMachine { get; private set; }
 
     // States
-    public EnemyState IdleState;
-    public EnemyState ChaseState;
-    public EnemyState AttackState;
+    public State IdleState;
+    public State ChaseState;
+    public State AttackState;
 
     // SO Instances
     public EnemyStateSOBase EnemyIdleBaseInstance { get; private set; }
@@ -56,22 +56,22 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        stateMachine = new EnemyStateMachine();
+        stateMachine = new StateMachine();
         player = GameObject.FindGameObjectWithTag("Player");
 
         // Idle
         EnemyIdleBaseInstance = Instantiate(enemyIdleBase);
-        IdleState = new EnemyState(EnemyIdleBaseInstance);
+        IdleState = new State(EnemyIdleBaseInstance);
         EnemyIdleBaseInstance.Initialize(gameObject, stateMachine, this);
 
         // Chase
         EnemyChaseBaseInstance = Instantiate(enemyChaseBase);
-        ChaseState = new EnemyState(EnemyChaseBaseInstance);
+        ChaseState = new State(EnemyChaseBaseInstance);
         EnemyChaseBaseInstance.Initialize(gameObject, stateMachine, this);
 
         // Attack
         EnemyAttackBaseInstance = Instantiate(enemyAttackBase);
-        AttackState = new EnemyState(EnemyAttackBaseInstance);
+        AttackState = new State(EnemyAttackBaseInstance);
         EnemyAttackBaseInstance.Initialize(gameObject, stateMachine, this);
 
         stateMachine.Initialize(IdleState);

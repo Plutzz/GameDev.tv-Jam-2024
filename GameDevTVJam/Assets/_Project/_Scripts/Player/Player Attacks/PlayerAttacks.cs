@@ -23,7 +23,7 @@ public class PlayerAttacks : MonoBehaviour
     public GameObject AttackPoint;
 
 
-    private PlayerStateMachine stateMachine;
+    private StateMachine stateMachine;
     private Player player;
     private PlayerAttackHitbox attackHitbox;
     private Animator anim;
