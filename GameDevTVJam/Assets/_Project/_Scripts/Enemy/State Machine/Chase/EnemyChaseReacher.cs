@@ -12,7 +12,7 @@ public class EnemyChaseReacher : EnemyChaseSOBase
     [SerializeField] private float jumpXVelocity = 5f;
     [SerializeField] private float jumpYVelocity = 5f;
     [SerializeField] private float jumpDrag = 10f;
-    private bool chargeReady;
+    private bool jumpReady;
     private float timer;
     private int jumpDirection;
 
@@ -35,20 +35,20 @@ public class EnemyChaseReacher : EnemyChaseSOBase
         base.DoUpdateState();
         timer -= Time.deltaTime;
 
-        if (timer < 0f && !chargeReady)
+        if (timer < 0f && !jumpReady)
         {
-            chargeReady = true;
+            jumpReady = true;
             timer = jumpTime;
-            Charge();
+            Jump();
         }
-        else if (timer < 0f && chargeReady)
+        else if (timer < 0f && jumpReady)
         {
             stateMachine.ChangeState(enemy.IdleState);
         }
 
     }
 
-    private void Charge()
+    private void Jump()
     {
         rb.drag = jumpDrag;
 
@@ -60,6 +60,6 @@ public class EnemyChaseReacher : EnemyChaseSOBase
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-        chargeReady = false;
+        jumpReady = false;
     }
 }
