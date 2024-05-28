@@ -48,13 +48,16 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
     #region Other Variables
 
     public GameObject player {  get; private set; }
+    public Animator anim { get; private set; }
 
     #endregion
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
         stateMachine = new EnemyStateMachine();
+        player = GameObject.FindGameObjectWithTag("Player");
 
         // Idle
         EnemyIdleBaseInstance = Instantiate(enemyIdleBase);
@@ -73,7 +76,7 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
 
         stateMachine.Initialize(IdleState);
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        
         currentHealth = maxHealth;
 
     }

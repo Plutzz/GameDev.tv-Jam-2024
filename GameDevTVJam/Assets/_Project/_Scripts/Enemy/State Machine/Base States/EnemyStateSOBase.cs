@@ -12,6 +12,7 @@ public class EnemyStateSOBase : ScriptableObject
     protected Rigidbody2D rb;
     protected GameObject gameObject;
     protected Enemy enemy;
+    [SerializeField] protected AnimationClip stateAnimationClip;
 
     /// <summary>
     /// Initialize paramaters that are commonly used in states
