@@ -14,24 +14,24 @@ public class PlayerAttack : PlayerStateSOBase
         
         base.DoEnterLogic();
         timer = attackTime;
-        stateMachine.playerAttacks.AttackPoint.SetActive(true);
-        if(stateMachine.inputManager.MoveInput > 0)
+        player.playerAttacks.AttackPoint.SetActive(true);
+        if(player.inputManager.MoveInput > 0)
         {
-            stateMachine.pivot.localScale = Vector3.one;
+            player.pivot.localScale = Vector3.one;
         }
-        else if(stateMachine.inputManager.MoveInput < 0)
+        else if(player.inputManager.MoveInput < 0)
         {
-            stateMachine.pivot.localScale = new Vector3(-1, 1, 1);
+            player.pivot.localScale = new Vector3(-1, 1, 1);
         }
         rb.drag = groundDrag;
         rb.velocity = Vector2.zero;
-        rb.AddForce(Vector2.right * attackMoveAmount * stateMachine.pivot.localScale.x, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.right * attackMoveAmount * player.pivot.localScale.x, ForceMode2D.Impulse);
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-        stateMachine.playerAttacks.AttackPoint.SetActive(false);
+        player.playerAttacks.AttackPoint.SetActive(false);
         rb.drag = 0;
     }
 

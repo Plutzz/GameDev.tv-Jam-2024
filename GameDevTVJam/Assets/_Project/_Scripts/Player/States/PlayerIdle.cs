@@ -8,7 +8,7 @@ public class PlayerIdle : PlayerStateSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        stateMachine.GetComponentInChildren<Animator>().Play("PlayerIdle");
+        player.GetComponentInChildren<Animator>().Play("PlayerIdle");
         rb.velocity = Vector2.zero;
     }
 
@@ -16,9 +16,9 @@ public class PlayerIdle : PlayerStateSOBase
     public override void CheckTransitions()
     {
         base.CheckTransitions();
-        if (stateMachine.inputManager.MoveInput != 0 && stateMachine.currentState != stateMachine.AttackState)
+        if (player.inputManager.MoveInput != 0 && stateMachine.currentState != player.AttackState)
         {
-            stateMachine.ChangeState(stateMachine.MovingState);
+            stateMachine.ChangeState(player.MovingState);
         }
     }
 }

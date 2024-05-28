@@ -8,6 +8,7 @@ using UnityEngine;
 public class PlayerStateSOBase : ScriptableObject
 {
     protected PlayerStateMachine stateMachine;
+    protected Player player;
     protected Rigidbody2D rb;
     protected GameObject gameObject;
 
@@ -16,11 +17,12 @@ public class PlayerStateSOBase : ScriptableObject
     /// </summary>
     /// <param name="gameObject"></param>
     /// <param name="stateMachine"></param>
-    public void Initialize(GameObject gameObject, PlayerStateMachine stateMachine)
+    public void Initialize(GameObject gameObject, PlayerStateMachine stateMachine, Player player)
     {
         this.gameObject = gameObject;
         this.stateMachine = stateMachine;
-        rb = stateMachine.rb;
+        this.player = player;
+        rb = player.rb;
     }
 
     /// <summary>

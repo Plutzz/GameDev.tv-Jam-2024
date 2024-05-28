@@ -14,23 +14,23 @@ public class PlayerRoll : PlayerStateSOBase
     {
         base.DoEnterLogic();
         timer = rollTime;
-        if (stateMachine.inputManager.MoveInput > 0)
+        if (player.inputManager.MoveInput > 0)
         {
-            stateMachine.pivot.localScale = Vector3.one;
+            player.pivot.localScale = Vector3.one;
         }
-        else if (stateMachine.inputManager.MoveInput < 0)
+        else if (player.inputManager.MoveInput < 0)
         {
-            stateMachine.pivot.localScale = new Vector3(-1, 1, 1);
+            player.pivot.localScale = new Vector3(-1, 1, 1);
         }
-        stateMachine.GetComponentInChildren<Animator>().Play("PlayerRoll");
-        rb.velocity = Vector2.right * rollVelocity * stateMachine.pivot.localScale.x;
-        stateMachine.GetComponent<Collider2D>().excludeLayers = enemyLayer;
+        player.GetComponentInChildren<Animator>().Play("PlayerRoll");
+        rb.velocity = Vector2.right * rollVelocity * player.pivot.transform.localScale.x;
+        player.GetComponent<Collider2D>().excludeLayers = enemyLayer;
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-        stateMachine.GetComponent<Collider2D>().excludeLayers = new LayerMask();
+        player.GetComponent<Collider2D>().excludeLayers = new LayerMask();
     }
 
     public override void DoUpdateState()
@@ -39,13 +39,13 @@ public class PlayerRoll : PlayerStateSOBase
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
-            if(stateMachine.inputManager.MoveInput == 0)
+            if(player.inputManager.MoveInput == 0)
             {
-                stateMachine.ChangeState(stateMachine.IdleState);
+                stateMachine.ChangeState(player.IdleState);
             }
             else
             {
-                stateMachine.ChangeState(stateMachine.MovingState);
+                stateMachine.ChangeState(player.MovingState);
             }
         }
     }

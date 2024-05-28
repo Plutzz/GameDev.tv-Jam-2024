@@ -22,8 +22,9 @@ public class PlayerAttacks : MonoBehaviour
     private float lastAttackTime;
     public GameObject AttackPoint;
 
-    [Header("Misc.")]
-    [SerializeField] private PlayerStateMachine stateMachine;
+
+    private PlayerStateMachine stateMachine;
+    private Player player;
     private PlayerAttackHitbox attackHitbox;
     private Animator anim;
     
@@ -33,13 +34,12 @@ public class PlayerAttacks : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         attackHitbox = GetComponentInChildren<PlayerAttackHitbox>(true);
+        player = GetComponent<Player>();
+        stateMachine = player.stateMachine;
     }
 
     public void Update()
     {
-
-
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
@@ -70,7 +70,7 @@ public class PlayerAttacks : MonoBehaviour
             if (Time.time - lastAttackTime >= attackCooldown)
             {
                 
-                stateMachine.ChangeState(stateMachine.AttackState);
+                stateMachine.ChangeState(player.AttackState);
                 anim.runtimeAnimatorController = combo[comboCounter].animatorOV;
                 attackHitbox.damage = combo[comboCounter].damage;
                 attackHitbox.knockback = combo[comboCounter].knockback;
@@ -102,13 +102,13 @@ public class PlayerAttacks : MonoBehaviour
         {
             Invoke("IncompleteCombo", continueComboTimer);
 
-            if (stateMachine.inputManager.MoveInput == 0)
+            if (player.inputManager.MoveInput == 0)
             {
-                stateMachine.ChangeState(stateMachine.IdleState);
+                stateMachine.ChangeState(player.IdleState);
             }
             else
             {
-                stateMachine.ChangeState(stateMachine.MovingState);
+                stateMachine.ChangeState(player.MovingState);
             }
         }
     }

@@ -11,20 +11,30 @@ public class PlayerMoving : PlayerStateSOBase
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        stateMachine.GetComponentInChildren<Animator>().Play("PlayerWalk");
+        player.GetComponentInChildren<Animator>().Play("PlayerWalk");
     }
     public override void DoUpdateState()
     {
         base.DoUpdateState();
-        rb.velocity = Vector2.right * stateMachine.inputManager.MoveInput * speed;
 
-        if(stateMachine.inputManager.MoveInput > 0)
+        rb.velocity = Vector2.right * player.inputManager.MoveInput * speed;
+
+        if(player.inputManager.MoveInput > 0)
         {
-            stateMachine.pivot.localScale = Vector2.one;
+            player.pivot.localScale = Vector2.one;
         }
-        else if(stateMachine.inputManager.MoveInput < 0)
+        else if(player.inputManager.MoveInput < 0)
         {
-            stateMachine.pivot.localScale = new Vector3(-1, 1, 1);
+            player.pivot.localScale = new Vector3(-1, 1, 1);
+        }
+    }
+
+    public override void CheckTransitions()
+    {
+        base.CheckTransitions();
+        if (player.inputManager.MoveInput == 0 && stateMachine.currentState != player.AttackState)
+        {
+            stateMachine.ChangeState(player.IdleState);
         }
 
     }
