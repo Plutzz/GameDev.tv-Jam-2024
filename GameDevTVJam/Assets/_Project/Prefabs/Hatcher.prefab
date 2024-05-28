@@ -201,7 +201,7 @@ MonoBehaviour:
   knockbackTime: 0.1
   knockbackDrag: 25
   <maxHealth>k__BackingField: 100
-  enemyIdleBase: {fileID: 0}
+  enemyIdleBase: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
   enemyChaseBase: {fileID: 0}
   enemyAttackBase: {fileID: 0}
 --- !u!1 &6859490985874738513
