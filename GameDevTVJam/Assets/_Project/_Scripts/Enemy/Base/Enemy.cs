@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckable
 {
     #region Knockback Variables
-    [SerializeField] float knockbackTime = 0.1f;
-    [SerializeField] float knockbackDrag = 25f;
+    [SerializeField] protected float knockbackTime = 0.1f;
+    [SerializeField] protected float knockbackDrag = 25f;
     private float knockbackTimer;
     #endregion
 
@@ -82,7 +82,7 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
     {
         knockbackTimer -= Time.deltaTime;
         stateMachine.currentState.UpdateState();
-        CheckForLeftOrRightFacing(rb.velocity);
+
     }
 
     private void FixedUpdate()

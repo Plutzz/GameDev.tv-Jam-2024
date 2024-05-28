@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windupTime: 2
   chargeTime: 1
-  chargeVelocity: 50
+  chargeVelocity: 40
   chargeDrag: 5

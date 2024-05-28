@@ -12,6 +12,7 @@ public class EnemyChaseCharger : EnemyChaseSOBase
     [SerializeField] private float chargeDrag = 10f;
     private bool chargeReady;
     private float timer;
+    private int chargeDirection;
 
 
     public override void DoEnterLogic()
@@ -19,6 +20,13 @@ public class EnemyChaseCharger : EnemyChaseSOBase
         base.DoEnterLogic();
         timer = windupTime;
         rb.drag = 100f;
+        chargeDirection = 1;
+
+        // If player is to the left, flip charge direction
+        if (enemy.player.transform.position.x < enemy.transform.position.x)
+        {
+            chargeDirection = -1;
+        }
     }
 
     public override void DoUpdateState()
@@ -42,15 +50,10 @@ public class EnemyChaseCharger : EnemyChaseSOBase
     private void Charge()
     {
         rb.drag = chargeDrag;
-        int chargeDirection = 1;
-
-        // If player is to the left, flip charge direction
-        if(enemy.player.transform.position.x < enemy.transform.position.x)
-        {
-            chargeDirection = -1;
-        }
 
         rb.AddForce(new Vector2(chargeVelocity * chargeDirection, 0), ForceMode2D.Impulse);
+
+        enemy.CheckForLeftOrRightFacing(rb.velocity);
     }
 
     public override void DoExitLogic()

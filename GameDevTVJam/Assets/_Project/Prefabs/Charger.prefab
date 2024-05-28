@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3974121783362865300}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.782, z: 0}
+  m_LocalPosition: {x: 0, y: -0.112, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.61, y: 0.52}
+  m_Size: {x: 0.61, y: 1.77}
   m_EdgeRadius: 0
 --- !u!1 &4326009796753613826
 GameObject:
@@ -86,9 +86,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6728783708721918276}
-  - component: {fileID: 2063854083536503864}
   - component: {fileID: 8885673317815360242}
   - component: {fileID: 6653356382647036119}
+  - component: {fileID: 1481078503274983092}
   m_Layer: 7
   m_Name: Charger
   m_TagString: Untagged
@@ -114,24 +114,6 @@ Transform:
   - {fileID: 4710362472966377372}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2063854083536503864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4326009796753613826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff022ea0d960e674cb1b85e839a14e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackTime: 0.1
-  knockbackDrag: 25
-  <maxHealth>k__BackingField: 100
-  enemyIdleBase: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
-  enemyChaseBase: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
-  enemyAttackBase: {fileID: 11400000, guid: 5a10a999ad79db64099b69e1346353ca, type: 2}
 --- !u!61 &8885673317815360242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,6 +186,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1481078503274983092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326009796753613826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea9ee443609afe418eaa19ab628856d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackTime: 0.1
+  knockbackDrag: 25
+  <maxHealth>k__BackingField: 100
+  enemyIdleBase: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+  enemyChaseBase: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
+  enemyAttackBase: {fileID: 11400000, guid: 5a10a999ad79db64099b69e1346353ca, type: 2}
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 0.0001
 --- !u!114 &5731153405524349017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 6
 --- !u!114 &6687490842702724028
 MonoBehaviour:
   m_ObjectHideFlags: 0
