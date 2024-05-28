@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06f85bcd10def1408f2176e72481557, type: 3}
   m_Name: RollState-Ben
   m_EditorClassIdentifier: 
-  rollTime: 0.5
-  rollVelocity: 7
+  rollTime: 0.33
+  rollVelocity: 8
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128

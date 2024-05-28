@@ -22,7 +22,7 @@ public class PlayerRollBen : PlayerRollSOBase
         {
             stateMachine.pivot.localScale = new Vector3(-1, 1, 1);
         }
-        stateMachine.GetComponentInChildren<Animator>().Play("Roll");
+        stateMachine.GetComponentInChildren<Animator>().Play("PlayerRoll");
         rb.velocity = Vector2.right * rollVelocity * stateMachine.pivot.localScale.x;
         stateMachine.GetComponent<Collider2D>().excludeLayers = enemyLayer;
     }
