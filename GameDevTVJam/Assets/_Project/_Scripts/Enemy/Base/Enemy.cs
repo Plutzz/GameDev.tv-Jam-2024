@@ -33,13 +33,13 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     private void Update()
     {
         knockbackTimer -= Time.deltaTime;
-        stateMachine.currentState.DoUpdateState();
+        stateMachine.currentState.DoUpdateBranch();
 
     }
 
     private void FixedUpdate()
     {
-        stateMachine.currentState.DoFixedUpdateState();
+        stateMachine.currentState.DoFixedUpdateBranch();
     }
 
     #region Health/Damage Functions
