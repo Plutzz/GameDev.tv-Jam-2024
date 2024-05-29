@@ -8,9 +8,9 @@ using UnityEngine;
 public class PlayerState : State
 {
     protected InputManager inputManager;
-    public override void SetCore(StateMachineCore _core)
+    public override void SetCore(StateMachineCore _core, State _parent)
     {
-        base.SetCore(_core);
+        base.SetCore(_core, _parent);
         inputManager = core.GetComponent<InputManager>();
     }
 

@@ -17,12 +17,14 @@ public class State : ScriptableObject
 
     [Tooltip("Holds references to CHILD states of this state (states accessable from this state's node of the state machine heirarchy")]
     [field: SerializeField]
-    protected SerializedDictionary<string, State> states;
+    public SerializedDictionary<string, State> states;
 
     public StateMachine stateMachine;
 
     public State parent;
     public State currentState => stateMachine.currentState;
+
+    [SerializeField] protected AnimationClip stateAnimation;
 
 
 
@@ -36,10 +38,25 @@ public class State : ScriptableObject
     /// Can be overriden to initialize additional parameters
     /// </summary>
     /// <param name="_core"></param>
-    public virtual void SetCore(StateMachineCore _core)
+    public virtual void SetCore(StateMachineCore _core, State _parent)
     {
         stateMachine = new StateMachine();
         core = _core;
+        parent = _parent;
+
+        SerializedDictionary<string, State> tempStates = new SerializedDictionary<string, State>();
+
+        foreach (string key in states.Keys)
+        {
+            tempStates.Add(key, Instantiate(states[key]));
+        }
+
+        states = tempStates;
+
+        foreach (State _state in states.Values)
+        {
+            _state.SetCore(core, this);
+        }
     }
     /// <summary>
     /// Setup state, e.g. starting animations.

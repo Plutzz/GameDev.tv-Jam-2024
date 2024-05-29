@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
 {
@@ -22,22 +23,22 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     public GameObject player { get; private set; }
     #endregion
 
-    private void Awake()
+    protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         SetupInstances();
         currentHealth = maxHealth;
-        stateMachine.Initialize(states["Idle"]);
+        //stateMachine.Initialize(states["Idle"]);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         knockbackTimer -= Time.deltaTime;
         stateMachine.currentState.DoUpdateBranch();
 
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         stateMachine.currentState.DoFixedUpdateBranch();
     }
@@ -78,5 +79,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     {
         IsWithinStrikingDistance = isWithinStrikingDistance;
     }
+
+    
     #endregion
 }

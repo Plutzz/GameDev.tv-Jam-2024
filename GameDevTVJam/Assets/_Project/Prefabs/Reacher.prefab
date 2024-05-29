@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4710362472966377372}
   - component: {fileID: 7786437802321978896}
+  - component: {fileID: 7998332984884234640}
   m_Layer: 7
   m_Name: GroundHitbox
   m_TagString: Untagged
@@ -77,6 +78,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 1.77}
   m_EdgeRadius: 0
+--- !u!114 &7998332984884234640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974121783362865300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f55a7539198fc214cbbf5d1086f9855c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 7786437802321978896}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &4326009796753613826
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +106,7 @@ GameObject:
   - component: {fileID: 8885673317815360242}
   - component: {fileID: 6653356382647036119}
   - component: {fileID: -3234692128472568565}
+  - component: {fileID: 2082759649315733975}
   m_Layer: 7
   m_Name: Reacher
   m_TagString: Untagged
@@ -200,18 +218,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <states>k__BackingField:
     _serializedList:
-    - Key: Idle
-      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+    - Key: Patrol
+      Value: {fileID: 11400000, guid: b05004b309c426543ad943dc8cff83bb, type: 2}
     - Key: Attack
       Value: {fileID: 11400000, guid: 7df28b1e8d84a1b4db8e57e353717a78, type: 2}
     - Key: Chase
       Value: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
-  rb: {fileID: 0}
-  animator: {fileID: 0}
+  rb: {fileID: 6653356382647036119}
+  animator: {fileID: 8922312168005717418}
+  groundSensor: {fileID: 7998332984884234640}
   <isFacingRight>k__BackingField: 0
   knockbackTime: 0.1
   knockbackDrag: 25
   <maxHealth>k__BackingField: 100
+--- !u!114 &2082759649315733975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326009796753613826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3575d0290a27f0c4fb137133bd4de087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrivedThreshold: 1
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
+  currentPoint: 0
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 // Enemy will be stationary in idle state for x amount of seconds
 // After which, the enemy will go into chase state or attack state depending on the distance to the player
 
-[CreateAssetMenu(menuName = "Enemy States/Idle/Stationary")]
+[CreateAssetMenu(menuName = "Enemy States/General States/Idle")]
 public class EnemyIdleStationary : EnemyState
 {
     
@@ -14,7 +14,8 @@ public class EnemyIdleStationary : EnemyState
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        //animator.Play("ReacherIdle");
+        if(animator != null && stateAnimation != null)
+            animator.Play(stateAnimation.name);
         idleTimer = maxIdleTime;
         rb.velocity = Vector2.zero;
     }

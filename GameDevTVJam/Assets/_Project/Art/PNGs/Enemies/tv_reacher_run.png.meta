@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e02aaed49b084b04ba90a71e6a98e1da
+guid: 27b5edb20ae39eb4894990a3713dfc92
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tv_grabber_idle_0
+      name: tv_reacher_run_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b7b3ad589beb6b46ad6a0b312bfe6d5
-      internalID: -1809692416
+      spriteID: f55fd6f203ebed34e96d85f7bb0326f2
+      internalID: 1356820350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_grabber_idle_1
+      name: tv_reacher_run_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 883b183d78eb18d438a63e6d140bfefc
-      internalID: -228695711
+      spriteID: 84911ae2180cd1647a84a77d51da9c49
+      internalID: 1056182687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_grabber_idle_2
+      name: tv_reacher_run_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 160
         y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cac4b41e8829c884e96de1d3c357ce5e
-      internalID: 444966606
+      spriteID: d382a763c09b85a4b990ef752b93c4f0
+      internalID: -313633616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_grabber_idle_3
+      name: tv_reacher_run_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 240
         y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a3ade10df81994a90219e302aa8e9e
-      internalID: 1465964740
+      spriteID: 97334f239666f804ab82ca4cf3f9e18c
+      internalID: 960992145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_reacher_run_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22274120268bc454c9499dbb23656d7b
+      internalID: -464906970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_reacher_run_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38aa45e4454b96c42a4a0609d3e5f66a
+      internalID: 601894092
       vertices: []
       indices: 
       edges: []
@@ -204,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tv_grabber_idle_0: -1809692416
-      tv_grabber_idle_1: -228695711
-      tv_grabber_idle_2: 444966606
-      tv_grabber_idle_3: 1465964740
+      tv_reacher_run_0: 1356820350
+      tv_reacher_run_1: 1056182687
+      tv_reacher_run_2: -313633616
+      tv_reacher_run_3: 960992145
+      tv_reacher_run_4: -464906970
+      tv_reacher_run_5: 601894092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

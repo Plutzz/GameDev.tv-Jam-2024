@@ -39,7 +39,7 @@ public abstract class StateMachineCore : MonoBehaviour
 
         foreach (State _state in states.Values)
         {
-            _state.SetCore(this);
+            _state.SetCore(this, null);
         }
     }
 
@@ -70,5 +70,17 @@ public abstract class StateMachineCore : MonoBehaviour
 
         isFacingRight = !isFacingRight;
 
+    }
+
+    public void CheckSpriteDirection()
+    {
+        if (rb.velocity.x > 0 && !isFacingRight)
+        {
+            FlipSprite();
+        }
+        else if (rb.velocity.x < 0 && isFacingRight)
+        {
+            FlipSprite();
+        }
     }
 }

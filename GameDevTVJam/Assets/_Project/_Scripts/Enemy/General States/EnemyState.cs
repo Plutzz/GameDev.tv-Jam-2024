@@ -8,9 +8,9 @@ using UnityEngine;
 public class EnemyState : State
 {
     protected Enemy enemy;
-    public override void SetCore(StateMachineCore _core)
+    public override void SetCore(StateMachineCore _core, State _parent)
     {
-        base.SetCore(_core);
+        base.SetCore(_core, _parent);
         enemy = core.GetComponent<Enemy>();
     }
 }
