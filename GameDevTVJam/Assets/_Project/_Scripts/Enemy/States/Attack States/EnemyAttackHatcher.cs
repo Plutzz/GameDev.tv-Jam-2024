@@ -30,8 +30,9 @@ public class EnemyAttackHatcher : EnemyState
         if (timer < 0f)
         {
             Debug.Log("spawn the wiggles");
-            Instantiate(wigglerPrefab, enemy.transform.position, enemy.transform.rotation);
-            stateMachine.ChangeState(enemy.EnemyIdleBaseInstance);
+            Instantiate(wigglerPrefab, enemy.transform.position, wigglerPrefab.transform.rotation);
+            timer = wigglerSpawnInterval;
+            core.stateMachine.ChangeState(core.states["Idle"]);
         }
     }
 }

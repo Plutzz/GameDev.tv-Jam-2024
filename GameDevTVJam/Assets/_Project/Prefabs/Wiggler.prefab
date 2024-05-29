@@ -198,12 +198,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85049fd12551f174693a78ff5b4f0ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <states>k__BackingField:
+    _serializedList:
+    - Key: Idle
+      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+    - Key: Chase
+      Value: {fileID: 11400000, guid: 719e7dec18d9e4347a68de96b8e26286, type: 2}
+  rb: {fileID: 6653356382647036119}
+  animator: {fileID: 2019159674226619869}
+  <isFacingRight>k__BackingField: 0
   knockbackTime: 0.1
   knockbackDrag: 25
   <maxHealth>k__BackingField: 100
-  enemyIdleBase: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
-  enemyChaseBase: {fileID: 11400000, guid: b93800c7d0c12504da289e7d87feef2c, type: 2}
-  enemyAttackBase: {fileID: 0}
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243038219394246357}
   - component: {fileID: 108853450765745549}
+  - component: {fileID: 2019159674226619869}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -481,3 +488,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2019159674226619869
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110314523759122815}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4180c87ff1eecd34ca6341627e0be053, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
