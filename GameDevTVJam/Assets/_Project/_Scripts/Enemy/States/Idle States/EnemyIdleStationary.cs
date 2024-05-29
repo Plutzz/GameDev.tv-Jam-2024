@@ -14,7 +14,7 @@ public class EnemyIdleStationary : EnemyState
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        animator.Play("ReacherIdle");
+        //animator.Play("ReacherIdle");
         idleTimer = maxIdleTime;
         rb.velocity = Vector2.zero;
     }

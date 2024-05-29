@@ -27,11 +27,15 @@ public abstract class StateMachineCore : MonoBehaviour
     {
         stateMachine = new StateMachine();
 
-        foreach(string key in states.Keys)
+        SerializedDictionary<string, State> tempStates = new SerializedDictionary<string, State>();
+
+        foreach (string key in states.Keys)
         {
-            states[key] = Instantiate(states[key]);
+            tempStates.Add(key, Instantiate(states[key]));
             states[key].SetCore(this);
         }
+
+        states = tempStates;
     }
 
     private void Update()
