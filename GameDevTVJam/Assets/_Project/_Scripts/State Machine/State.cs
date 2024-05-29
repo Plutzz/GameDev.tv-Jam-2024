@@ -11,10 +11,11 @@ public class State : ScriptableObject
     protected StateMachineCore core;
 
     protected Rigidbody2D rb => core.rb;
-
     protected Animator animator => core.animator;
+    protected bool isFacingRight => core.isFacingRight;
 
-    protected SerializedDictionary<string, State> states => core.states;
+    [Tooltip("Holds references to CHILD states of this state (states accessable from this state's node of the state machine heirarchy")]
+    protected SerializedDictionary<string, State> states;
 
     /// <summary>
     /// Passes the StateMachineCore to this state.

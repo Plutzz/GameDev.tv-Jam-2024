@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy States/Attack/Wiggler")]
-public class EnemyAttackWiggler : EnemyStateSOBase
+public class EnemyAttackWiggler : EnemyState
 {
     public override void DoEnterLogic()
     {

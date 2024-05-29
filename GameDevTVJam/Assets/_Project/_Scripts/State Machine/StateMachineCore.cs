@@ -9,10 +9,11 @@ public abstract class StateMachineCore : MonoBehaviour
     /// Dictonary used to hold states that are NOT a part of a heirarchical state machine.
     /// </summary>
     [SerializedDictionary("State Type", "Scriptable Object")]
+    [Tooltip("Holds references to CORE states (states accessable from the root of the state machine heirarchy")]
     [field: SerializeField] public SerializedDictionary<string, State> states { get; private set; }
     public Rigidbody2D rb;
     public Animator animator;
-    //[Tooltip("Check this box if sprite is initially facing right")]
+    [Tooltip("Check this box if sprite is initially facing right")]
     [field:SerializeField] public bool isFacingRight { get; private set; }
     public StateMachine stateMachine { get; private set; }
 

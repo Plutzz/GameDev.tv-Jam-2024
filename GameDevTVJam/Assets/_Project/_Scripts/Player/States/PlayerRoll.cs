@@ -42,11 +42,11 @@ public class PlayerRoll : PlayerState
         {
             if(inputManager.MoveInput == 0)
             {
-                core.stateMachine.ChangeState(states["Idle"]);
+                core.stateMachine.ChangeState(core.states["Idle"]);
             }
             else
             {
-                core.stateMachine.ChangeState(states["Move"]);
+                core.stateMachine.ChangeState(core.states["Move"]);
             }
         }
     }

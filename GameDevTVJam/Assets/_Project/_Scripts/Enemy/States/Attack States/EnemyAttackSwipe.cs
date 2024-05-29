@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy States/Attack/Swipe")]
-public class EnemyAttackSwipe : EnemyStateSOBase
+public class EnemyAttackSwipe : EnemyState
 {
     [SerializeField] private float attackChargeTime = 1f;
     private float timer;
@@ -27,7 +27,7 @@ public class EnemyAttackSwipe : EnemyStateSOBase
         {
             Debug.Log("attacking");
             //play swing animation
-            stateMachine.ChangeState(enemy.EnemyIdleBaseInstance);
+            core.stateMachine.ChangeState(core.states["Idle"]);
         }
     }
 

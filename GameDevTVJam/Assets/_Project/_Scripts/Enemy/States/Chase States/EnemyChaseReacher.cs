@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Enemy States/Chase/Reacher")]
-public class EnemyChaseReacher : EnemyStateSOBase
+public class EnemyChaseReacher : EnemyState
 {
     [SerializeField] private float xVelocity = 2f;
     [SerializeField] private float windupTime = 2f;
@@ -27,7 +27,7 @@ public class EnemyChaseReacher : EnemyStateSOBase
         jumpDirection = 1;
 
         // If player is to the left, flip charge direction
-        if (enemy.player.transform.position.x < enemy.transform.position.x)
+        if (enemy.player.transform.position.x < core.transform.position.x)
         {
             jumpDirection = -1;
         }
@@ -55,7 +55,7 @@ public class EnemyChaseReacher : EnemyStateSOBase
         }
         else if (timer < 0f && jumpReady)
         {
-            stateMachine.ChangeState(enemy.EnemyIdleBaseInstance);
+            core.stateMachine.ChangeState(core.states["Idle"]);
         }
 
     }
@@ -66,7 +66,14 @@ public class EnemyChaseReacher : EnemyStateSOBase
 
         rb.AddForce(new Vector2(jumpXVelocity * jumpDirection, jumpYVelocity), ForceMode2D.Impulse);
 
-        enemy.CheckForLeftOrRightFacing(rb.velocity);
+        if(rb.velocity.x > 0 && !isFacingRight)
+        {
+            core.FlipSprite();
+        }
+        else if(rb.velocity.x < 0 && isFacingRight) 
+        {
+            core.FlipSprite();
+        }
     }
 
     public override void DoExitLogic()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy States/Chase/Hatcher")]
-public class EnemyChaseHatcher : EnemyStateSOBase
+public class EnemyChaseHatcher : EnemyState
 {
     public override void DoEnterLogic()
     {
