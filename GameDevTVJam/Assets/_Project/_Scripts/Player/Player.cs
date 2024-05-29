@@ -24,7 +24,7 @@ public class Player : StateMachineCore
 
     private void Update()
     {
-        stateMachine.currentState.DoUpdateState();
+        stateMachine.currentState.DoUpdateBranch();
 
         rollTimer -= Time.deltaTime;
 
@@ -33,6 +33,11 @@ public class Player : StateMachineCore
             stateMachine.ChangeState(states["Roll"]);
             rollTimer = rollCooldown;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        stateMachine.currentState.DoFixedUpdateBranch();
     }
 
     #endregion

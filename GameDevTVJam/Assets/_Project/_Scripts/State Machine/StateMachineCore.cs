@@ -32,12 +32,12 @@ public abstract class StateMachineCore : MonoBehaviour
 
     private void Update()
     {
-        stateMachine.currentState.DoUpdateState();
+        stateMachine.currentState.DoUpdateBranch();
     }
 
     private void FixedUpdate()
     {
-        stateMachine.currentState.DoFixedUpdateState();
+        stateMachine.currentState.DoFixedUpdateBranch();
     }
 
     /// <summary>

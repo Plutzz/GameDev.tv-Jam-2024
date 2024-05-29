@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AYellowpaper.SerializedCollections;
+using Unity.VisualScripting;
 
 /// <summary>
 /// Base class that all state scriptable objects inherit from.
@@ -15,7 +16,20 @@ public class State : ScriptableObject
     protected bool isFacingRight => core.isFacingRight;
 
     [Tooltip("Holds references to CHILD states of this state (states accessable from this state's node of the state machine heirarchy")]
+    [field: SerializeField]
     protected SerializedDictionary<string, State> states;
+
+    public StateMachine stateMachine;
+
+    public State parent;
+    public State currentState => stateMachine.currentState;
+
+
+
+    protected void ChangeState(State _newState)
+    {
+        stateMachine.ChangeState(_newState);
+    }
 
     /// <summary>
     /// Passes the StateMachineCore to this state.
@@ -60,5 +74,23 @@ public class State : ScriptableObject
     /// To be called in the UpdateState() or FixedUpdateState() methods.
     /// </summary>
     public virtual void CheckTransitions() { }
+
+    /// <summary>
+    /// Calls DoUpdate for every state down the branch
+    /// </summary>
+    public void DoUpdateBranch()
+    {
+        DoUpdateState();
+        currentState?.DoUpdateBranch();
+    }
+
+    /// <summary>
+    /// Calls DoUpdate for every state down the branch
+    /// </summary>
+    public void DoFixedUpdateBranch()
+    {
+        DoFixedUpdateState();
+        currentState?.DoFixedUpdateBranch();
+    }
 
 }

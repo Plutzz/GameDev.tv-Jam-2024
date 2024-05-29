@@ -2167,28 +2167,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.25, y: 4.5}
   m_EdgeRadius: 0
---- !u!114 &1682184821 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2547474811822506469, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-  m_PrefabInstance: {fileID: 7206673048921760674}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddf876f83accd0489b9b1e6f13ee44c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1682184824 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2180788664521983373, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-  m_PrefabInstance: {fileID: 7206673048921760674}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28ff51f3e43b59a4aa34abf7e12feee4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1765339416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,54 +3057,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 1682184824}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: playerAttacks
-      value: 
-      objectReference: {fileID: 1682184821}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <isFacingRight>k__BackingField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[0].Key
-      value: Idle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[1].Key
-      value: Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[2].Key
-      value: Move
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[3].Key
-      value: Roll
-      objectReference: {fileID: 0}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[0].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: 61b661bf36c57d148a86a8578de0442c, type: 2}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[1].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: 9e13f3d4e7976334a9f6a62a3e66515a, type: 2}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[2].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: e674e6e2bca4a4048acb4fb14b9a8a9e, type: 2}
-    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[3].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: 09d85ac70b3a6f745bf3f9fc6c97a0d3, type: 2}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.59
