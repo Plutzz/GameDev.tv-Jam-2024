@@ -8,7 +8,7 @@ public class PlayerIdle : PlayerState
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        animator.Play("PlayerIdle");
+        //animator.Play("PlayerIdle");
         rb.velocity = Vector2.zero;
     }
 

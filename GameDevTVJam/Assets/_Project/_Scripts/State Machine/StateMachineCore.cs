@@ -32,10 +32,14 @@ public abstract class StateMachineCore : MonoBehaviour
         foreach (string key in states.Keys)
         {
             tempStates.Add(key, Instantiate(states[key]));
-            states[key].SetCore(this);
         }
 
         states = tempStates;
+
+        foreach (State _state in states.Values)
+        {
+            _state.SetCore(this);
+        }
     }
 
     private void Update()

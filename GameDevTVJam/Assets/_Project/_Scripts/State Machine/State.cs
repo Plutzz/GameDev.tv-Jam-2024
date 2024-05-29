@@ -38,6 +38,7 @@ public class State : ScriptableObject
     /// <param name="_core"></param>
     public virtual void SetCore(StateMachineCore _core)
     {
+        stateMachine = new StateMachine();
         core = _core;
     }
     /// <summary>
