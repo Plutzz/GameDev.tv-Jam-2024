@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy States/Attack/Melee")]
-public class EnemyAttackMelee : EnemyStateSOBase
+public class EnemyAttackMelee : EnemyState
 {
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
         Debug.Log("Melee");
-        stateMachine.ChangeState(enemy.IdleState);
+        core.stateMachine.ChangeState(core.states["Idle"]);
     }
 }

@@ -69,8 +69,8 @@ public class PlayerAttacks : MonoBehaviour
 
             if (Time.time - lastAttackTime >= attackCooldown)
             {
-                
-                stateMachine.ChangeState(player.AttackState);
+
+                stateMachine.ChangeState(player.states["Attack"]);
                 anim.runtimeAnimatorController = combo[comboCounter].animatorOV;
                 attackHitbox.damage = combo[comboCounter].damage;
                 attackHitbox.knockback = combo[comboCounter].knockback;
@@ -104,11 +104,11 @@ public class PlayerAttacks : MonoBehaviour
 
             if (player.inputManager.MoveInput == 0)
             {
-                stateMachine.ChangeState(player.IdleState);
+                stateMachine.ChangeState(player.states["Idle"]);
             }
             else
             {
-                stateMachine.ChangeState(player.MovingState);
+                stateMachine.ChangeState(player.states["Move"]);
             }
         }
     }

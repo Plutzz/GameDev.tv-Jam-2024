@@ -3,41 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AttackState-Ben", menuName = "PlayerStates/AttackStates/Ben")]
-public class PlayerAttack : PlayerStateSOBase
+public class PlayerAttack : PlayerState
 {
     [SerializeField] private float attackTime = 1f;
     [SerializeField] private float attackMoveAmount = 0.5f;
     [SerializeField] private float groundDrag = 2f;
     private float timer;
+    private PlayerAttacks playerAttacks;
     public override void DoEnterLogic()
     {
-        
         base.DoEnterLogic();
+        playerAttacks = core.GetComponent<PlayerAttacks>();
         timer = attackTime;
-        player.playerAttacks.AttackPoint.SetActive(true);
-        if(player.inputManager.MoveInput > 0)
+        playerAttacks.AttackPoint.SetActive(true);
+        if(inputManager.MoveInput > 0 && !core.isFacingRight)
         {
-            player.pivot.localScale = Vector3.one;
+            core.FlipSprite();
         }
-        else if(player.inputManager.MoveInput < 0)
+        else if(inputManager.MoveInput < 0 && core.isFacingRight)
         {
-            player.pivot.localScale = new Vector3(-1, 1, 1);
+            core.FlipSprite();
         }
+
         rb.drag = groundDrag;
         rb.velocity = Vector2.zero;
-        rb.AddForce(Vector2.right * attackMoveAmount * player.pivot.localScale.x, ForceMode2D.Impulse);
+        int direction = core.isFacingRight ? 1 : -1;
+        rb.AddForce(Vector2.right * attackMoveAmount * direction, ForceMode2D.Impulse);
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-        player.playerAttacks.AttackPoint.SetActive(false);
+        playerAttacks.AttackPoint.SetActive(false);
         rb.drag = 0;
-    }
-
-    private void EnableHitbox()
-    {
-
     }
 
     public override void DoUpdateState()

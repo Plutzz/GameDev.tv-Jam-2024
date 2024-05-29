@@ -6,15 +6,15 @@ using UnityEngine;
 // After which, the enemy will go into chase state or attack state depending on the distance to the player
 
 [CreateAssetMenu(menuName = "Enemy States/Idle/Stationary")]
-public class EnemyIdleStationary : EnemyStateSOBase
+public class EnemyIdleStationary : EnemyState
 {
+    
     [SerializeField] private float maxIdleTime = 2f;
     private float idleTimer;
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        Debug.Log("EnemyIdle");
-        enemy.anim?.Play(stateAnimationClip?.name);
+        animator.Play("ReacherIdle");
         idleTimer = maxIdleTime;
         rb.velocity = Vector2.zero;
     }
@@ -24,15 +24,16 @@ public class EnemyIdleStationary : EnemyStateSOBase
         Debug.Log("Update Enemy");
         base.DoUpdateState();
         idleTimer -= Time.deltaTime;
+
         if (idleTimer < 0)
         {
             if (enemy.IsWithinStrikingDistance)
             {
-                stateMachine.ChangeState(enemy.AttackState);
+                core.stateMachine.ChangeState(core.states["Attack"]);
             }
             else if (enemy.IsAggroed)
             {
-                stateMachine.ChangeState(enemy.ChaseState);
+                core.stateMachine.ChangeState(core.states["Chase"]);
             }
         }
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy States/Chase/Charger")]
-public class EnemyChaseCharger : EnemyStateSOBase
+public class EnemyChaseCharger : EnemyState
 {
     [SerializeField] private float windupTime = 2f;
     [SerializeField] private float chargeTime = 2f;
@@ -42,7 +42,7 @@ public class EnemyChaseCharger : EnemyStateSOBase
         }
         else if(timer < 0f && jumpReady)
         {
-            stateMachine.ChangeState(enemy.IdleState);
+            core.stateMachine.ChangeState(core.states["Idle"]);
         }
 
     }
@@ -53,7 +53,14 @@ public class EnemyChaseCharger : EnemyStateSOBase
 
         rb.AddForce(new Vector2(chargeVelocity * chargeDirection, 0), ForceMode2D.Impulse);
 
-        enemy.CheckForLeftOrRightFacing(rb.velocity);
+        if (rb.velocity.x > 0 && !isFacingRight)
+        {
+            core.FlipSprite();
+        }
+        else if (rb.velocity.x < 0 && isFacingRight)
+        {
+            core.FlipSprite();
+        }
     }
 
     public override void DoExitLogic()

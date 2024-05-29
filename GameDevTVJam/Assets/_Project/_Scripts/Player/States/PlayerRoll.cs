@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PlayerStates/RollState")]
-public class PlayerRoll : PlayerStateSOBase
+public class PlayerRoll : PlayerState
 {
     [SerializeField] private float rollTime = 0.5f;
     [SerializeField] private float rollVelocity = 5f;
@@ -14,23 +14,24 @@ public class PlayerRoll : PlayerStateSOBase
     {
         base.DoEnterLogic();
         timer = rollTime;
-        if (player.inputManager.MoveInput > 0)
+        if (inputManager.MoveInput > 0 && !core.isFacingRight)
         {
-            player.pivot.localScale = Vector3.one;
+            core.FlipSprite();
         }
-        else if (player.inputManager.MoveInput < 0)
+        else if (inputManager.MoveInput < 0 && core.isFacingRight)
         {
-            player.pivot.localScale = new Vector3(-1, 1, 1);
+            core.FlipSprite();
         }
-        player.GetComponentInChildren<Animator>().Play("PlayerRoll");
-        rb.velocity = Vector2.right * rollVelocity * player.pivot.transform.localScale.x;
-        player.GetComponent<Collider2D>().excludeLayers = enemyLayer;
+        animator.Play("PlayerRoll");
+        int direction = core.isFacingRight ? 1 : -1;
+        rb.velocity = Vector2.right * rollVelocity * direction;
+        core.GetComponent<Collider2D>().excludeLayers = enemyLayer;
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-        player.GetComponent<Collider2D>().excludeLayers = new LayerMask();
+        core.GetComponent<Collider2D>().excludeLayers = new LayerMask();
     }
 
     public override void DoUpdateState()
@@ -39,13 +40,13 @@ public class PlayerRoll : PlayerStateSOBase
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
-            if(player.inputManager.MoveInput == 0)
+            if(inputManager.MoveInput == 0)
             {
-                stateMachine.ChangeState(player.IdleState);
+                core.stateMachine.ChangeState(core.states["Idle"]);
             }
             else
             {
-                stateMachine.ChangeState(player.MovingState);
+                core.stateMachine.ChangeState(core.states["Move"]);
             }
         }
     }

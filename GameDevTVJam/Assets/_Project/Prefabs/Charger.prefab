@@ -198,12 +198,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea9ee443609afe418eaa19ab628856d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <states>k__BackingField:
+    _serializedList:
+    - Key: Idle
+      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+    - Key: Chase
+      Value: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
+  rb: {fileID: 6653356382647036119}
+  animator: {fileID: 0}
+  <isFacingRight>k__BackingField: 0
   knockbackTime: 0.1
   knockbackDrag: 25
   <maxHealth>k__BackingField: 100
-  enemyIdleBase: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
-  enemyChaseBase: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
-  enemyAttackBase: {fileID: 11400000, guid: 5a10a999ad79db64099b69e1346353ca, type: 2}
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0
