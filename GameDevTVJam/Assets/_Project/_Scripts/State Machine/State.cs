@@ -15,13 +15,15 @@ public class State : ScriptableObject
     protected Animator animator => core.animator;
     protected bool isFacingRight => core.isFacingRight;
 
+    protected float stateUptime = 0;
+
     [Tooltip("Holds references to CHILD states of this state (states accessable from this state's node of the state machine heirarchy")]
     [field: SerializeField]
     public SerializedDictionary<string, State> states;
 
     public StateMachine stateMachine;
 
-    public State parent;
+    [HideInInspector] public State parent;
     public State currentState => stateMachine.currentState;
 
     [SerializeField] protected AnimationClip stateAnimation;
@@ -73,7 +75,7 @@ public class State : ScriptableObject
     /// This method is called once every frame while this state is active.
     /// Consider this the "Update" method of this state.
     /// </summary>
-    public virtual void DoUpdateState() { CheckTransitions(); }
+    public virtual void DoUpdateState() { CheckTransitions(); HandleTimer(); }
 
     /// <summary>
     /// This method is called once every physics frame while this state is active.
@@ -85,13 +87,19 @@ public class State : ScriptableObject
     /// This method is called during ExitLogic().
     /// Use this method to reset or null out values during state cleanup.
     /// </summary>
-    public virtual void ResetValues() { }
+    public virtual void ResetValues() { stateUptime = 0f; }
 
     /// <summary>
     /// This method contains checks for all transitions from the current state.
     /// To be called in the UpdateState() or FixedUpdateState() methods.
     /// </summary>
     public virtual void CheckTransitions() { }
+
+
+    protected void HandleTimer()
+    {
+        stateUptime += Time.deltaTime;
+    }
 
     /// <summary>
     /// Calls DoUpdate for every state down the branch

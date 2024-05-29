@@ -14,12 +14,13 @@ public class EnemyAttackSwipe : EnemyState
         base.DoEnterLogic();
 
         timer = attackChargeTime;
+        rb.velocity = Vector3.zero;
     }
 
     public override void DoUpdateState()
     {
         base.DoUpdateState();
-
+        rb.velocity = Vector3.zero;
         timer -= Time.deltaTime;
         Debug.Log("attack charging");
 
@@ -27,7 +28,8 @@ public class EnemyAttackSwipe : EnemyState
         {
             Debug.Log("attacking");
             //play swing animation
-            core.stateMachine.ChangeState(core.states["Idle"]);
+            //core.stateMachine.ChangeState(core.states["Idle"]);
+            core.stateMachine.ChangeState(core.states["Patrol"]);
         }
     }
 

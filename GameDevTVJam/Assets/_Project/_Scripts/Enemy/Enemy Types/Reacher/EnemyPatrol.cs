@@ -6,7 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Enemy States/General States/Patrol")]
 public class EnemyPatrol : EnemyState
 {
-    [SerializeField] private float IdleTime = 2f;
+    [SerializeField] private float idleTime = 2f;
+    [SerializeField] private float minimumPatrolTime = 4f;
     private float timer;
 
 
@@ -14,7 +15,7 @@ public class EnemyPatrol : EnemyState
     {
         base.DoEnterLogic();
         stateMachine.Initialize(states["Idle"]);
-        timer = IdleTime;
+        timer = idleTime;
     }
 
     public override void DoUpdateState()
@@ -25,14 +26,9 @@ public class EnemyPatrol : EnemyState
             timer -= Time.deltaTime;
         }
 
-        if(enemy.IsAggroed)
+        if(enemy.IsAggroed && stateUptime > minimumPatrolTime)
         {
             core.stateMachine.ChangeState(core.states["Chase"]);
-            return;
-        }
-        else if(enemy.IsWithinStrikingDistance)
-        {
-            core.stateMachine.ChangeState(core.states["Attack"]);
             return;
         }
 
@@ -40,7 +36,7 @@ public class EnemyPatrol : EnemyState
         if(timer < 0 && currentState == states["Idle"])
         {
             stateMachine.ChangeState(states["Navigate"]);
-            timer = IdleTime;
+            timer = idleTime;
             return;
         }
 
