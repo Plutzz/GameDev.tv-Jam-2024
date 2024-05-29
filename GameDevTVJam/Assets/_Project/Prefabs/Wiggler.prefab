@@ -123,7 +123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4326009796753613826}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: d9ca5d29f92cca641989a0123c42339d, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -175,7 +175,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: d9ca5d29f92cca641989a0123c42339d, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -202,6 +202,10 @@ MonoBehaviour:
     _serializedList:
     - Key: Idle
       Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+    - Key: Latch
+      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+    - Key: Attack
+      Value: {fileID: 11400000, guid: ac00e1201c4782a42877d128e17c4e6b, type: 2}
     - Key: Chase
       Value: {fileID: 11400000, guid: 719e7dec18d9e4347a68de96b8e26286, type: 2}
   rb: {fileID: 6653356382647036119}

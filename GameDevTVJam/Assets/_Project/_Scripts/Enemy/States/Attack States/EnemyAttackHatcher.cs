@@ -17,12 +17,17 @@ public class EnemyAttackHatcher : EnemyState
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-
+        Debug.Log("exited hatcher attack");
     }
 
     public override void DoUpdateState()
     {
         base.DoUpdateState();
+
+        if (enemy.IsWithinStrikingDistance == false)
+        {
+            core.stateMachine.ChangeState(core.states["Idle"]);
+        }
 
         timer -= Time.deltaTime;
         Debug.Log("attack charging");

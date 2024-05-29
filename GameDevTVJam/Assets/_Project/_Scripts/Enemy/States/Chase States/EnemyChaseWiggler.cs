@@ -23,6 +23,9 @@ public class EnemyChaseWiggler : EnemyState
         if(enemy.IsAggroed == false)
         {
             core.stateMachine.ChangeState(core.states["Idle"]);
+        } else if (enemy.IsWithinStrikingDistance == true)
+        {
+            core.stateMachine.ChangeState(core.states["Attack"]);
         }
     }
 
