@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Charger
+  m_Name: Reacher
   m_Shader: {fileID: -6465566751694194690, guid: 88e76362496cd1e4c9159f1d3e2473e5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,9 +54,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Height: 0.0147
+    - _Height: 0.0151
     - _OUTLINES: 0
-    - _Width: 0.034
+    - _Width: 0.0038
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
