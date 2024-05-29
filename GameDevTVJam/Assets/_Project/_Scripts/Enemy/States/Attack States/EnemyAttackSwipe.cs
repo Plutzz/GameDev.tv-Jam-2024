@@ -27,7 +27,7 @@ public class EnemyAttackSwipe : EnemyStateSOBase
         {
             Debug.Log("attacking");
             //play swing animation
-            stateMachine.ChangeState(enemy.IdleState);
+            stateMachine.ChangeState(enemy.EnemyIdleBaseInstance);
         }
     }
 

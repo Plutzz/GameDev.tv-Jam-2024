@@ -3,38 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MovingState-Ben", menuName = "PlayerStates/MovingState")]
-public class PlayerMoving : PlayerStateSOBase
+public class PlayerMoving : PlayerState
 {
-
     [SerializeField] private float speed = 1f;
 
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        player.GetComponentInChildren<Animator>().Play("PlayerWalk");
+        core.animator.Play("PlayerWalk");
     }
     public override void DoUpdateState()
     {
         base.DoUpdateState();
 
-        rb.velocity = Vector2.right * player.inputManager.MoveInput * speed;
+        rb.velocity = Vector2.right * inputManager.MoveInput * speed;
 
-        if(player.inputManager.MoveInput > 0)
+
+        if(inputManager.MoveInput > 0 && !core.isFacingRight) // Flip Right
         {
-            player.pivot.localScale = Vector2.one;
+            core.FlipSprite();
         }
-        else if(player.inputManager.MoveInput < 0)
+        else if(inputManager.MoveInput < 0 && core.isFacingRight) // Flip Left
         {
-            player.pivot.localScale = new Vector3(-1, 1, 1);
+            core.FlipSprite();
         }
     }
 
     public override void CheckTransitions()
     {
         base.CheckTransitions();
-        if (player.inputManager.MoveInput == 0 && stateMachine.currentState != player.AttackState)
+        if (inputManager.MoveInput == 0 && core.stateMachine.currentState != states["Attack"])
         {
-            stateMachine.ChangeState(player.IdleState);
+            core.stateMachine.ChangeState(states["Idle"]);
         }
 
     }

@@ -30,12 +30,6 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
     [SerializeField] private EnemyStateSOBase enemyAttackBase;
 
     public StateMachine stateMachine { get; private set; }
-
-    // States
-    public State IdleState;
-    public State ChaseState;
-    public State AttackState;
-
     // SO Instances
     public EnemyStateSOBase EnemyIdleBaseInstance { get; private set; }
     public EnemyStateSOBase EnemyChaseBaseInstance { get; private set; }
@@ -61,20 +55,17 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
 
         // Idle
         EnemyIdleBaseInstance = Instantiate(enemyIdleBase);
-        IdleState = new State(EnemyIdleBaseInstance);
         EnemyIdleBaseInstance.Initialize(gameObject, stateMachine, this);
 
         // Chase
         EnemyChaseBaseInstance = Instantiate(enemyChaseBase);
-        ChaseState = new State(EnemyChaseBaseInstance);
         EnemyChaseBaseInstance.Initialize(gameObject, stateMachine, this);
 
         // Attack
         EnemyAttackBaseInstance = Instantiate(enemyAttackBase);
-        AttackState = new State(EnemyAttackBaseInstance);
         EnemyAttackBaseInstance.Initialize(gameObject, stateMachine, this);
 
-        stateMachine.Initialize(IdleState);
+        stateMachine.Initialize(EnemyIdleBaseInstance);
 
         
         currentHealth = maxHealth;
@@ -84,13 +75,13 @@ public class Enemy: MonoBehaviour, IDamageable, IEnemyMoveable, ITriggerCheckabl
     private void Update()
     {
         knockbackTimer -= Time.deltaTime;
-        stateMachine.currentState.UpdateState();
+        stateMachine.currentState.DoUpdateState();
 
     }
 
     private void FixedUpdate()
     {
-        stateMachine.currentState.FixedUpdateState();
+        stateMachine.currentState.DoFixedUpdateState();
     }
 
     #region Health/Damage Functions

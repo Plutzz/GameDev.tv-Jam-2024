@@ -5,11 +5,10 @@ using UnityEngine;
 /// <summary>
 /// Base class that all enemy state scriptable objects inherit from.
 /// </summary>
-public class EnemyStateSOBase : StateSOBase
+public class EnemyStateSOBase : State
 {
 
     protected StateMachine stateMachine;
-    protected Rigidbody2D rb;
     protected GameObject gameObject;
     protected Enemy enemy;
     [SerializeField] protected AnimationClip stateAnimationClip;
@@ -25,6 +24,5 @@ public class EnemyStateSOBase : StateSOBase
         this.gameObject = gameObject;
         this.stateMachine = stateMachine;
         this.enemy = enemy;
-        rb = enemy.rb;
     }
 }

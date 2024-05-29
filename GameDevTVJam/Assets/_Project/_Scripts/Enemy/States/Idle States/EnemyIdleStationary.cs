@@ -28,11 +28,11 @@ public class EnemyIdleStationary : EnemyStateSOBase
         {
             if (enemy.IsWithinStrikingDistance)
             {
-                stateMachine.ChangeState(enemy.AttackState);
+                stateMachine.ChangeState(enemy.EnemyAttackBaseInstance);
             }
             else if (enemy.IsAggroed)
             {
-                stateMachine.ChangeState(enemy.ChaseState);
+                stateMachine.ChangeState(enemy.EnemyChaseBaseInstance);
             }
         }
     }

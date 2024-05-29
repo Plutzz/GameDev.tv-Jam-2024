@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "IdleState-Ben", menuName = "PlayerStates/IdleState")]
-public class PlayerIdle : PlayerStateSOBase
+public class PlayerIdle : PlayerState
 {
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        player.GetComponentInChildren<Animator>().Play("PlayerIdle");
+        animator.Play("PlayerIdle");
         rb.velocity = Vector2.zero;
     }
 
@@ -16,9 +16,9 @@ public class PlayerIdle : PlayerStateSOBase
     public override void CheckTransitions()
     {
         base.CheckTransitions();
-        if (player.inputManager.MoveInput != 0 && stateMachine.currentState != player.AttackState)
+        if (inputManager.MoveInput != 0 && core.stateMachine.currentState != core.states["Attack"])
         {
-            stateMachine.ChangeState(player.MovingState);
+            core.stateMachine.ChangeState(core.states["Move"]);
         }
     }
 }

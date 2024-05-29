@@ -42,7 +42,7 @@ public class EnemyChaseCharger : EnemyStateSOBase
         }
         else if(timer < 0f && jumpReady)
         {
-            stateMachine.ChangeState(enemy.IdleState);
+            stateMachine.ChangeState(enemy.EnemyIdleBaseInstance);
         }
 
     }

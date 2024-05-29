@@ -9,6 +9,6 @@ public class EnemyAttackMelee : EnemyStateSOBase
     {
         base.DoEnterLogic();
         Debug.Log("Melee");
-        stateMachine.ChangeState(enemy.IdleState);
+        stateMachine.ChangeState(enemy.EnemyIdleBaseInstance);
     }
 }
