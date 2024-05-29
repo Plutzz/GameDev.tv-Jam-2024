@@ -14,6 +14,7 @@ public abstract class StateMachineCore : MonoBehaviour
     [field: SerializeField] public SerializedDictionary<string, State> states { get; private set; }
     public Rigidbody2D rb;
     public Animator animator;
+    public GroundSensor groundSensor;
     [Tooltip("Check this box if sprite is initially facing right")]
     [field:SerializeField] public bool isFacingRight { get; private set; }
     public StateMachine stateMachine { get; private set; }

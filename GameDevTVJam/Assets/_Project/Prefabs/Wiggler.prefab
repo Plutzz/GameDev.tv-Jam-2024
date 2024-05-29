@@ -211,6 +211,7 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 719e7dec18d9e4347a68de96b8e26286, type: 2}
   rb: {fileID: 6653356382647036119}
   animator: {fileID: 2019159674226619869}
+  groundSensor: {fileID: 5666333203562216342}
   <isFacingRight>k__BackingField: 0
   knockbackTime: 0.1
   knockbackDrag: 25
