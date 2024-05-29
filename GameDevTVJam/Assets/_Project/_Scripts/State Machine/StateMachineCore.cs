@@ -1,4 +1,5 @@
 using AYellowpaper.SerializedCollections;
+using FMOD;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public abstract class StateMachineCore : MonoBehaviour
     [field:SerializeField] public bool isFacingRight { get; private set; }
     public StateMachine stateMachine { get; private set; }
 
+
+    public Dictionary<string, int> test;
     /// <summary>
     /// Passes the core to all the states in the states dictionary
     /// </summary>
@@ -24,9 +27,10 @@ public abstract class StateMachineCore : MonoBehaviour
     {
         stateMachine = new StateMachine();
 
-        foreach (State _state in states.Values)
+        foreach(string key in states.Keys)
         {
-            _state.SetCore(this);
+            states[key] = Instantiate(states[key]);
+            states[key].SetCore(this);
         }
     }
 
