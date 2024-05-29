@@ -264,17 +264,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wiggler
       objectReference: {fileID: 0}
-    - target: {fileID: 6653356382647036119, guid: adae66c1584e5ac42b5a3423e8ae5ef7, type: 3}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6728783708721918276, guid: adae66c1584e5ac42b5a3423e8ae5ef7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6542139
+      value: -3.086
       objectReference: {fileID: 0}
     - target: {fileID: 6728783708721918276, guid: adae66c1584e5ac42b5a3423e8ae5ef7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8764126
+      value: -1.997
       objectReference: {fileID: 0}
     - target: {fileID: 6728783708721918276, guid: adae66c1584e5ac42b5a3423e8ae5ef7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -324,7 +320,7 @@ GameObject:
   - component: {fileID: 1837100352}
   - component: {fileID: 1837100351}
   - component: {fileID: 1837100353}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,11 +595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.11
+      value: 2.435
       objectReference: {fileID: 0}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.025
+      value: -2.156
       objectReference: {fileID: 0}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.z

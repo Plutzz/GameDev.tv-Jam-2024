@@ -15,4 +15,4 @@ MonoBehaviour:
   states:
     _serializedList: []
   parent: {fileID: 0}
-  maxIdleTime: 2
+  maxIdleTime: 0

@@ -175,7 +175,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -185,7 +185,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7667864968411807202
 MonoBehaviour:
@@ -204,7 +204,7 @@ MonoBehaviour:
     - Key: Idle
       Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
     - Key: Latch
-      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+      Value: {fileID: 11400000, guid: e5cdce7205bed5d4cbf74cec59228c18, type: 2}
     - Key: Attack
       Value: {fileID: 11400000, guid: ac00e1201c4782a42877d128e17c4e6b, type: 2}
     - Key: Chase
