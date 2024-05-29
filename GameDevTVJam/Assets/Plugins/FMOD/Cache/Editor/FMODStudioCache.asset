@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../GameDev.tv_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638522360839745587
+  lastModified: 638523557726995498
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -41,7 +41,7 @@ MonoBehaviour:
   - {fileID: -3786592309286181299}
   StringsBanks:
   - {fileID: 3924574323870233698}
-  cacheTime: 638522360839785480
+  cacheTime: 638523557726995498
   cacheVersion: 131616
 --- !u!114 &3924574323870233698
 MonoBehaviour:
@@ -58,7 +58,7 @@ MonoBehaviour:
   Path: ../GameDev.tv_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638522360839785480
+  lastModified: 638523557726995498
   FileSizes:
   - Name: Desktop
     Value: 712
