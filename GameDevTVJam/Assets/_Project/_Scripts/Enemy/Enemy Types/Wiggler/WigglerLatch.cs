@@ -10,8 +10,19 @@ public class WigglerLatch : EnemyState
         base.DoEnterLogic();
         //animator.Play("WigglerLatch");
         rb.velocity = Vector2.zero;
-        //rb.bodyType = RigidbodyType2D.Static;
+        rb.bodyType = RigidbodyType2D.Kinematic;
         //rb.gravityScale = 0;
         //rb.position += new Vector2(0, 2);
+    }
+
+    public override void DoExitLogic()
+    {
+        base.DoExitLogic();
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    public void UnLatch()
+    {
+        core.stateMachine.ChangeState(core.states["Idle"]);
     }
 }

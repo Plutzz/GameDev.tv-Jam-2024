@@ -22,10 +22,9 @@ public class EnemyIdleStationary : EnemyState
 
     public override void DoUpdateState()
     {
-        Debug.Log("Update Enemy");
         base.DoUpdateState();
         idleTimer -= Time.deltaTime;
-
+        Debug.Log(idleTimer);
         if (idleTimer < 0)
         {
             if (enemy.IsWithinStrikingDistance)
