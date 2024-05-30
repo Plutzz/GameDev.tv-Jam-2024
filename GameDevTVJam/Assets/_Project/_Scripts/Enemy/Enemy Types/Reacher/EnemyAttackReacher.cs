@@ -2,22 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Enemy States/Reacher/Attack")]
 public class EnemyAttackReacher : EnemyState
 {
+    [SerializeField] private float windupTime;
+
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
 
-        if (animator != null && stateAnimation != null)
-            animator.Play(stateAnimation.name);
+        stateMachine.Initialize(states["Windup"]);
     }
 
     public override void DoUpdateState()
     {
         base.DoUpdateState();
-        if(stateUptime >= stateAnimation.length * animator.speed)
+
+        if(stateUptime > windupTime && currentState == states["Windup"]) 
         {
-            core.stateMachine.ChangeState(core.states["Patrol"]);
+            stateMachine.ChangeState(states["Tongue Whip"]);
         }
 
     }

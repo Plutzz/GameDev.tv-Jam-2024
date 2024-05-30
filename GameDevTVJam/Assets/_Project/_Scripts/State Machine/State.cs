@@ -69,7 +69,7 @@ public class State : ScriptableObject
     /// <summary>
     /// State-Cleanup.
     /// </summary>
-    public virtual void DoExitLogic() { ResetValues(); }
+    public virtual void DoExitLogic() { currentState?.DoExitLogic(); ResetValues(); }
 
     /// <summary>
     /// This method is called once every frame while this state is active.
