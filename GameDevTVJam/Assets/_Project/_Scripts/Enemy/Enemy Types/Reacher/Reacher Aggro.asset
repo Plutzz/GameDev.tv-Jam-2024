@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac5d833e8225313468e265baf851408c, type: 3}
-  m_Name: Idle Stationary
+  m_Script: {fileID: 11500000, guid: 39c38a9ff2157bb43bdef20661cbbd81, type: 3}
+  m_Name: Reacher Aggro
   m_EditorClassIdentifier: 
   states:
-    _serializedList: []
+    _serializedList:
+    - Key: Detected
+      Value: {fileID: 11400000, guid: e3520ec072278314e91e2e970284a603, type: 2}
+    - Key: Run
+      Value: {fileID: 11400000, guid: c11a4b878a8f9b343b7920e781e61461, type: 2}
   parent: {fileID: 0}
   stateAnimation: {fileID: 0}
-  maxIdleTime: 1000

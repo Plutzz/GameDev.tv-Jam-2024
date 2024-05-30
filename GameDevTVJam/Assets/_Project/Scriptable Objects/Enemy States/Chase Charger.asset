@@ -15,7 +15,7 @@ MonoBehaviour:
   states:
     _serializedList: []
   parent: {fileID: 0}
-  stateAnimation: {fileID: 7400000, guid: 171f7d72d6437db49aec96871af59b1c, type: 2}
+  stateAnimation: {fileID: 0}
   windupTime: 2
   chargeTime: 1
   chargeVelocity: 40

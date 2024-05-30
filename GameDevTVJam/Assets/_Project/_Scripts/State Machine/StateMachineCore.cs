@@ -53,6 +53,19 @@ public abstract class StateMachineCore : MonoBehaviour
         stateMachine.currentState.DoFixedUpdateBranch();
     }
 
+    private void OnDrawGizmos()
+    {
+#if UNITY_EDITOR
+        if(Application.isPlaying)
+        {
+            List<State> states = stateMachine.GetActiveStateBranch();
+
+            UnityEditor.Handles.Label(transform.position + Vector3.up, "Active States: " + string.Join(" > ", states));
+        }
+#endif
+    }
+
+
     /// <summary>
     /// Flips the direction of the sprite.
     /// </summary>

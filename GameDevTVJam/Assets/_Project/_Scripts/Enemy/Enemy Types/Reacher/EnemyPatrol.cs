@@ -14,7 +14,7 @@ public class EnemyPatrol : EnemyState
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        stateMachine.Initialize(states["Idle"]);
+        stateMachine.Initialize(states["Navigate"]);
         timer = idleTime;
     }
 
@@ -28,7 +28,7 @@ public class EnemyPatrol : EnemyState
 
         if(enemy.IsAggroed && stateUptime > minimumPatrolTime)
         {
-            core.stateMachine.ChangeState(core.states["Chase"]);
+            core.stateMachine.ChangeState(core.states["Aggro"]);
             return;
         }
 

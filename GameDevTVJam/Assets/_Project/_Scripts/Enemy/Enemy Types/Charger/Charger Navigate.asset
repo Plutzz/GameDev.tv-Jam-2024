@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8a15eef7d55e8046afa2173bd84cb13, type: 3}
-  m_Name: Reacher Detected
+  m_Script: {fileID: 11500000, guid: 71b05f3c26274d94b9bcd996719d9c3f, type: 3}
+  m_Name: Charger Navigate
   m_EditorClassIdentifier: 
   states:
     _serializedList: []
   parent: {fileID: 0}
-  stateAnimation: {fileID: 7400000, guid: 171f7d72d6437db49aec96871af59b1c, type: 2}
-  detectedPrefab: {fileID: 2415281431430828997, guid: 8976c08dc29afa64fbba76ec4175be9f, type: 3}
-  detected: {fileID: 0}
-  localOffset: {x: 0, y: 1.25, z: 0}
+  stateAnimation: {fileID: 0}
+  walkSpeed: 2
+  navigate: {fileID: 0}

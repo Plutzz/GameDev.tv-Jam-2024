@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd63aab2def212b43bc2f90819967aec, type: 3}
-  m_Name: Reacher Run
+  m_Script: {fileID: 11500000, guid: 24e39c1cb366fc24c882c8ea9e7c4453, type: 3}
+  m_Name: Charger Windup
   m_EditorClassIdentifier: 
   states:
     _serializedList: []
   parent: {fileID: 0}
-  stateAnimation: {fileID: 7400000, guid: b952a0eadf58610429b1ac1a523e0a77, type: 2}
-  chaseSpeed: 6
-  animationSpeed: 0.5
+  stateAnimation: {fileID: 0}

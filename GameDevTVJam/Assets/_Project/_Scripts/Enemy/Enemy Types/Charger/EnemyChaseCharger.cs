@@ -3,22 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy States/Charger/Chase")]
-public class EnemyChaseCharger : EnemyState
+[CreateAssetMenu(menuName = "Enemy States/Charger/Charge")]
+public class EnemyChargeCharger : EnemyState
 {
-    [SerializeField] private float windupTime = 2f;
     [SerializeField] private float chargeTime = 2f;
     [SerializeField] private float chargeVelocity = 10f;
     [SerializeField] private float chargeDrag = 10f;
-    private bool jumpReady;
-    private float timer;
     private int chargeDirection;
 
 
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        timer = windupTime;
         rb.drag = 100f;
         chargeDirection = 1;
 
@@ -27,22 +23,26 @@ public class EnemyChaseCharger : EnemyState
         {
             chargeDirection = -1;
         }
+
+        Charge();
+
+    }
+
+
+    public override void DoExitLogic()
+    {
+        base.DoExitLogic();
+        rb.drag = 0f;
     }
 
     public override void DoUpdateState()
     {
         base.DoUpdateState();
-        timer -= Time.deltaTime;
 
-        if(timer < 0f && !jumpReady)
+        if(stateUptime > chargeTime)
         {
-            jumpReady = true;
-            timer = chargeTime;
-            Charge();
-        }
-        else if(timer < 0f && jumpReady)
-        {
-            core.stateMachine.ChangeState(core.states["Idle"]);
+            core.stateMachine.ChangeState(core.states["Patrol"]);
+            return;
         }
 
     }
@@ -61,11 +61,5 @@ public class EnemyChaseCharger : EnemyState
         {
             core.FlipSprite();
         }
-    }
-
-    public override void DoExitLogic()
-    {
-        base.DoExitLogic();
-        jumpReady = false;
     }
 }

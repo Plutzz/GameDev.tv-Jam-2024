@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy States/Reacher/Chase")]
-public class EnemyChaseReacher : EnemyState
+[CreateAssetMenu(menuName = "Enemy States/Charger/Aggro")]
+public class EnemyAttackCharger : EnemyState
 {
     [SerializeField] private float detectedTime = 0.66f;
 
@@ -16,22 +14,13 @@ public class EnemyChaseReacher : EnemyState
 
     }
 
-
     public override void DoUpdateState()
     {
         base.DoUpdateState();
 
         if (stateUptime >= detectedTime && currentState == states["Detected"])
         {
-            stateMachine.ChangeState(states["Run"]);
-        }
-
-        if (enemy.IsWithinStrikingDistance && currentState != states["Detected"])
-        {
             core.stateMachine.ChangeState(core.states["Attack"]);
-            return;
         }
-
-
     }
 }

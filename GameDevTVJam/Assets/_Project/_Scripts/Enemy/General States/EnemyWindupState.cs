@@ -11,8 +11,10 @@ public class EnemyWindupState : EnemyState
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        rb.velocity = Vector3.zero;
+
         if (animator != null && stateAnimation != null)
             animator.Play(stateAnimation.name);
+
+        rb.velocity = Vector2.zero;
     }
 }

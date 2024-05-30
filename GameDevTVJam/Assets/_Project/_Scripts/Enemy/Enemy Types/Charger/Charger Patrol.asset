@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85f368a6911c2df45a9288b7228e2fa5, type: 3}
-  m_Name: Reacher Attack
+  m_Script: {fileID: 11500000, guid: 6c1eb87bce9fd8f41b6a1dde7a111181, type: 3}
+  m_Name: Charger Patrol
   m_EditorClassIdentifier: 
   states:
     _serializedList:
-    - Key: Windup
-      Value: {fileID: 11400000, guid: 2f4b21f40e9be76418aed677c8a9d3ac, type: 2}
-    - Key: Tongue Whip
-      Value: {fileID: 11400000, guid: 4516ef5d79ede85408db58b9d60b1758, type: 2}
+    - Key: Idle
+      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+    - Key: Navigate
+      Value: {fileID: 11400000, guid: 2e36f730c4b103f4b9fefeed7f692d2e, type: 2}
   parent: {fileID: 0}
   stateAnimation: {fileID: 0}
-  windupTime: 0.5
+  idleTime: 2
+  minimumPatrolTime: 4

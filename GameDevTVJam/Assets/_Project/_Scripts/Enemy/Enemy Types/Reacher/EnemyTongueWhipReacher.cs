@@ -15,7 +15,6 @@ public class EnemyTongueWhipReacher : EnemyState
 
     public override void DoUpdateState()
     {
-        Debug.Log("State uptime" + stateUptime);
         base.DoUpdateState();
         if (stateUptime > 2f)
             core.stateMachine.ChangeState(core.states["Patrol"]);

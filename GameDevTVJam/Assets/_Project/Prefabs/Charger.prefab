@@ -86,9 +86,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6728783708721918276}
+  - component: {fileID: 1481078503274983092}
   - component: {fileID: 8885673317815360242}
   - component: {fileID: 6653356382647036119}
-  - component: {fileID: 1481078503274983092}
   m_Layer: 7
   m_Name: Charger
   m_TagString: Untagged
@@ -114,6 +114,31 @@ Transform:
   - {fileID: 4710362472966377372}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1481078503274983092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326009796753613826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea9ee443609afe418eaa19ab628856d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <states>k__BackingField:
+    _serializedList:
+    - Key: Idle
+      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
+    - Key: Chase
+      Value: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
+  rb: {fileID: 6653356382647036119}
+  animator: {fileID: 0}
+  groundSensor: {fileID: 0}
+  <isFacingRight>k__BackingField: 0
+  knockbackTime: 0.1
+  knockbackDrag: 25
+  <maxHealth>k__BackingField: 100
 --- !u!61 &8885673317815360242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,30 +211,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1481078503274983092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4326009796753613826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea9ee443609afe418eaa19ab628856d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <states>k__BackingField:
-    _serializedList:
-    - Key: Idle
-      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
-    - Key: Chase
-      Value: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
-  rb: {fileID: 6653356382647036119}
-  animator: {fileID: 0}
-  <isFacingRight>k__BackingField: 0
-  knockbackTime: 0.1
-  knockbackDrag: 25
-  <maxHealth>k__BackingField: 100
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243038219394246357}
   - component: {fileID: 108853450765745549}
+  - component: {fileID: 7802019147635089896}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -487,3 +489,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7802019147635089896
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110314523759122815}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

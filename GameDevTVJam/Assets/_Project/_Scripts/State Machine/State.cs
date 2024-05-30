@@ -106,8 +106,8 @@ public class State : ScriptableObject
     /// </summary>
     public void DoUpdateBranch()
     {
-        DoUpdateState();
         currentState?.DoUpdateBranch();
+        DoUpdateState();
     }
 
     /// <summary>
@@ -115,8 +115,8 @@ public class State : ScriptableObject
     /// </summary>
     public void DoFixedUpdateBranch()
     {
-        DoFixedUpdateState();
         currentState?.DoFixedUpdateBranch();
+        DoFixedUpdateState();
     }
 
 }

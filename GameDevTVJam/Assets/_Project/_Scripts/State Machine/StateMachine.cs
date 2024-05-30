@@ -31,4 +31,22 @@ public class StateMachine
         currentState = newState;
         currentState.DoEnterLogic();
     }
+
+
+    public List<State> GetActiveStateBranch(List<State> list = null)
+    {
+        if (list == null)
+            list = new List<State>();
+
+        if (currentState == null)
+            return list;
+
+        else
+        {
+            list.Add(currentState);
+            return currentState.stateMachine.GetActiveStateBranch(list);
+        }
+
+    }
+
 }
