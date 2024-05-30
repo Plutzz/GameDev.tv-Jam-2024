@@ -41,7 +41,7 @@ public class EnemyChargeCharger : EnemyState
 
         if(stateUptime > chargeTime)
         {
-            core.stateMachine.ChangeState(core.states["Patrol"]);
+            parent.stateMachine.ChangeState(parent.states["Windup"]);
             return;
         }
 

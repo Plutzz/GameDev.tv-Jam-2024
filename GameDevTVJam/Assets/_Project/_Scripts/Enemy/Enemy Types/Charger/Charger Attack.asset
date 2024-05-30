@@ -21,3 +21,4 @@ MonoBehaviour:
   parent: {fileID: 0}
   stateAnimation: {fileID: 0}
   windupTime: 0.5
+  dropAggroTime: 1

@@ -669,10 +669,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reacher
       objectReference: {fileID: 0}
-    - target: {fileID: 4326009796753613826, guid: 969b1ea5c40068c4aaca284254bd63cd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6728783708721918276, guid: 969b1ea5c40068c4aaca284254bd63cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.86
@@ -2613,43 +2609,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 373657460660788938, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: m_Radius
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[0].Key
-      value: Patrol
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[1].Key
-      value: Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[2].Key
-      value: Aggro
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[0].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: 2ffa65810b0be4e48b64ca550cede9d5, type: 2}
-    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[1].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: 6233d47a3734dca40920ebd75f1ce069, type: 2}
-    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: <states>k__BackingField._serializedList.Array.data[2].Value
-      value: 
-      objectReference: {fileID: 11400000, guid: 1aea0555330fd694d894949256a0294a, type: 2}
     - target: {fileID: 4326009796753613826, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: m_Name
       value: Charger
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326009796753613826, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6728783708721918276, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2693,38 +2657,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6731444432032055707, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: m_Radius
-      value: 5.5
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7237000392397658072, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
+      propertyPath: points.Array.data[0]
+      value: 
+      objectReference: {fileID: 972295493}
+    - target: {fileID: 7237000392397658072, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
+      propertyPath: points.Array.data[1]
+      value: 
+      objectReference: {fileID: 1799985168}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4326009796753613826, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1524297921}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
---- !u!1 &1524297920 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4326009796753613826, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
-  m_PrefabInstance: {fileID: 1524297919}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1524297921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524297920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3575d0290a27f0c4fb137133bd4de087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrivedThreshold: 0.1
-  points:
-  - {fileID: 972295493}
-  - {fileID: 1799985168}
-  currentPoint: 0
 --- !u!1 &1765339416
 GameObject:
   m_ObjectHideFlags: 0

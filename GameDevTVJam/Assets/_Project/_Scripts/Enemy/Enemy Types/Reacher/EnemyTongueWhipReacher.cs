@@ -17,6 +17,6 @@ public class EnemyTongueWhipReacher : EnemyState
     {
         base.DoUpdateState();
         if (stateUptime > 2f)
-            core.stateMachine.ChangeState(core.states["Patrol"]);
+            stateMachine.ChangeState(states["Windup"]);
     }
 }

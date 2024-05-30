@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1481078503274983092}
   - component: {fileID: 8885673317815360242}
   - component: {fileID: 6653356382647036119}
+  - component: {fileID: 7237000392397658072}
   m_Layer: 7
   m_Name: Charger
   m_TagString: Untagged
@@ -128,10 +129,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <states>k__BackingField:
     _serializedList:
-    - Key: Idle
-      Value: {fileID: 11400000, guid: 3bbe3f090ae24e8468ae14546015a46d, type: 2}
-    - Key: Chase
-      Value: {fileID: 11400000, guid: 64464c136689a0743ab292ac9b8b8375, type: 2}
+    - Key: Patrol
+      Value: {fileID: 11400000, guid: 2ffa65810b0be4e48b64ca550cede9d5, type: 2}
+    - Key: Attack
+      Value: {fileID: 11400000, guid: 6233d47a3734dca40920ebd75f1ce069, type: 2}
+    - Key: Aggro
+      Value: {fileID: 11400000, guid: 1aea0555330fd694d894949256a0294a, type: 2}
   rb: {fileID: 6653356382647036119}
   animator: {fileID: 0}
   groundSensor: {fileID: 0}
@@ -211,6 +214,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7237000392397658072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326009796753613826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3575d0290a27f0c4fb137133bd4de087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrivedThreshold: 0.1
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
+  currentPoint: 0
 --- !u!1 &6859490985874738513
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +298,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.0001
+  m_Radius: 6
 --- !u!114 &5731153405524349017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +378,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 5.5
 --- !u!114 &6687490842702724028
 MonoBehaviour:
   m_ObjectHideFlags: 0
