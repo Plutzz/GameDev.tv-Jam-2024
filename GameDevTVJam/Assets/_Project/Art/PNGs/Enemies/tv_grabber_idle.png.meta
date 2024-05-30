@@ -115,8 +115,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 66
+        height: 66
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: tv_grabber_idle_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 0
-        width: 64
-        height: 64
+        width: 66
+        height: 66
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: tv_grabber_idle_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 132
         y: 0
-        width: 64
-        height: 64
+        width: 66
+        height: 66
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: tv_grabber_idle_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 198
         y: 0
-        width: 64
-        height: 64
+        width: 66
+        height: 66
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
