@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : StateMachineCore, IDamageable
 {
+    [SerializeField] private Image healthBar;
     public static Player Instance { get; private set; }
     [field: SerializeField] public float maxHealth { get; set; } = 5;
     public float currentHealth { get; set; }
@@ -83,6 +85,7 @@ public class Player : StateMachineCore, IDamageable
         }
 
         currentHealth -= damage;
+        healthBar.fillAmount = currentHealth/maxHealth;
 
         invincible = true;
     }
