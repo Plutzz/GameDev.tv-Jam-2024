@@ -120,7 +120,7 @@ Transform:
   m_GameObject: {fileID: 403362404971945794}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.10499999, z: 0}
+  m_LocalPosition: {x: 0, y: -0.603, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2090184384, guid: a6a47d1e112795a44bd163671426c3ee, type: 3}
+  m_Sprite: {fileID: -69437099, guid: 3b0e19cb3c9c86b48af20d85c239cda5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -274,6 +274,7 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 09d85ac70b3a6f745bf3f9fc6c97a0d3, type: 2}
   rb: {fileID: 6055598574023658980}
   animator: {fileID: 2900209338362568266}
+  groundSensor: {fileID: 0}
   <isFacingRight>k__BackingField: 1
   inputManager: {fileID: 2180788664521983373}
   playerAttacks: {fileID: 2547474811822506469}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
@@ -9,8 +10,17 @@ using UnityEngine.UI;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
+    private Dialogue currentDialogue;
+    
+    private GameObject dialogueBox;
     private TextMeshProUGUI nameText;
     private TextMeshProUGUI dialogueText;
+    private Image characterImage;
+    private InputManager inputManager;
+
+    private DialogueSequence currentSequence;
+    private int currentSequenceIndex;
+
 
     [SerializeField] private float textDelay;
     private Queue<string> sentences;
@@ -19,18 +29,71 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         base.Awake();
         sentences = new Queue<string>();
+
+    }
+
+    private void Start()
+    {
+        inputManager = InputManager.Instance;
+    }
+    private void Update()
+    {
+        if(inputManager.NextDialoguePressedThisFrame)
+        {
+            DisplayNextSentence();
+        }
+    }
+
+    public void StartDialogueSequence(DialogueSequence sequence)
+    {
+        currentSequenceIndex = 0;
+        currentSequence = sequence;
+        StartDialogue(sequence.dialogues[currentSequenceIndex]);
+    }
+
+    private void NextDialogueInSequence()
+    {
+        currentSequenceIndex++;
+        if(currentSequenceIndex < currentSequence.dialogues.Count)
+        {
+            StartDialogue(currentSequence.dialogues[currentSequenceIndex]);
+        }
+        else
+        {
+            EndDialogueSequence();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-
+        InputManager.Instance.playerInput.SwitchCurrentActionMap("Cutscene");
         nameText = dialogue.nameText;
         dialogueText = dialogue.dialogueText;
+        dialogueBox = dialogue.dialogueBox;
+        characterImage = dialogue.characterImage;
+        currentDialogue = dialogue;
+
+        dialogueBox.SetActive(true);
+        
 
         if(nameText != null )
             nameText.text = dialogue.name;
 
+        if (characterImage != null)
+        {
+            if(dialogue.characterSprite == null)
+            {
+                characterImage.enabled = false;
+            }
 
+            else
+            {
+                characterImage.enabled = true;
+                characterImage.sprite = dialogue.characterSprite;
+            }
+            
+        }
+            
 
         sentences.Clear();
 
@@ -68,6 +131,24 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void EndDialogue()
     {
-        Debug.Log("End of Dialogue");
+        currentDialogue?.actionOnComplete.Invoke();
+        currentDialogue = null;
+        if (currentSequence != null)
+        {
+            NextDialogueInSequence();
+        }
+        else
+        {
+            Debug.Log("End of Dialogue");
+            InputManager.Instance.playerInput.SwitchCurrentActionMap("Player");
+            dialogueBox.SetActive(false);
+        }
+    }
+
+    private void EndDialogueSequence()
+    {
+        Debug.Log("End of Dialogue Sequence");
+        InputManager.Instance.playerInput.SwitchCurrentActionMap("Player");
+        dialogueBox.SetActive(false);
     }
 }

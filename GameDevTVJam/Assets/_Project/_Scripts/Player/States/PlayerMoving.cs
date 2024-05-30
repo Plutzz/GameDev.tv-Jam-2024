@@ -32,7 +32,7 @@ public class PlayerMoving : PlayerState
     public override void CheckTransitions()
     {
         base.CheckTransitions();
-        if (inputManager.MoveInput == 0 && core.stateMachine.currentState != core.states["Attack"])
+        if (inputManager.MoveInput == 0)
         {
             core.stateMachine.ChangeState(core.states["Idle"]);
         }

@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class DialogueSequence : MonoBehaviour
 {
-    [SerializeField] private List<Dialogue> dialogues;
-    private bool dialogueStarted;
+    public List<Dialogue> dialogues;
 
-    public void Start()
+    public void OnEnable()
     {
-        StartDialogue(dialogues[0]);
+        StartDialogueSequence();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartSelf()
     {
-        dialogueStarted = true;
-        DialogueManager.Instance.StartDialogue(dialogue);
+        StartDialogueSequence();
+    }
+
+    private void StartDialogueSequence()
+    {
+        DialogueManager.Instance.StartDialogueSequence(this);
     }
 
     public void ContinueDialogue()

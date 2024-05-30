@@ -8,6 +8,12 @@ public class Hatcher : Enemy
     [SerializeField] private int wigglersSpawnedOnDeath;
     [SerializeField] private float scatterRange = 5;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        stateMachine.Initialize(states["Idle"]);
+    }
+
     public void Death()
     {
         for(int i = 0; i < wigglersSpawnedOnDeath; i++)

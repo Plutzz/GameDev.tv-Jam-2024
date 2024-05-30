@@ -25,6 +25,11 @@ public class SceneSwapManager : Singleton<SceneSwapManager>
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    public void FadeOutAndChangeScene(SceneField _scene)
+    {
+        StartCoroutine(FadeOutThenChangeScene(_scene));
+    }
+
     public IEnumerator FadeOutThenChangeScene(SceneField myScene)
     {
         Debug.Log("Start Fade Out");

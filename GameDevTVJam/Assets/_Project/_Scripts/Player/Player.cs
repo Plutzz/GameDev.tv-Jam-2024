@@ -22,6 +22,11 @@ public class Player : StateMachineCore
         stateMachine.Initialize(states["Idle"]);
     }
 
+    private void Start()
+    {
+        transform.parent = Persistence.Instance?.transform;
+    }
+
     private void Update()
     {
         stateMachine.currentState.DoUpdateBranch();

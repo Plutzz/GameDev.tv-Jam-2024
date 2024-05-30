@@ -52,11 +52,11 @@
             ]
         },
         {
-            "name": "UI",
+            "name": "Cutscene",
             "id": "858b81a1-fdc2-4c47-a26d-df4a44847235",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Next Dialogue",
                     "type": "Button",
                     "id": "3f98a810-1238-4162-a211-7cd45c9d8660",
                     "expectedControlType": "Button",
@@ -69,11 +69,22 @@
                 {
                     "name": "",
                     "id": "b2473ddd-54b7-43ee-937e-6689112a68f3",
-                    "path": "",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "New action",
+                    "action": "Next Dialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4f1870f-058f-4ae4-875c-ab6ef97b1ee2",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Next Dialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
