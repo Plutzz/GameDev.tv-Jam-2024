@@ -23,7 +23,6 @@ public class EnemyAttackWiggler : EnemyState
         }
 
         rb.velocity = new Vector2(direction * Mathf.Abs(enemy.player.transform.position.x - enemy.transform.position.x) / (2 * jumpStrengthY / (-rb.gravityScale * Physics2D.gravity.magnitude)), jumpStrengthY);
-        Debug.Log("wiggles attack");
         //core.stateMachine.ChangeState(core.states["Idle"]);
     }
 

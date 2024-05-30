@@ -17,7 +17,6 @@ public class EnemyAttackHatcher : EnemyState
     public override void DoExitLogic()
     {
         base.DoExitLogic();
-        Debug.Log("exited hatcher attack");
     }
 
     public override void DoUpdateState()
@@ -30,11 +29,9 @@ public class EnemyAttackHatcher : EnemyState
         }
 
         timer -= Time.deltaTime;
-        Debug.Log("attack charging");
 
         if (timer < 0f)
         {
-            Debug.Log("spawn the wiggles");
             Instantiate(wigglerPrefab, enemy.transform.position, wigglerPrefab.transform.rotation);
             timer = wigglerSpawnInterval;
             core.stateMachine.ChangeState(core.states["Idle"]);

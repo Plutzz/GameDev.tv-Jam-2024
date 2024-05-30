@@ -16,6 +16,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     [field: SerializeField] public float maxHealth { get; set; } = 100f;
     public float currentHealth { get; set; }
     #endregion
+    public int collisionDamage = 1;
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
 
@@ -79,6 +80,6 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
         IsWithinStrikingDistance = isWithinStrikingDistance;
     }
 
-    
+
     #endregion
 }
