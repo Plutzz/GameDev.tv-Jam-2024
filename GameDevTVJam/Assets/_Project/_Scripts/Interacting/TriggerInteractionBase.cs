@@ -6,6 +6,16 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
 {
     public bool CanInteract { get; set; }
 
+    protected SpriteRenderer spriteRenderer;
+    [SerializeField] protected Material outlines;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        outlines = Instantiate(outlines);
+        spriteRenderer.material = outlines;
+    }
+
     private void Update()
     {
         if(CanInteract)
@@ -17,19 +27,20 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("Player Can Interact with door");
+            spriteRenderer.material.EnableKeyword("_OUTLINES");
             CanInteract = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            spriteRenderer.material.DisableKeyword("_OUTLINES");
             CanInteract = false;
         }
     }

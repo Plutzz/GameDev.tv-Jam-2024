@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 1bcc4d14810ee4a41b7e7c58a1fee7c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66283c1104f86b4ab32130392ee0466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlines: {fileID: 2100000, guid: 1bcc4d14810ee4a41b7e7c58a1fee7c7, type: 2}
   doorToSpawnAt: 1
   sceneToLoad:
     m_SceneAsset: {fileID: 102900000, guid: 66ef1ddd9e5d0204fadac1c4d5e09519, type: 3}
