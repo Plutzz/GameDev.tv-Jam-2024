@@ -20,3 +20,4 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: c11a4b878a8f9b343b7920e781e61461, type: 2}
   parent: {fileID: 0}
   stateAnimation: {fileID: 0}
+  detectedTime: 0.66

@@ -12,6 +12,12 @@ public class EnemyWindupState : EnemyState
     {
         base.DoEnterLogic();
 
+        if ((enemy.player.transform.position.x < enemy.transform.position.x && isFacingRight) ||
+    enemy.player.transform.position.x > enemy.transform.position.x && !isFacingRight)
+        {
+            enemy.FlipSprite();
+        }
+
         if (animator != null && stateAnimation != null)
             animator.Play(stateAnimation.name);
 
