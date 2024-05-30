@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d727b84aaea9e940abe043acb4f7f9a, type: 3}
   m_Name: Chase Charger
   m_EditorClassIdentifier: 
+  states:
+    _serializedList: []
+  parent: {fileID: 0}
+  stateAnimation: {fileID: 7400000, guid: 171f7d72d6437db49aec96871af59b1c, type: 2}
   windupTime: 2
   chargeTime: 1
   chargeVelocity: 40

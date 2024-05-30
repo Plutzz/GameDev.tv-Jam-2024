@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 27b5edb20ae39eb4894990a3713dfc92
+guid: 31d01dd01e5dfb946a370d043ed1be63
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tv_reacher_run_0
+      name: tv_reacher_run 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f55fd6f203ebed34e96d85f7bb0326f2
-      internalID: 1356820350
+      spriteID: 6015378e0db576c4685f42b0ff12cb91
+      internalID: 1424680063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_reacher_run_1
+      name: tv_reacher_run 1_1
       rect:
         serializedVersion: 2
         x: 80
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84911ae2180cd1647a84a77d51da9c49
-      internalID: 1056182687
+      spriteID: c46a43f10f6a56946bb9ea0f80369d58
+      internalID: -213680374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_reacher_run_2
+      name: tv_reacher_run 1_2
       rect:
         serializedVersion: 2
         x: 160
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d382a763c09b85a4b990ef752b93c4f0
-      internalID: -313633616
+      spriteID: 966178df5fa664e4095993fa3992dc52
+      internalID: -564989469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_reacher_run_3
+      name: tv_reacher_run 1_3
       rect:
         serializedVersion: 2
         x: 240
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97334f239666f804ab82ca4cf3f9e18c
-      internalID: 960992145
+      spriteID: a263acdd272743445b4744ff1cadbab3
+      internalID: -328120800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_reacher_run_4
+      name: tv_reacher_run 1_4
       rect:
         serializedVersion: 2
         x: 320
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22274120268bc454c9499dbb23656d7b
-      internalID: -464906970
+      spriteID: 1c521db9b07c5d14bb1cb0d3249e2531
+      internalID: -1104384653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_reacher_run_5
+      name: tv_reacher_run 1_5
       rect:
         serializedVersion: 2
         x: 400
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38aa45e4454b96c42a4a0609d3e5f66a
-      internalID: 601894092
+      spriteID: e4d97a98c66c9c040a8f9a92a68aa7ba
+      internalID: -13019744
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tv_reacher_run_0: 1356820350
-      tv_reacher_run_1: 1056182687
-      tv_reacher_run_2: -313633616
-      tv_reacher_run_3: 960992145
-      tv_reacher_run_4: -464906970
-      tv_reacher_run_5: 601894092
+      tv_reacher_run 1_0: 1424680063
+      tv_reacher_run 1_1: -213680374
+      tv_reacher_run 1_2: -564989469
+      tv_reacher_run 1_3: -328120800
+      tv_reacher_run 1_4: -1104384653
+      tv_reacher_run 1_5: -13019744
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
