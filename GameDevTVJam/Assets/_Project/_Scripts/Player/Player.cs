@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
-public class Player : StateMachineCore
+public class Player : StateMachineCore, IDamageable
 {
     public static Player Instance { get; private set; }
+    [field: SerializeField] public float maxHealth { get; set; } = 5;
+    public float currentHealth { get; set; }
+    [SerializeField] private float invincibleTime = 1.5f;
 
     #region Player Variables
     public InputManager inputManager;
@@ -15,6 +19,9 @@ public class Player : StateMachineCore
     [SerializeField] private float rollCooldown = 1f;
     private float rollTimer;
     #endregion
+
+    public bool invincible = false;
+    private float invincibleTimer;
 
     #region Unity Methods
     private void Awake()
@@ -31,6 +38,8 @@ public class Player : StateMachineCore
     private void Start()
     {
         transform.parent = Persistence.Instance?.transform;
+        currentHealth = maxHealth;
+        invincibleTimer = invincibleTime;
     }
 
     private void Update()
@@ -38,6 +47,18 @@ public class Player : StateMachineCore
         stateMachine.currentState.DoUpdateBranch();
 
         rollTimer -= Time.deltaTime;
+
+        if(invincible == true)
+        {
+            invincibleTimer -= Time.deltaTime;
+        }
+
+        if(invincibleTimer <= 0f)
+        {
+            invincible = false;
+            invincibleTimer = invincibleTime;
+        }
+
 
         if (rollTimer < 0 && Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -52,5 +73,18 @@ public class Player : StateMachineCore
     }
 
     #endregion
+
+    public void TakeDamage(int damage, float knockback, float xPos)
+    {
+        
+        if (currentHealth == 0 || invincible)
+        {
+            return;
+        }
+
+        currentHealth -= damage;
+
+        invincible = true;
+    }
 
 }

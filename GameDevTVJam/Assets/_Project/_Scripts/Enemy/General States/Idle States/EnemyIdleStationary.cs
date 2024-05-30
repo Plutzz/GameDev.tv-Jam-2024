@@ -24,7 +24,7 @@ public class EnemyIdleStationary : EnemyState
     {
         base.DoUpdateState();
         idleTimer -= Time.deltaTime;
-        Debug.Log(idleTimer);
+
         if (idleTimer < 0)
         {
             if (enemy.IsWithinStrikingDistance)

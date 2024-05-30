@@ -22,11 +22,9 @@ public class EnemyAttackSwipe : EnemyState
         base.DoUpdateState();
         rb.velocity = Vector3.zero;
         timer -= Time.deltaTime;
-        Debug.Log("attack charging");
 
         if(timer < 0f)
         {
-            Debug.Log("attacking");
             //play swing animation
             //core.stateMachine.ChangeState(core.states["Idle"]);
             core.stateMachine.ChangeState(core.states["Patrol"]);

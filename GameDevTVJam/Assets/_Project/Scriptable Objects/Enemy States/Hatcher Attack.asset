@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399a56e5d7b9d13479a3a605656bfd72, type: 3}
   m_Name: Hatcher Attack
   m_EditorClassIdentifier: 
-  stateAnimationClip: {fileID: 7400000, guid: 75aa9b4ac13c9344c96cbdf3b973e441, type: 2}
+  states:
+    _serializedList: []
+  parent: {fileID: 0}
+  stateAnimation: {fileID: 0}
   wigglerPrefab: {fileID: 4326009796753613826, guid: adae66c1584e5ac42b5a3423e8ae5ef7, type: 3}
-  wigglerSpawnInterval: 2
+  wigglerSpawnInterval: 100
