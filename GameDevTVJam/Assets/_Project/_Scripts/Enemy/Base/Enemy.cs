@@ -28,6 +28,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
         player = GameObject.FindGameObjectWithTag("Player");
         SetupInstances();
         currentHealth = maxHealth;
+        //was commented out VV
         stateMachine.Initialize(states["Idle"]);
     }
 
