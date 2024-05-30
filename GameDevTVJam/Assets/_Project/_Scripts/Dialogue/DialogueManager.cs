@@ -11,11 +11,11 @@ using UnityEngine.UI;
 public class DialogueManager : Singleton<DialogueManager>
 {
     private Dialogue currentDialogue;
-    
-    private GameObject dialogueBox;
-    private TextMeshProUGUI nameText;
-    private TextMeshProUGUI dialogueText;
-    private Image characterImage;
+
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private Image characterImage;
     private InputManager inputManager;
 
     private DialogueSequence currentSequence;
@@ -32,13 +32,15 @@ public class DialogueManager : Singleton<DialogueManager>
 
     }
 
-    private void Start()
+
+    private void OnEnable()
     {
         inputManager = InputManager.Instance;
     }
+
     private void Update()
     {
-        if(inputManager.NextDialoguePressedThisFrame)
+        if(inputManager != null && inputManager.NextDialoguePressedThisFrame)
         {
             DisplayNextSentence();
         }
@@ -67,10 +69,7 @@ public class DialogueManager : Singleton<DialogueManager>
     public void StartDialogue(Dialogue dialogue)
     {
         InputManager.Instance.playerInput.SwitchCurrentActionMap("Cutscene");
-        nameText = dialogue.nameText;
-        dialogueText = dialogue.dialogueText;
-        dialogueBox = dialogue.dialogueBox;
-        characterImage = dialogue.characterImage;
+
         currentDialogue = dialogue;
 
         dialogueBox.SetActive(true);
@@ -133,6 +132,7 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         currentDialogue?.actionOnComplete.Invoke();
         currentDialogue = null;
+
         if (currentSequence != null)
         {
             NextDialogueInSequence();

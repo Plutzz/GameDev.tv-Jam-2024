@@ -26,13 +26,12 @@ public class PlayerAttacks : MonoBehaviour
     private StateMachine stateMachine;
     private Player player;
     private PlayerAttackHitbox attackHitbox;
-    private Animator anim;
+    [SerializeField] private Animator anim;
     
 
 
     private void Start()
     {
-        anim = GetComponentInChildren<Animator>();
         attackHitbox = GetComponentInChildren<PlayerAttackHitbox>(true);
         player = GetComponent<Player>();
         stateMachine = player.stateMachine;

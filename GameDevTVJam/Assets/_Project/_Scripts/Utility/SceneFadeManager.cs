@@ -46,6 +46,7 @@ public class SceneFadeManager : Singleton<SceneFadeManager>
             else
             {
                 IsFadingIn = false;
+                InputManager.Instance.EnablePlayerInput(true);
             }
         }
 

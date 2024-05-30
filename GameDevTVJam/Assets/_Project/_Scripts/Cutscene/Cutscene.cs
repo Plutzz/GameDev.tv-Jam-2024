@@ -11,6 +11,7 @@ public class Cutscene : MonoBehaviour
     public UnityEvent actionOnComplete;
     public void StartSelf()
     {
+        
         CutsceneManager.Instance.StartCutscene(this);
     }
 }

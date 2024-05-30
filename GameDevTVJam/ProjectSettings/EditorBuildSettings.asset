@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Gameplay Scene.unity
     guid: dd6dad3d6c9a562449957fea9acd74cc
+  - enabled: 1
+    path: Assets/_Project/Scenes/Storage Room.unity
+    guid: 66ef1ddd9e5d0204fadac1c4d5e09519
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5385ecb0ac1e06c40b4a008dfa47769b, type: 2}

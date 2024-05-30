@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player : StateMachineCore
 {
+    public static Player Instance { get; private set; }
 
     #region Player Variables
     public InputManager inputManager;
@@ -18,6 +19,11 @@ public class Player : StateMachineCore
     #region Unity Methods
     private void Awake()
     {
+        if (Instance != null)
+            Destroy(this);
+
+        Instance = this;
+
         SetupInstances();
         stateMachine.Initialize(states["Idle"]);
     }
