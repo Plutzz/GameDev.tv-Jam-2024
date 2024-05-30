@@ -8,7 +8,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     #region Knockback Variables
     [SerializeField] protected float knockbackTime = 0.1f;
     [SerializeField] protected float knockbackDrag = 25f;
-    private float knockbackTimer;
+    protected float knockbackTimer;
     #endregion
 
     #region IDamageable Variables
@@ -44,7 +44,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     }
 
     #region Health/Damage Functions
-    public void TakeDamage(int damage, float knockback, float xPos)
+    public virtual void TakeDamage(int damage, float knockback, float xPos)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)

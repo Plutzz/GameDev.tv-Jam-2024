@@ -212,7 +212,7 @@ MonoBehaviour:
   knockbackDrag: 25
   <maxHealth>k__BackingField: 100
   collisionDamage: 1
-  wigglerPrefab: {fileID: 0}
+  wigglerPrefab: {fileID: 4326009796753613826, guid: adae66c1584e5ac42b5a3423e8ae5ef7, type: 3}
   wigglersSpawnedOnDeath: 0
   scatterRange: 5
 --- !u!1 &4379033320493876296
