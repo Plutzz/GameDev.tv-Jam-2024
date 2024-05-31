@@ -8,6 +8,7 @@ public class StorageRoomInteract : TriggerInteractionBase
     public override void Interact()
     {
         Instantiate(storageRoomCutscene, CutsceneManager.Instance.transform);
+        GameManager.Instance.SetMeteorSpawned(true);
         Destroy(gameObject);
     }
 }

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class SceneFadeManager : Singleton<SceneFadeManager>
 {
     [SerializeField] private Image fadeOutImage;
-    [Range(1f, 10f), SerializeField] private float fadeOutSpeed = 5f;
-    [Range(1f, 10f), SerializeField] private float fadeInSpeed = 5f;
+    [Range(0.1f, 10f), SerializeField] private float fadeOutSpeed = 5f;
+    [Range(0.1f, 10f), SerializeField] private float fadeInSpeed = 5f;
 
     [SerializeField] private Color fadeOutStartColor;
 
