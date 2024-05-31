@@ -8,10 +8,10 @@ using UnityEngine.Playables;
 public class Cutscene : MonoBehaviour
 {
     public PlayableDirector timeline;
+    public UnityEvent actionOnStart;
     public UnityEvent actionOnComplete;
     public void StartSelf()
     {
-        
         CutsceneManager.Instance.StartCutscene(this);
     }
 }

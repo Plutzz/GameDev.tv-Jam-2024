@@ -1247,6 +1247,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 546286366926498127, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: dialogues.Array.data[0].characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 90d316b1f2504f046b255ebd5f7539b8, type: 3}
+    - target: {fileID: 1599496350637220050, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: ease
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599496350637220050, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: initialCutscene
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2297197247127669166, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1285,22 +1297,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2297197247127669166, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4952306067308239857, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
-      propertyPath: storageRoomInteract
-      value: 
-      objectReference: {fileID: 9099665278339606598, guid: f6ca74c233325ca48a50d7e843ebc8d2, type: 3}
-    - target: {fileID: 8574188983860880196, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
-      propertyPath: fadeInSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8574188983860880196, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
-      propertyPath: fadeOutSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8574188983860880196, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
-      propertyPath: fadeOutStartColor.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8950006267570378076, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}

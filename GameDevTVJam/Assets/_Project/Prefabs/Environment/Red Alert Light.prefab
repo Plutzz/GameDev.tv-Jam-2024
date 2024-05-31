@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1585871218374086306}
   - component: {fileID: 2490242300706025914}
   m_Layer: 0
-  m_Name: Red Alert Lights
+  m_Name: Red Alert Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
