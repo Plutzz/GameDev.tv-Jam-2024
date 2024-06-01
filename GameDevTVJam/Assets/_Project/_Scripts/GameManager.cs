@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -9,6 +10,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private SceneField TutorialScene;
     [SerializeField] private SceneField StorageScene;
     [SerializeField] private SceneField GameplayScene;
+
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private int planetYRes; // Default 131
 
     // Player progress variables
     public bool MeteorSpawned = false;
@@ -50,7 +54,7 @@ public class GameManager : Singleton<GameManager>
         }
         else if( _scene.name == GameplayScene.SceneName)
         {
-
+            ChangePixelCamera(planetYRes);
         }
     }
 
@@ -64,6 +68,9 @@ public class GameManager : Singleton<GameManager>
         TalkedToMae = _talkedToMae;
     }
 
-
+    public void ChangePixelCamera(int _yRes)
+    {
+        mainCamera.GetComponent<PixelPerfectCamera>().refResolutionY = _yRes;
+    }
     
 }

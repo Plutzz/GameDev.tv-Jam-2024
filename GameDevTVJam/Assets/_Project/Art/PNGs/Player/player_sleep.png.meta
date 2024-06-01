@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd2fe99228ab7044797fff2188ae9d96
+guid: dc739cbcf51a6504b828bad59b4cb0bb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -113,12 +113,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: a6adf6c6e924b6042bfce30a1eaca59d, type: 3}
+      name: _Emission
     nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
