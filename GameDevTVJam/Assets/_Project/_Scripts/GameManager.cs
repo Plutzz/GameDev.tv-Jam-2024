@@ -11,7 +11,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private SceneField GameplayScene;
 
     // Player progress variables
-    public bool meteorSpawned = false;
+    public bool MeteorSpawned = false;
+    public bool TalkedToMae = false;
 
     [SerializeField] private GameObject storageRoomInteract;
 
@@ -34,7 +35,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (_scene.name == TutorialScene.SceneName)
         {
-            if (meteorSpawned)
+            if (MeteorSpawned)
             {
                 // Load meteor scene
                 exitStorageSequence.StartSelf();
@@ -42,7 +43,7 @@ public class GameManager : Singleton<GameManager>
         }
         else if( _scene.name == StorageScene.SceneName) 
         {
-            if(!meteorSpawned)
+            if(!MeteorSpawned)
             {
                 Instantiate(storageRoomInteract);
             }
@@ -55,7 +56,12 @@ public class GameManager : Singleton<GameManager>
 
     public void SetMeteorSpawned(bool _spawned)
     {
-        meteorSpawned = _spawned;
+        MeteorSpawned = _spawned;
+    }
+
+    public void SetTalkedToMae(bool _talkedToMae)
+    {
+        TalkedToMae = _talkedToMae;
     }
 
 

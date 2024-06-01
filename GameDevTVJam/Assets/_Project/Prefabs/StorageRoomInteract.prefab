@@ -100,6 +100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlines: {fileID: 2100000, guid: 1bcc4d14810ee4a41b7e7c58a1fee7c7, type: 2}
   storageRoomCutscene: {fileID: 5466964681800776684, guid: c65e7f1dd5f606c4a90095a57c6685d3, type: 3}
+  dialogue:
+    name: 
+    characterSprite: {fileID: 21300000, guid: 90d316b1f2504f046b255ebd5f7539b8, type: 3}
+    actionOnComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    sentences:
+    - A power core!
+    - Looks like we only have one left
 --- !u!61 &8377655224822882550
 BoxCollider2D:
   m_ObjectHideFlags: 0

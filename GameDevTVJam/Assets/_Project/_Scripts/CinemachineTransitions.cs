@@ -32,4 +32,6 @@ public class CinemachineTransitions : MonoBehaviour
         yield return new WaitForSecondsRealtime(seconds);
         Time.timeScale = 1;
     }
+
+
 }

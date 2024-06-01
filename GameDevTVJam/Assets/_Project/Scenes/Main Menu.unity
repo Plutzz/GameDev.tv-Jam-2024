@@ -1247,13 +1247,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517869616950515427, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: meteorScene.m_SceneName
+      value: Meteor Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 517869616950515427, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: meteorScene.m_SceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 9263673669a17ab4cb1e805037c3c497, type: 3}
+    - target: {fileID: 517869616950515427, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: tutorialScene.m_SceneName
+      value: Tutorial Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 517869616950515427, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: tutorialScene.m_SceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 0502699729c214c459052c130c149917, type: 3}
     - target: {fileID: 546286366926498127, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
       propertyPath: dialogues.Array.data[0].characterSprite
       value: 
       objectReference: {fileID: 21300000, guid: 90d316b1f2504f046b255ebd5f7539b8, type: 3}
     - target: {fileID: 1599496350637220050, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
       propertyPath: ease
-      value: 31
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1599496350637220050, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
       propertyPath: initialCutscene
@@ -1298,6 +1314,10 @@ PrefabInstance:
     - target: {fileID: 2297197247127669166, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882666348034174024, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.49
       objectReference: {fileID: 0}
     - target: {fileID: 8950006267570378076, guid: 16a44235e6c2ce64a80ed3e6a0912ac5, type: 3}
       propertyPath: m_Name

@@ -7,6 +7,10 @@ public class SceneSwapManager : Singleton<SceneSwapManager>
 {
     public SceneField scene;
 
+    public SceneField meteorScene;
+    public SceneField tutorialScene;
+
+
     private bool loadFromDoor;
 
     private DoorTriggerInteraction.DoorToSpawnAt doorToSpawnTo;
@@ -37,6 +41,10 @@ public class SceneSwapManager : Singleton<SceneSwapManager>
 
     public void SwapSceneFromDoorUse(SceneField _scene, DoorTriggerInteraction.DoorToSpawnAt _doorToSpawnAt)
     {
+        if(GameManager.Instance.MeteorSpawned && _scene.SceneName == tutorialScene.SceneName)
+        {
+            _scene = meteorScene;
+        }
         StartCoroutine(FadeOutThenChangeScene(_scene, _doorToSpawnAt));
         loadFromDoor = true;
     }

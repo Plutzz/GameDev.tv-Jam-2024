@@ -334,6 +334,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 4952306067308239857}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: SetTalkedToMae
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     sentences:
     - Haha, you're starting to sound like your father
     - "I\u2019ll go fetch something from the storage room to recharge your suit.\r\n"
@@ -1003,7 +1015,7 @@ SpriteRenderer:
   m_Size: {x: 0.4375, y: 0.21875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5899419160562665977
@@ -1540,13 +1552,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8178780337096722057}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4888112308888338279}
-  m_Father: {fileID: 2297197247127669166}
+  m_Father: {fileID: 42927739121805162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4952306067308239857
 MonoBehaviour:
@@ -1569,7 +1581,8 @@ MonoBehaviour:
   GameplayScene:
     m_SceneAsset: {fileID: 102900000, guid: dd6dad3d6c9a562449957fea9acd74cc, type: 3}
     m_SceneName: Gameplay Scene
-  meteorSpawned: 0
+  MeteorSpawned: 0
+  TalkedToMae: 0
   storageRoomInteract: {fileID: 9099665278339606598, guid: f6ca74c233325ca48a50d7e843ebc8d2, type: 3}
   exitStorageSequence: {fileID: 570695040386396760}
 --- !u!1 &8182011868548990291
@@ -1680,7 +1693,6 @@ Transform:
   - {fileID: 42927739121805162}
   - {fileID: 5302097163037642301}
   - {fileID: 1644810792750021795}
-  - {fileID: 3732150274830536954}
   - {fileID: 1167597190275972749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1879,6 +1891,7 @@ Transform:
   m_Children:
   - {fileID: 3090633587172484638}
   - {fileID: 8667585630249890389}
+  - {fileID: 3732150274830536954}
   m_Father: {fileID: 2297197247127669166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5278260361376647787
@@ -1895,7 +1908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980782034709505571, guid: 8976c08dc29afa64fbba76ec4175be9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.824
+      value: -5.11
       objectReference: {fileID: 0}
     - target: {fileID: 8980782034709505571, guid: 8976c08dc29afa64fbba76ec4175be9f, type: 3}
       propertyPath: m_LocalPosition.y

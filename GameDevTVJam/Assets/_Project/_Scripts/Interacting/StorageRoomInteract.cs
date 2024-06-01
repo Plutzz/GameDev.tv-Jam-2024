@@ -5,10 +5,18 @@ using UnityEngine;
 public class StorageRoomInteract : TriggerInteractionBase
 {
     [SerializeField] private GameObject storageRoomCutscene;
+    [SerializeField] private Dialogue dialogue;
     public override void Interact()
     {
-        Instantiate(storageRoomCutscene, CutsceneManager.Instance.transform);
-        GameManager.Instance.SetMeteorSpawned(true);
-        Destroy(gameObject);
+        if(GameManager.Instance.TalkedToMae)
+        {
+            Instantiate(storageRoomCutscene, CutsceneManager.Instance.transform);
+            GameManager.Instance.SetMeteorSpawned(true);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DialogueManager.Instance.StartDialogue(dialogue);
+        }
     }
 }
