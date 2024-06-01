@@ -16,6 +16,7 @@ public class Player : StateMachineCore, IDamageable
     #region Player Variables
     public InputManager inputManager;
     public PlayerAttacks playerAttacks;
+    public SpriteRenderer graphics;
 
     [Header("Roll")]
     [SerializeField] private float rollCooldown = 1f;
@@ -24,6 +25,7 @@ public class Player : StateMachineCore, IDamageable
 
     public bool invincible = false;
     private float invincibleTimer;
+    [SerializeField] private int numBlinks;
 
     #region Unity Methods
     private void Awake()
@@ -88,6 +90,18 @@ public class Player : StateMachineCore, IDamageable
         healthBar.fillAmount = currentHealth/maxHealth;
 
         invincible = true;
+        StartCoroutine(InvincibleBlink());
+    }
+
+    private IEnumerator InvincibleBlink()
+    {
+        while(invincible)
+        {
+            yield return new WaitForSeconds(invincibleTime / numBlinks / 2);
+            graphics.enabled = false;
+            yield return new WaitForSeconds(invincibleTime / numBlinks / 2);
+            graphics.enabled = true;
+        }
     }
 
 }

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06f85bcd10def1408f2176e72481557, type: 3}
   m_Name: Player-Roll
   m_EditorClassIdentifier: 
+  states:
+    _serializedList: []
+  parent: {fileID: 0}
+  stateAnimation: {fileID: 0}
   rollTime: 0.33
   rollVelocity: 8
   enemyLayer:
