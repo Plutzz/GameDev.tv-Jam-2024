@@ -13,7 +13,8 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         outlines = Instantiate(outlines);
-        spriteRenderer.material = outlines;
+        if(spriteRenderer != null)
+            spriteRenderer.material = outlines;
     }
 
     private void Update()
@@ -31,7 +32,7 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
     {
         if(collision.CompareTag("Player"))
         {
-            spriteRenderer.material.EnableKeyword("_OUTLINES");
+            spriteRenderer?.material.EnableKeyword("_OUTLINES");
             CanInteract = true;
         }
     }
