@@ -450,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2150070687810652034
 Transform:
   m_ObjectHideFlags: 0
@@ -593,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &537397500120746305
 Transform:
   m_ObjectHideFlags: 0
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - name: Kryon
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 21300000, guid: 90d316b1f2504f046b255ebd5f7539b8, type: 3}
     actionOnComplete:
       m_PersistentCalls:
         m_Calls:
@@ -934,6 +934,12 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: dd6dad3d6c9a562449957fea9acd74cc, type: 3}
     m_SceneName: Gameplay Scene
+  meteorScene:
+    m_SceneAsset: {fileID: 102900000, guid: 9263673669a17ab4cb1e805037c3c497, type: 3}
+    m_SceneName: Meteor Scene
+  tutorialScene:
+    m_SceneAsset: {fileID: 102900000, guid: 0502699729c214c459052c130c149917, type: 3}
+    m_SceneName: Tutorial Scene
 --- !u!1 &4290997241890116128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,15 +1013,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a875f97752132454b836ea9e8f019885, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51f864875d0963444a737130f736b11a, type: 3}
   m_Color: {r: 0.7019608, g: 0.7254902, b: 0.8117647, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.4375, y: 0.21875}
+  m_Size: {x: 0.14, y: 0.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5899419160562665977
@@ -1388,10 +1394,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c294a37f480dc346b14679a11e0cedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialCutscene: {fileID: 1525908021749641929}
+  initialCutscene: {fileID: 0}
   topCinematicBar: {fileID: 5386564460938524642}
   bottomCinematicBar: {fileID: 5229545367979286606}
-  ease: 0
+  ease: 16
   barAnimationTime: 1
 --- !u!1 &8104952485689909916
 GameObject:
@@ -1908,7 +1914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980782034709505571, guid: 8976c08dc29afa64fbba76ec4175be9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.11
+      value: -1.49
       objectReference: {fileID: 0}
     - target: {fileID: 8980782034709505571, guid: 8976c08dc29afa64fbba76ec4175be9f, type: 3}
       propertyPath: m_LocalPosition.y
