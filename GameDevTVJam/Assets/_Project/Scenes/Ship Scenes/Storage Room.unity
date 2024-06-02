@@ -251,6 +251,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship Lighting
       objectReference: {fileID: 0}
+    - target: {fileID: 8942244214148670582, guid: 3a1b2db1fd74afb479a3be60177e0345, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942244214148670582, guid: 3a1b2db1fd74afb479a3be60177e0345, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: -1572451603
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942244214148670582, guid: 3a1b2db1fd74afb479a3be60177e0345, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 1748234315
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942244214148670582, guid: 3a1b2db1fd74afb479a3be60177e0345, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 1960620917
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1323227011098347031, guid: 3a1b2db1fd74afb479a3be60177e0345, type: 3}
@@ -268,6 +284,7 @@ GameObject:
   - component: {fileID: 1014623307}
   - component: {fileID: 1014623306}
   - component: {fileID: 1014623305}
+  - component: {fileID: 1014623308}
   m_Layer: 0
   m_Name: Ship Camera 1
   m_TagString: Untagged
@@ -343,6 +360,18 @@ Transform:
   - {fileID: 1643470195}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1014623308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014623303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1298811407
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class PlayerAttackHitbox : MonoBehaviour
     private void OnEnable()
     {
         previousHits.Clear();
-        Invoke("EnableHitbox", 0.15f);
+        hitbox.enabled = true;
     }
     private void OnDisable()
     {
@@ -33,8 +33,4 @@ public class PlayerAttackHitbox : MonoBehaviour
         }
     }
 
-    private void EnableHitbox()
-    {
-        hitbox.enabled = true;
-    }
 }

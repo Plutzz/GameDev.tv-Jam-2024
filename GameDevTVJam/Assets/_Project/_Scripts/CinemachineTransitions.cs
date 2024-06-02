@@ -16,7 +16,8 @@ public class CinemachineTransitions : MonoBehaviour
         Debug.Log("Player Enter Camera Transition");
         if(collision.gameObject.CompareTag("Player"))
         {
-            SwitchCamera(stateName);
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName(stateName))
+                SwitchCamera(stateName);
         }
     }
 

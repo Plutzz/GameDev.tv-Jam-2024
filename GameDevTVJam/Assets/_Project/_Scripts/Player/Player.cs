@@ -17,6 +17,7 @@ public class Player : StateMachineCore, IDamageable
     public InputManager inputManager;
     public PlayerAttacks playerAttacks;
     public SpriteRenderer graphics;
+    public GameObject hitbox;
 
     [Header("Roll")]
     [SerializeField] private float rollCooldown = 1f;
@@ -64,7 +65,7 @@ public class Player : StateMachineCore, IDamageable
         }
 
 
-        if (rollTimer < 0 && Input.GetKeyDown(KeyCode.LeftShift))
+        if (rollTimer < 0 && inputManager.RollPressedThisFrame)
         {
             stateMachine.ChangeState(states["Roll"]);
             rollTimer = rollCooldown;
@@ -80,7 +81,9 @@ public class Player : StateMachineCore, IDamageable
 
     public void TakeDamage(int damage, float knockback, float xPos)
     {
-        
+        if (stateMachine.currentState == states["Attack"])
+            return;
+
         if (currentHealth == 0 || invincible)
         {
             return;

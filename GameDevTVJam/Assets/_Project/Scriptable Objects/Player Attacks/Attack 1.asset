@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animatorOV: {fileID: 22100000, guid: 8bdd68b2611038d4592882cb89eb80d8, type: 2}
   damage: 30
-  knockback: 50
+  knockback: 30

@@ -21,11 +21,13 @@ public class PlayerAttacks : MonoBehaviour
     private float lastBufferedAttack;
     private float lastAttackTime;
     public GameObject AttackPoint;
+    public bool FinalAttack;
 
 
     private StateMachine stateMachine;
     private Player player;
     private PlayerAttackHitbox attackHitbox;
+    private InputManager inputManager;
     [SerializeField] private Animator anim;
     
 
@@ -34,12 +36,13 @@ public class PlayerAttacks : MonoBehaviour
     {
         attackHitbox = GetComponentInChildren<PlayerAttackHitbox>(true);
         player = GetComponent<Player>();
+        inputManager = GetComponent<InputManager>();
         stateMachine = player.stateMachine;
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (inputManager.AttackPressedThisFrame)
         {
             Attack();
         }
@@ -75,6 +78,10 @@ public class PlayerAttacks : MonoBehaviour
                 attackHitbox.knockback = combo[comboCounter].knockback;
                 anim.Play("Attack", 0, 0);
                 comboCounter++;
+                if(comboCounter == combo.Count - 1)
+                {
+                    FinalAttack = true;
+                }
                 if(comboCounter >= combo.Count)
                 {
                     EndCombo();
@@ -116,10 +123,12 @@ public class PlayerAttacks : MonoBehaviour
     {
         comboCounter = 0;
         lastComboEnd = lastAttackTime;
+        FinalAttack = false;
     }
 
     void IncompleteCombo()
     {
+        FinalAttack = false;
         comboCounter = 0;
     }
 }

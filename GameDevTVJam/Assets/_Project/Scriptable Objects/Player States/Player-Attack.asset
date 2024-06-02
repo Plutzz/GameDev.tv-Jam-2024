@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814d2f5854b87b442869af1d7219043d, type: 3}
   m_Name: Player-Attack
   m_EditorClassIdentifier: 
+  states:
+    _serializedList: []
+  parent: {fileID: 0}
+  stateAnimation: {fileID: 0}
   attackTime: 0.5
   attackMoveAmount: 30
+  finalAttackMoveAmount: 60
   groundDrag: 50

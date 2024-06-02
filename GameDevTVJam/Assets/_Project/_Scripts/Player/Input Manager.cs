@@ -13,21 +13,25 @@ public class InputManager : Singleton<InputManager>
     // Interact input
     public bool InteractPressedThisFrame { get; private set; }
     public bool InteractReleasedThisFrame { get; private set; }
-    public bool InteractIsPressed { get; private set; }
-
-    //// Pause Input
-    //public bool PausePressedThisFrame { get; private set; }
-    //public bool PauseReleasedThisFrame { get; private set; }
-    //public bool PauseIsPressed { get; private set; }
-
+    public bool InteractIsPressed { get; private set; }   
+    
+    // Interact input
+    public bool AttackPressedThisFrame { get; private set; }
+    public bool AttackReleasedThisFrame { get; private set; }
+    public bool AttackIsPressed { get; private set; }   
+    
+    // Interact input
+    public bool RollPressedThisFrame { get; private set; }
+    public bool RollReleasedThisFrame { get; private set; }
+    public bool RollIsPressed { get; private set; }
 
 
 
     public PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction interactAction;
-    //private InputAction jumpAction;
-    //private InputAction sprintAction;
+    private InputAction attackAction;
+    private InputAction rollAction;
     //private InputAction crouchAction;
     //private InputAction nextInventoryAction;
     //private InputAction previousInventoryAction;
@@ -53,12 +57,12 @@ public class InputManager : Singleton<InputManager>
     {
         UpdateInputs();
     }
-
     private void SetupInputActions()
     {
         moveAction = playerInput.actions["Move"];
         interactAction = playerInput.actions["Interact"];
-        //pauseAction = playerInput.actions["Pause"];
+        attackAction = playerInput.actions["Attack"];
+        rollAction = playerInput.actions["Roll"];
         nextDialogueAction = playerInput.actions["Next Dialogue"];
     }
 
@@ -72,13 +76,17 @@ public class InputManager : Singleton<InputManager>
         InteractIsPressed = interactAction.IsPressed();
         InteractReleasedThisFrame = interactAction.WasReleasedThisFrame();
 
-        //// Pause Action
-        //PausePressedThisFrame = pauseAction.WasPressedThisFrame();
-        //PauseIsPressed = pauseAction.IsPressed();
-        //PauseReleasedThisFrame = pauseAction.WasReleasedThisFrame();
+        // Attack Action
+        AttackPressedThisFrame = attackAction.WasPressedThisFrame();
+        AttackIsPressed = attackAction.IsPressed();
+        AttackReleasedThisFrame = attackAction.WasReleasedThisFrame();
+
+        // Roll Action
+        RollPressedThisFrame = rollAction.WasPressedThisFrame();
+        RollIsPressed = rollAction.IsPressed();
+        RollReleasedThisFrame = rollAction.WasReleasedThisFrame();
 
         // DIALOGUE ACTION MAP
-
         NextDialoguePressedThisFrame = nextDialogueAction.WasPressedThisFrame();
         NextDialogueIsPressed = nextDialogueAction.IsPressed();
         NextDialogueReleasedThisFrame = nextDialogueAction.WasReleasedThisFrame();

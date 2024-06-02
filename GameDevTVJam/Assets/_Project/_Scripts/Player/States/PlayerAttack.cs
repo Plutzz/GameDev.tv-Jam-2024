@@ -7,6 +7,7 @@ public class PlayerAttack : PlayerState
 {
     [SerializeField] private float attackTime = 1f;
     [SerializeField] private float attackMoveAmount = 0.5f;
+    [SerializeField] private float finalAttackMoveAmount = 50f;
     [SerializeField] private float groundDrag = 2f;
     private float timer;
     private PlayerAttacks playerAttacks;
@@ -28,7 +29,15 @@ public class PlayerAttack : PlayerState
         rb.drag = groundDrag;
         rb.velocity = Vector2.zero;
         int direction = core.isFacingRight ? 1 : -1;
-        rb.AddForce(Vector2.right * attackMoveAmount * direction, ForceMode2D.Impulse);
+        if(playerAttacks.FinalAttack)
+        {
+            rb.AddForce(Vector2.right * finalAttackMoveAmount * direction, ForceMode2D.Impulse);
+        }
+        else
+        {
+            rb.AddForce(Vector2.right * attackMoveAmount * direction, ForceMode2D.Impulse);
+        }
+        
     }
 
     public override void DoExitLogic()
