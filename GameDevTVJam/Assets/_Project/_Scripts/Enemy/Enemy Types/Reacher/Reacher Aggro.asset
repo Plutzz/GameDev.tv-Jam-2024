@@ -21,3 +21,4 @@ MonoBehaviour:
   parent: {fileID: 0}
   stateAnimation: {fileID: 0}
   detectedTime: 0.66
+  dropAggroTime: 1

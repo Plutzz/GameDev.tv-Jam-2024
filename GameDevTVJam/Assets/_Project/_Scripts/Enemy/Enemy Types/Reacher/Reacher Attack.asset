@@ -20,5 +20,4 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 4516ef5d79ede85408db58b9d60b1758, type: 2}
   parent: {fileID: 0}
   stateAnimation: {fileID: 0}
-  windupTime: 0.5
-  dropAggroTime: 3
+  windupTime: 1

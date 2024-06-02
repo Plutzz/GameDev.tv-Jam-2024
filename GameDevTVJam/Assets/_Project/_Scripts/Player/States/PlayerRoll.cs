@@ -24,7 +24,7 @@ public class PlayerRoll : PlayerState
         }
         animator.Play("PlayerRoll");
         int direction = core.isFacingRight ? 1 : -1;
-        rb.velocity = Vector2.right * rollVelocity * direction;
+        rb.velocity = new Vector2(rollVelocity * direction, rb.velocity.y);
         core.GetComponent<Player>().hitbox.transform.localScale = new Vector3(1, 0.5f, 1);
         rb.AddForce(Vector2.down * 5f);
         core.GetComponent<Player>().hitbox.GetComponentInChildren<Collider2D>().excludeLayers = enemyLayer;

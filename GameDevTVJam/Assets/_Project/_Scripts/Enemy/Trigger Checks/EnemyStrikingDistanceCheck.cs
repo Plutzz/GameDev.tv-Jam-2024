@@ -14,7 +14,7 @@ public class EnemyStrikingDistanceCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == enemy.player)
+        if (collision.gameObject.CompareTag("Player"))
         {
             enemy.SetStrikingDistance(true);
         }
@@ -22,7 +22,7 @@ public class EnemyStrikingDistanceCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == enemy.player)
+        if (collision.gameObject.CompareTag("Player"))
         {
             enemy.SetStrikingDistance(false);
         }

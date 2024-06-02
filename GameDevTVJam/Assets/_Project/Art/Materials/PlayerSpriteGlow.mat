@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpriteGlowUnlit
+  m_Name: PlayerSpriteGlow
   m_Shader: {fileID: -6465566751694194690, guid: 91af59b7db5278646b287d7020d90d25, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

@@ -24,6 +24,12 @@ public class EnemyMoveTowardsPlayer : EnemyState
 
     public override void DoUpdateState()
     {
+        if(enemy.knockbackTimer < 0)
+        {
+            float direction = enemy.player.transform.position.x - enemy.transform.position.x;
+            rb.velocity = Vector3.right * chaseSpeed * Mathf.Sign(direction);
+        }
+
         base.DoUpdateState();
     }
 }

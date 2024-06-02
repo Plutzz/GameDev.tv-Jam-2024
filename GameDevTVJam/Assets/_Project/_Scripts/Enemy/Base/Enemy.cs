@@ -8,7 +8,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     #region Knockback Variables
     [SerializeField] protected float knockbackTime = 0.1f;
     [SerializeField] protected float knockbackDrag = 25f;
-    protected float knockbackTimer;
+    public float knockbackTimer;
     #endregion
 
     #region IDamageable Variables
@@ -20,6 +20,8 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
 
+    private DamageFlash damageFlash;
+
     #region Other Variables
     public GameObject player { get; private set; }
     #endregion
@@ -27,6 +29,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        damageFlash = GetComponent<DamageFlash>();
         SetupInstances();
         currentHealth = maxHealth;
     }
@@ -52,6 +55,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
             Destroy(gameObject);
         }
 
+        damageFlash?.CallDamageFlash();
 
         // Handle knockback
         rb.velocity = Vector2.zero;

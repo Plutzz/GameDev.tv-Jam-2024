@@ -13,7 +13,7 @@ public class EnemyAggroCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == enemy.player)
+        if(collision.gameObject.CompareTag("Player"))
         {
             enemy.SetAggroStatus(true);
         }
@@ -21,7 +21,7 @@ public class EnemyAggroCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == enemy.player)
+        if (collision.gameObject.CompareTag("Player"))
         {
             enemy.SetAggroStatus(false);
         }

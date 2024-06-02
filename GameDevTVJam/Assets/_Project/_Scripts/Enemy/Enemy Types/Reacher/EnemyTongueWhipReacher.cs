@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Enemy States/Reacher/Tongue Whip")]
 public class EnemyTongueWhipReacher : EnemyState
 {
+    [SerializeField] private float animationTime;
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
@@ -16,7 +17,7 @@ public class EnemyTongueWhipReacher : EnemyState
     public override void DoUpdateState()
     {
         base.DoUpdateState();
-        if (stateUptime > 2f)
-            parent.stateMachine.ChangeState(parent.states["Windup"]);
+        if (stateUptime > animationTime)
+            core.stateMachine.ChangeState(core.states["Aggro"]);
     }
 }

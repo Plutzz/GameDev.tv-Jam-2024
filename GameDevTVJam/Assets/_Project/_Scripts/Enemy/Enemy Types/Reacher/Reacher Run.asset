@@ -16,5 +16,5 @@ MonoBehaviour:
     _serializedList: []
   parent: {fileID: 0}
   stateAnimation: {fileID: 7400000, guid: b952a0eadf58610429b1ac1a523e0a77, type: 2}
-  chaseSpeed: 6
+  chaseSpeed: 3
   animationSpeed: 0.5

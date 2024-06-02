@@ -1,3 +1,5 @@
+using Cinemachine;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -18,6 +20,9 @@ public class Player : StateMachineCore, IDamageable
     public PlayerAttacks playerAttacks;
     public SpriteRenderer graphics;
     public GameObject hitbox;
+    [SerializeField] private float cameraShakeIntensity;
+    [SerializeField] private float cameraShakeTime;
+    [SerializeField] private Ease cameraShakeEase;
 
     [Header("Roll")]
     [SerializeField] private float rollCooldown = 1f;
@@ -79,10 +84,10 @@ public class Player : StateMachineCore, IDamageable
 
     #endregion
 
+
+    #region Player Take Damage Functions
     public void TakeDamage(int damage, float knockback, float xPos)
     {
-        if (stateMachine.currentState == states["Attack"])
-            return;
 
         if (currentHealth == 0 || invincible)
         {
@@ -91,7 +96,7 @@ public class Player : StateMachineCore, IDamageable
 
         currentHealth -= damage;
         healthBar.fillAmount = currentHealth/maxHealth;
-
+        CinemachineShake.Instance?.ShakeCamera(cameraShakeIntensity, cameraShakeTime, cameraShakeEase);
         invincible = true;
         StartCoroutine(InvincibleBlink());
     }
@@ -106,5 +111,5 @@ public class Player : StateMachineCore, IDamageable
             graphics.enabled = true;
         }
     }
-
+    #endregion
 }

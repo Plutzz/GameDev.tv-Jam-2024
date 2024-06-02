@@ -16,7 +16,7 @@ public class PlayerMoving : PlayerState
     {
         base.DoUpdateState();
 
-        rb.velocity = Vector2.right * inputManager.MoveInput * speed;
+        rb.velocity = new Vector2(inputManager.MoveInput * speed, rb.velocity.y);
 
 
         if(inputManager.MoveInput > 0 && !core.isFacingRight) // Flip Right

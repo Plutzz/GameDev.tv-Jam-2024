@@ -10,7 +10,7 @@ public class CollisionCheck : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Player>().TakeDamage(collisionDamage, 0, 0);
+            collision.GetComponentInParent<Player>().TakeDamage(collisionDamage, 0, 0);
         }
     }
 }

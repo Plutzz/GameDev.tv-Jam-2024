@@ -15,6 +15,7 @@ public class EnemyDetected : EnemyState
         base.DoEnterLogic();
 
         detected = Instantiate(detectedPrefab, core.transform);
+        detected.SetActive(true);
         detected.transform.localPosition = localOffset;
         rb.velocity = Vector3.zero;
 

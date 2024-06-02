@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Reacher : Enemy
 {
+    public Collider2D tongueHitbox;
     protected override void Awake()
     {
         base.Awake();

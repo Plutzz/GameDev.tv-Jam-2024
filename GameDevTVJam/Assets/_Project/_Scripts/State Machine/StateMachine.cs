@@ -10,6 +10,7 @@ public class StateMachine
 {
     public State currentState  { get; private set; } 
     public State initialState { get; private set; }
+    public State previousState { get; private set; }
 
     /// <summary>
     /// Starts the state machine with a specified state
@@ -28,6 +29,7 @@ public class StateMachine
     public void ChangeState(State newState)
     {
         currentState.DoExitLogic();
+        previousState = currentState;
         currentState = newState;
         currentState.DoEnterLogic();
     }

@@ -32,6 +32,11 @@ public class EnemyNavigateToPoint : EnemyState
     {
         base.DoUpdateState();
 
+        if(enemy.knockbackTimer < 0)
+        {
+            MoveToPoint(navigate.points[navigate.currentPoint]);
+        }
+
         if(navigate.IsAtPoint())
         {
             parent.stateMachine.ChangeState(parent.states["Idle"]);
