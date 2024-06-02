@@ -251,7 +251,7 @@ MonoBehaviour:
   knockbackTime: 0.1
   knockbackDrag: 25
   knockbackTimer: 0
-  <maxHealth>k__BackingField: 10000
+  <maxHealth>k__BackingField: 200
   collisionDamage: 1
   tongueHitbox: {fileID: 5803115642697275340}
 --- !u!61 &8885673317815360242
@@ -411,7 +411,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4681154383456196094}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: d9ca5d29f92cca641989a0123c42339d, type: 2}
   m_IncludeLayers:

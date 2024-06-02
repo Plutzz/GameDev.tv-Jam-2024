@@ -533,7 +533,7 @@ MonoBehaviour:
   - {x: 0.10359788, y: 0.064306736, z: 0}
   m_ShapePathHash: -657154787
   m_Mesh: {fileID: 0}
-  m_InstanceId: -121638
+  m_InstanceId: -140224
   m_LocalBounds:
     m_Center: {x: 0.048788786, y: 0.46866918, z: 0}
     m_Extent: {x: 0.19026828, y: 0.45723093, z: 0}
@@ -1319,6 +1319,7 @@ GameObject:
   - component: {fileID: 4023554498965609584}
   - component: {fileID: 6416734416650308224}
   - component: {fileID: 7055428403966696465}
+  - component: {fileID: 8154367768712128966}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1335,7 +1336,7 @@ Transform:
   m_GameObject: {fileID: 4189688299157466694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8505137, y: 3.0798912, z: -10}
+  m_LocalPosition: {x: -3.5929728, y: 3.193087, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1351,7 +1352,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19607845, g: 0.16862746, b: 0.15686275, a: 1}
+  m_BackGroundColor: {r: 0.09019608, g: 0.09019608, b: 0.09019608, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1369,14 +1370,14 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0037037036
+    y: 0
     width: 1
-    height: 0.9925926
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.09375
+  orthographic size: 2.109375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1498,7 +1499,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_AssetsPPU: 32
   m_RefResolutionX: 192
-  m_RefResolutionY: 131
+  m_RefResolutionY: 221
   m_CropFrame: 0
   m_GridSnapping: 2
   m_FilterMode: 0
@@ -1507,6 +1508,18 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &8154367768712128966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189688299157466694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0033adb5fac8d498646e9475d2a943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4193220398232279728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,6 +2889,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1702839685178571138, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702839685178571138, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
@@ -2921,15 +2938,31 @@ PrefabInstance:
       objectReference: {fileID: 4391494244121364840}
     - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: numBlinks
-      value: 3
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: cameraShakeEase
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: cameraShakeTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: cameraShakeIntensity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692378709365806174, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
+      propertyPath: <maxHealth>k__BackingField
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.33
+      value: -3.87
       objectReference: {fileID: 0}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.95
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: 7051656334029044345, guid: 9aedc9cc22ebdea45a0848cf573af604, type: 3}
       propertyPath: m_LocalPosition.z

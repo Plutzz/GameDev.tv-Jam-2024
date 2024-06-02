@@ -50,12 +50,14 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     public virtual void TakeDamage(int damage, float knockback, float xPos)
     {
         currentHealth -= damage;
+        damageFlash?.CallDamageFlash();
+
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }
 
-        damageFlash?.CallDamageFlash();
+  
 
         // Handle knockback
         rb.velocity = Vector2.zero;

@@ -97,6 +97,7 @@ public class Player : StateMachineCore, IDamageable
         currentHealth -= damage;
         healthBar.fillAmount = currentHealth/maxHealth;
         CinemachineShake.Instance?.ShakeCamera(cameraShakeIntensity, cameraShakeTime, cameraShakeEase);
+        TimeFreezer.Instance?.StopTime();
         invincible = true;
         StartCoroutine(InvincibleBlink());
     }
