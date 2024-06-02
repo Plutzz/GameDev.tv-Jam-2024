@@ -19,4 +19,6 @@ MonoBehaviour:
     - Key: Navigate
       Value: {fileID: 11400000, guid: c196077fc40e83b4bb04eafe52c21dae, type: 2}
   parent: {fileID: 0}
-  IdleTime: 2
+  stateAnimation: {fileID: 0}
+  idleTime: 2
+  minimumPatrolTime: 4
