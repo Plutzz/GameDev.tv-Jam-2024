@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private SceneField TutorialScene;
     [SerializeField] private SceneField StorageScene;
     [SerializeField] private SceneField GameplayScene;
+    [SerializeField] private SceneField MeteorScene;
 
     [SerializeField] private Camera mainCamera;
     [SerializeField] private int planetYRes; // Default 131
@@ -19,6 +20,7 @@ public class GameManager : Singleton<GameManager>
     public bool TalkedToMae = false;
 
     [SerializeField] private GameObject storageRoomInteract;
+    [HideInInspector] public GameObject redLight;
 
 
     [Header("Dialogues")]
@@ -39,11 +41,6 @@ public class GameManager : Singleton<GameManager>
     {
         if (_scene.name == TutorialScene.SceneName)
         {
-            if (MeteorSpawned)
-            {
-                // Load meteor scene
-                exitStorageSequence.StartSelf();
-            }
         }
         else if( _scene.name == StorageScene.SceneName) 
         {
@@ -55,6 +52,12 @@ public class GameManager : Singleton<GameManager>
         else if( _scene.name == GameplayScene.SceneName)
         {
             ChangePixelCamera(planetYRes);
+        }
+        else if(_scene.name == MeteorScene.SceneName)
+        {
+            // Load meteor scene
+            exitStorageSequence.StartSelf();
+            Destroy(redLight);
         }
     }
 

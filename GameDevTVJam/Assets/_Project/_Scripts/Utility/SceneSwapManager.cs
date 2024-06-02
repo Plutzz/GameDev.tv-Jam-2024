@@ -20,15 +20,6 @@ public class SceneSwapManager : Singleton<SceneSwapManager>
     private Collider2D doorCol;
     private Vector3 spawnPos;
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.G))
-        {
-            Debug.Log("Transition scene");
-            StartCoroutine(FadeOutThenChangeScene(scene));
-        }
-    }
-
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
