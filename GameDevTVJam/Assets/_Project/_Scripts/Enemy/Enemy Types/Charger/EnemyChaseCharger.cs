@@ -9,23 +9,24 @@ public class EnemyChargeCharger : EnemyState
     [SerializeField] private float chargeTime = 2f;
     [SerializeField] private float chargeVelocity = 10f;
     [SerializeField] private float chargeDrag = 10f;
-    private int chargeDirection;
-
+    private float chargeDirection;
 
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
         rb.drag = 100f;
-        chargeDirection = 1;
 
-        // If player is to the left, flip charge direction
-        if (enemy.player.transform.position.x < enemy.transform.position.x)
+        chargeDirection = 1f;
+
+        if(enemy.transform.localRotation.y == 0f)
         {
-            chargeDirection = -1;
+            chargeDirection = -1f;
         }
 
         Charge();
 
+        if (animator != null && stateAnimation != null)
+            animator.Play(stateAnimation.name);
     }
 
 
@@ -41,7 +42,8 @@ public class EnemyChargeCharger : EnemyState
 
         if(stateUptime > chargeTime)
         {
-            parent.stateMachine.ChangeState(parent.states["Windup"]);
+            //parent.stateMachine.ChangeState(parent.states["Windup"]);
+            core.stateMachine.ChangeState(core.states["Attack"]);
             return;
         }
 

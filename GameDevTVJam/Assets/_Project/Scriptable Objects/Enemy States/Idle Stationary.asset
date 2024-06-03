@@ -15,5 +15,5 @@ MonoBehaviour:
   states:
     _serializedList: []
   parent: {fileID: 0}
-  stateAnimation: {fileID: 0}
+  stateAnimation: {fileID: 7400000, guid: d8113edefc1f6bc4eb3567653d6f660c, type: 2}
   maxIdleTime: 1
