@@ -147,7 +147,6 @@ public class DialogueManager : Singleton<DialogueManager>
         else
         {
             Debug.Log("End of Dialogue");
-            InputManager.Instance.playerInput.SwitchCurrentActionMap("Player");
             dialogueBox.SetActive(false);
         }
     }
@@ -155,7 +154,16 @@ public class DialogueManager : Singleton<DialogueManager>
     private void EndDialogueSequence()
     {
         Debug.Log("End of Dialogue Sequence");
-        InputManager.Instance.playerInput.SwitchCurrentActionMap("Player");
         dialogueBox.SetActive(false);
+    }
+
+    public void SwitchActionMapCutscene()
+    {
+        InputManager.Instance.SwitchActionMap("Cutscene");
+    }
+
+    public void SwitchActionMapPlayer()
+    {
+        InputManager.Instance.SwitchActionMap("Player");
     }
 }

@@ -11,6 +11,7 @@ public class CutsceneTrigger : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             CutsceneManager.Instance.StartCutscene(cutscene);
+            Destroy(this);
         }
     }
 

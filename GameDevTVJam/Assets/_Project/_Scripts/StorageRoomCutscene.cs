@@ -31,4 +31,14 @@ public class StorageRoomCutscene : MonoBehaviour
         globalLight.color = redColor;
         globalLight.intensity = redIntensity;
     }
+
+    public void SwitchActionMapCutscene()
+    {
+        InputManager.Instance.SwitchActionMap("Cutscene");
+    }
+
+    public void SwitchActionMapPlayer()
+    {
+        InputManager.Instance.SwitchActionMap("Player");
+    }
 }

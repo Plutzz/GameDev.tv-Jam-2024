@@ -73,7 +73,7 @@ public class GameManager : Singleton<GameManager>
         }
         else if(_scene.name == MeteorScene.SceneName)
         {
-            ChangePixelCamera(131);
+            ChangePixelCamera(132);
             // Load meteor scene
             exitStorageSequence.StartSelf();
             Destroy(redLight);

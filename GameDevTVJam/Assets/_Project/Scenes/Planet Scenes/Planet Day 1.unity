@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 2.5
+    OrthographicSize: 3.3125
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2174,7 +2174,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 2.5
+    OrthographicSize: 3.3125
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2558,7 +2558,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 2.5
+    OrthographicSize: 3.3125
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -3581,7 +3581,10 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 1807400832}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 1194591784}
+  - {fileID: 1046090216}
+  - {fileID: 273873718}
   m_Instructions:
   - m_FullHash: -1408580339
     m_VirtualCamera: {fileID: 1194591784}
@@ -3751,7 +3754,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3234692128472568565, guid: 969b1ea5c40068c4aaca284254bd63cd, type: 3}
       propertyPath: <maxHealth>k__BackingField
-      value: 10000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -3234692128472568565, guid: 969b1ea5c40068c4aaca284254bd63cd, type: 3}
       propertyPath: <states>k__BackingField._serializedList.Array.data[1].Value

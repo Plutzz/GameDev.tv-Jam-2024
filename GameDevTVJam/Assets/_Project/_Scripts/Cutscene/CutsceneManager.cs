@@ -29,13 +29,12 @@ public class CutsceneManager : Singleton<CutsceneManager>
         currentCutscene = cutscene;
         currentCutscene.timeline.stopped += OnEndCutscene;
         currentCutscene.actionOnStart?.Invoke();
-        InputManager.Instance.SwitchActionMap("Cutscene");
         currentCutscene.gameObject.SetActive(true);
     }
 
     private void OnEndCutscene(PlayableDirector timeline)
     {
-        InputManager.Instance.SwitchActionMap("Player");
+        
         currentCutscene.actionOnComplete?.Invoke();
         timeline.stopped -= OnEndCutscene;
     }
@@ -52,6 +51,14 @@ public class CutsceneManager : Singleton<CutsceneManager>
         bottomCinematicBar.DOLocalMoveY(bottomCinematicBar.localPosition.y - 150, barAnimationTime).SetEase(ease);
     }
 
+    public void SwitchActionMapCutscene()
+    {
+        InputManager.Instance.SwitchActionMap("Cutscene");
+    }
 
+    public void SwitchActionMapPlayer()
+    {
+        InputManager.Instance.SwitchActionMap("Player");
+    }
 
 }
