@@ -145,8 +145,11 @@ MonoBehaviour:
   knockbackTimer: 0
   knockbackEnabled: 1
   canBeKnockedBack: 0
-  <maxHealth>k__BackingField: 30000
+  <maxHealth>k__BackingField: 1500
   collisionDamage: 1
+  endGameScene:
+    m_SceneAsset: {fileID: 102900000, guid: 7f3df18f2eba29849bd0df7f42e83e3b, type: 3}
+    m_SceneName: End Scene
 --- !u!61 &9201612270644396640
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -11,12 +11,16 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private SceneField StorageScene;
     [SerializeField] private SceneField GameplayScene;
     [SerializeField] private SceneField MeteorScene;
+    [SerializeField] private SceneField ComicScene;
+    [SerializeField] private SceneField EndScene;
 
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject playerLight;
     [SerializeField] private GameObject planetLight;
     [SerializeField] private GameObject shipLight;
     [SerializeField] private GameObject dustParticles;
+    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject PlayerHealthbar;
 
     [SerializeField] private int planetYRes; // Default 131
 
@@ -48,6 +52,7 @@ public class GameManager : Singleton<GameManager>
         {
             playerLight.SetActive(true);
             shipLight.SetActive(true);
+            PlayerHealthbar.SetActive(false);
         }
         else if( _scene.name == StorageScene.SceneName) 
         {
@@ -59,16 +64,34 @@ public class GameManager : Singleton<GameManager>
         else if( _scene.name == GameplayScene.SceneName)
         {
             ChangePixelCamera(planetYRes);
+            Player.SetActive(true);
             planetLight.SetActive(true);
             playerLight.SetActive(true);
             dustParticles.SetActive(true);
             shipLight.SetActive(false);
+            PlayerHealthbar.SetActive(true);
         }
         else if(_scene.name == MeteorScene.SceneName)
         {
+            ChangePixelCamera(131);
             // Load meteor scene
             exitStorageSequence.StartSelf();
             Destroy(redLight);
+            PlayerHealthbar.SetActive(false);
+
+            planetLight.SetActive(false);
+            playerLight.SetActive(true);
+            dustParticles.SetActive(false);
+            shipLight.SetActive(true);
+        }
+        else if(_scene.name == ComicScene.SceneName) 
+        {
+            Player.SetActive(false);
+        }
+        else if(_scene.name == EndScene.SceneName)
+        {
+            Player.SetActive(false);
+            PlayerHealthbar.SetActive(false);
         }
     }
 

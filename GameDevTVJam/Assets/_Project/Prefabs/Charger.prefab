@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 8885673317815360242}
   - component: {fileID: 6653356382647036119}
   - component: {fileID: 7237000392397658072}
+  - component: {fileID: 6887304194350843504}
   m_Layer: 7
   m_Name: Charger
   m_TagString: Untagged
@@ -132,15 +133,18 @@ MonoBehaviour:
     - Key: Patrol
       Value: {fileID: 11400000, guid: 2ffa65810b0be4e48b64ca550cede9d5, type: 2}
     - Key: Attack
-      Value: {fileID: 11400000, guid: 6233d47a3734dca40920ebd75f1ce069, type: 2}
+      Value: {fileID: 11400000, guid: 2ce586881bd878748951d5e9e88d105a, type: 2}
     - Key: Aggro
       Value: {fileID: 11400000, guid: 1aea0555330fd694d894949256a0294a, type: 2}
   rb: {fileID: 6653356382647036119}
-  animator: {fileID: 0}
+  animator: {fileID: 7802019147635089896}
   groundSensor: {fileID: 0}
   <isFacingRight>k__BackingField: 0
   knockbackTime: 0.1
   knockbackDrag: 25
+  knockbackTimer: 0
+  knockbackEnabled: 1
+  canBeKnockedBack: 0
   <maxHealth>k__BackingField: 100
   collisionDamage: 1
 --- !u!61 &8885673317815360242
@@ -232,6 +236,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentPoint: 0
+--- !u!114 &6887304194350843504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326009796753613826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328533fc79db6bd49b49586bd9fb293b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1.1019771, g: 0.071438394, b: 0.03638606, a: 1}
+  flashTime: 0.25
+  material: {fileID: 2100000, guid: f5bd6a5c5302bf540a8f3f01f9dc9920, type: 2}
 --- !u!1 &5794403326683559418
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +262,7 @@ GameObject:
   - component: {fileID: 3749413239663631945}
   - component: {fileID: 431994359085805982}
   - component: {fileID: 4795642809715776482}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +409,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 4.5
 --- !u!114 &5731153405524349017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +489,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.5
+  m_Radius: 4.5
 --- !u!114 &6687490842702724028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +563,7 @@ Transform:
   m_GameObject: {fileID: 9110314523759122815}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.016, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -588,10 +607,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -743242871
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b4007c404ed5f848a73549a2a8dff9f, type: 3}
+  m_Sprite: {fileID: -171592715, guid: f67aa77c115c7ad4e9128d9feebdc5af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -612,7 +631,7 @@ Animator:
   m_GameObject: {fileID: 9110314523759122815}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 391ebc1a43ccd0b41ab15683689d775d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

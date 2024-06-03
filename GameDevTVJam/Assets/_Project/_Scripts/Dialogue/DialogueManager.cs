@@ -33,6 +33,11 @@ public class DialogueManager : Singleton<DialogueManager>
     }
 
 
+    private void Start()
+    {
+        inputManager = InputManager.Instance;
+    }
+
     private void OnEnable()
     {
         inputManager = InputManager.Instance;
@@ -40,6 +45,8 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private void Update()
     {
+        Debug.Log(inputManager == null);
+        Debug.Log("Pressed: " + inputManager.NextDialoguePressedThisFrame);
         if(inputManager != null && inputManager.NextDialoguePressedThisFrame)
         {
             DisplayNextSentence();

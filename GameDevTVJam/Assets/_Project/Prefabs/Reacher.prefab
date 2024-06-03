@@ -251,6 +251,8 @@ MonoBehaviour:
   knockbackTime: 0.1
   knockbackDrag: 25
   knockbackTimer: 0
+  knockbackEnabled: 1
+  canBeKnockedBack: 0
   <maxHealth>k__BackingField: 200
   collisionDamage: 1
   tongueHitbox: {fileID: 5803115642697275340}
@@ -715,8 +717,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -743242871
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1424680063, guid: 31d01dd01e5dfb946a370d043ed1be63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

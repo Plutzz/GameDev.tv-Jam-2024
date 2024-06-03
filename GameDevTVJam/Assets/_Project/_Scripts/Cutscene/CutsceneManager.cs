@@ -42,14 +42,14 @@ public class CutsceneManager : Singleton<CutsceneManager>
 
     public void ActivateCinematicBars()
     {
-        topCinematicBar.transform.DOLocalMoveY(topCinematicBar.localPosition.y - topCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
-        bottomCinematicBar.transform.DOLocalMoveY(bottomCinematicBar.localPosition.y + bottomCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
+        topCinematicBar.transform.DOLocalMoveY(topCinematicBar.localPosition.y - 150, barAnimationTime).SetEase(ease);
+        bottomCinematicBar.transform.DOLocalMoveY(bottomCinematicBar.localPosition.y + 150, barAnimationTime).SetEase(ease);
     }
 
     public void DeactivateCinematicBars()
     {
-        topCinematicBar.DOLocalMoveY(topCinematicBar.localPosition.y + topCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
-        bottomCinematicBar.DOLocalMoveY(bottomCinematicBar.localPosition.y - bottomCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
+        topCinematicBar.DOLocalMoveY(topCinematicBar.localPosition.y + 150, barAnimationTime).SetEase(ease);
+        bottomCinematicBar.DOLocalMoveY(bottomCinematicBar.localPosition.y - 150, barAnimationTime).SetEase(ease);
     }
 
 
