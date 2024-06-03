@@ -9,6 +9,8 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     [SerializeField] protected float knockbackTime = 0.1f;
     [SerializeField] protected float knockbackDrag = 25f;
     public float knockbackTimer;
+    public bool knockbackEnabled = true;
+    [HideInInspector] public bool canBeKnockedBack = true;
     #endregion
 
     #region IDamageable Variables
@@ -20,7 +22,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
 
-    private DamageFlash damageFlash;
+    protected DamageFlash damageFlash;
 
     #region Other Variables
     public GameObject player { get; private set; }
@@ -38,6 +40,13 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
     {
         knockbackTimer -= Time.deltaTime;
         stateMachine.currentState.DoUpdateBranch();
+
+
+        if(!canBeKnockedBack && knockbackTimer < 0f)
+        {
+            canBeKnockedBack = true;
+            rb.velocity = Vector2.zero;
+        }
 
     }
 
@@ -58,6 +67,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
         }
 
   
+        if(!knockbackEnabled) return;
 
         // Handle knockback
         rb.velocity = Vector2.zero;
@@ -71,7 +81,9 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
             rb.AddForce(Vector2.left * knockback, ForceMode2D.Impulse);
         }
         knockbackTimer = knockbackTime;
+        canBeKnockedBack = false;
     }
+
     #endregion
 
     #region Trigger Checks Functions

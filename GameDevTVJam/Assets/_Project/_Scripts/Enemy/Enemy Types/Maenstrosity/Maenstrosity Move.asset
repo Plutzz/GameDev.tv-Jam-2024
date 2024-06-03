@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140774211f6efe849800266187970289, type: 3}
+  m_Name: Maenstrosity Move
+  m_EditorClassIdentifier: 
+  states:
+    _serializedList:
+    - Key: Up
+      Value: {fileID: 11400000, guid: eb82c93802bc9984483435ef9c06335d, type: 2}
+    - Key: Hover
+      Value: {fileID: 11400000, guid: 93a51f0a67a6b7147b85ce35709bbc58, type: 2}
+    - Key: Down
+      Value: {fileID: 11400000, guid: a86492787fac0294badffbac5e3aa7e6, type: 2}
+  parent: {fileID: 0}
+  stateAnimation: {fileID: 0}

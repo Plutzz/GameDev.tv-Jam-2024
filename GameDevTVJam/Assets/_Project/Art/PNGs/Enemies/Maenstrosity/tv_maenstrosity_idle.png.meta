@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dcf1faf93d234a943b06da55fee43226
+guid: 19657618c7875ef4babe2da9b129807d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tv_button_ui_0
+      name: tv_maenstrosity_idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 11
-        height: 13
+        y: 192
+        width: 80
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f24b610796137a946aedd29e77ee69b7
-      internalID: -38406877
+      spriteID: 472f5751b70ca4440b416761e898bc38
+      internalID: 341318857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_1
+      name: tv_maenstrosity_idle_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 16
-        width: 11
-        height: 13
+        x: 80
+        y: 192
+        width: 80
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d3612596e765c4b9ccbf18a8a20b31
-      internalID: 2031430477
+      spriteID: 0ee18d17fe32ed34ea99df2fadf7951b
+      internalID: 1123254483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_2
+      name: tv_maenstrosity_idle_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 16
-        width: 11
-        height: 13
+        x: 160
+        y: 192
+        width: 80
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d33dfdea411d2346819a3f6a9c3523b
-      internalID: -1976629579
+      spriteID: 6c49e5ae554d255499bd0e2909a8c622
+      internalID: 88954974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_3
+      name: tv_maenstrosity_idle_3
       rect:
         serializedVersion: 2
-        x: 36
-        y: 15
-        width: 11
-        height: 14
+        x: 240
+        y: 192
+        width: 80
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,125 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 032e97d25e9c03e47857bcfcc0b66060
-      internalID: -1193352558
+      spriteID: a9799765a48ec3b45b2d386717e2c151
+      internalID: -215586728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 15
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65bed4510b7d1e240af18076fa57215f
-      internalID: 355033233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tv_button_ui_5
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 15
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7897563fd4c5d24a9b1f274fb8cde08
-      internalID: 1014292680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tv_button_ui_6
+      name: tv_maenstrosity_idle_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fc305a152daa7b44b651f07572d12e8
-      internalID: -1640941809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tv_button_ui_7
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 2
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43a0bae4c9ff2c64e921b5a1f25c7fc6
-      internalID: 62804129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tv_button_ui_8
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 2
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec5270849bb56b2449f9da14bfdfc5e3
-      internalID: 869007568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tv_button_ui_9
-      rect:
-        serializedVersion: 2
-        x: 36
         y: 0
-        width: 11
-        height: 14
+        width: 80
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b1732e4147bd2341a84452877e32ee8
-      internalID: 591117190
+      spriteID: 00795f5f71d1f91468a9b34c7c07ff01
+      internalID: -462130162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_10
+      name: tv_maenstrosity_idle_5
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 0
-        width: 11
-        height: 14
+        width: 80
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 270dbc84dec245e4e9f1881e6aee732a
-      internalID: -1641369465
+      spriteID: 41ce9684ca52bf549b283e84c3bab1cd
+      internalID: -1030915903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_11
+      name: tv_maenstrosity_idle_6
       rect:
         serializedVersion: 2
-        x: 60
+        x: 160
         y: 0
-        width: 11
-        height: 14
+        width: 80
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +250,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d497988c22369418ff99e0e49c9317
-      internalID: -1851761359
+      spriteID: 5fa2b92e08a010e40977563fa7f66df8
+      internalID: 1558592051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_maenstrosity_idle_7
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518ded03e16b62348836f27b78d088fa
+      internalID: -1781724728
       vertices: []
       indices: 
       edges: []
@@ -365,25 +281,21 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tv_button_ui_0: -38406877
-      tv_button_ui_1: 2031430477
-      tv_button_ui_10: -1641369465
-      tv_button_ui_11: -1851761359
-      tv_button_ui_2: -1976629579
-      tv_button_ui_3: -1193352558
-      tv_button_ui_4: 355033233
-      tv_button_ui_5: 1014292680
-      tv_button_ui_6: -1640941809
-      tv_button_ui_7: 62804129
-      tv_button_ui_8: 869007568
-      tv_button_ui_9: 591117190
+      tv_maenstrosity_idle_0: 341318857
+      tv_maenstrosity_idle_1: 1123254483
+      tv_maenstrosity_idle_2: 88954974
+      tv_maenstrosity_idle_3: -215586728
+      tv_maenstrosity_idle_4: -462130162
+      tv_maenstrosity_idle_5: -1030915903
+      tv_maenstrosity_idle_6: 1558592051
+      tv_maenstrosity_idle_7: -1781724728
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
