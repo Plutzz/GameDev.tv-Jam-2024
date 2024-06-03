@@ -25,4 +25,14 @@ public class DialogueSequence : MonoBehaviour
     {
         DialogueManager.Instance.DisplayNextSentence();
     }
+
+    public void SwitchActionMapCutscene()
+    {
+        InputManager.Instance.SwitchActionMap("Cutscene");
+    }
+
+    public void SwitchActionMapPlayer()
+    {
+        InputManager.Instance.SwitchActionMap("Player");
+    }
 }

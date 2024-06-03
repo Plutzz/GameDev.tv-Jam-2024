@@ -17,6 +17,6 @@ MonoBehaviour:
   parent: {fileID: 0}
   stateAnimation: {fileID: 0}
   attackTime: 0.5
-  attackMoveAmount: 30
-  finalAttackMoveAmount: 60
+  attackMoveAmount: 20
+  finalAttackMoveAmount: 30
   groundDrag: 50

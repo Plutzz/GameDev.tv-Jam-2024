@@ -33,6 +33,11 @@ public class DialogueManager : Singleton<DialogueManager>
     }
 
 
+    private void Start()
+    {
+        inputManager = InputManager.Instance;
+    }
+
     private void OnEnable()
     {
         inputManager = InputManager.Instance;
@@ -40,6 +45,8 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private void Update()
     {
+        Debug.Log(inputManager == null);
+        Debug.Log("Pressed: " + inputManager.NextDialoguePressedThisFrame);
         if(inputManager != null && inputManager.NextDialoguePressedThisFrame)
         {
             DisplayNextSentence();
@@ -140,7 +147,6 @@ public class DialogueManager : Singleton<DialogueManager>
         else
         {
             Debug.Log("End of Dialogue");
-            InputManager.Instance.playerInput.SwitchCurrentActionMap("Player");
             dialogueBox.SetActive(false);
         }
     }
@@ -148,7 +154,16 @@ public class DialogueManager : Singleton<DialogueManager>
     private void EndDialogueSequence()
     {
         Debug.Log("End of Dialogue Sequence");
-        InputManager.Instance.playerInput.SwitchCurrentActionMap("Player");
         dialogueBox.SetActive(false);
+    }
+
+    public void SwitchActionMapCutscene()
+    {
+        InputManager.Instance.SwitchActionMap("Cutscene");
+    }
+
+    public void SwitchActionMapPlayer()
+    {
+        InputManager.Instance.SwitchActionMap("Player");
     }
 }

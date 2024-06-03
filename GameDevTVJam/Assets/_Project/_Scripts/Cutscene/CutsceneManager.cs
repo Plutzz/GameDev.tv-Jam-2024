@@ -29,29 +29,36 @@ public class CutsceneManager : Singleton<CutsceneManager>
         currentCutscene = cutscene;
         currentCutscene.timeline.stopped += OnEndCutscene;
         currentCutscene.actionOnStart?.Invoke();
-        InputManager.Instance.SwitchActionMap("Cutscene");
         currentCutscene.gameObject.SetActive(true);
     }
 
     private void OnEndCutscene(PlayableDirector timeline)
     {
-        InputManager.Instance.SwitchActionMap("Player");
+        
         currentCutscene.actionOnComplete?.Invoke();
         timeline.stopped -= OnEndCutscene;
     }
 
     public void ActivateCinematicBars()
     {
-        topCinematicBar.transform.DOLocalMoveY(topCinematicBar.localPosition.y - topCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
-        bottomCinematicBar.transform.DOLocalMoveY(bottomCinematicBar.localPosition.y + bottomCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
+        topCinematicBar.transform.DOLocalMoveY(topCinematicBar.localPosition.y - 150, barAnimationTime).SetEase(ease);
+        bottomCinematicBar.transform.DOLocalMoveY(bottomCinematicBar.localPosition.y + 150, barAnimationTime).SetEase(ease);
     }
 
     public void DeactivateCinematicBars()
     {
-        topCinematicBar.DOLocalMoveY(topCinematicBar.localPosition.y + topCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
-        bottomCinematicBar.DOLocalMoveY(bottomCinematicBar.localPosition.y - bottomCinematicBar.sizeDelta.y, barAnimationTime).SetEase(ease);
+        topCinematicBar.DOLocalMoveY(topCinematicBar.localPosition.y + 150, barAnimationTime).SetEase(ease);
+        bottomCinematicBar.DOLocalMoveY(bottomCinematicBar.localPosition.y - 150, barAnimationTime).SetEase(ease);
     }
 
+    public void SwitchActionMapCutscene()
+    {
+        InputManager.Instance.SwitchActionMap("Cutscene");
+    }
 
+    public void SwitchActionMapPlayer()
+    {
+        InputManager.Instance.SwitchActionMap("Player");
+    }
 
 }

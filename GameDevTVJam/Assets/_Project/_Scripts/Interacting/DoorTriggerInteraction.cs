@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorTriggerInteraction : TriggerInteractionBase
 {
+    [SerializeField] private bool autoTransition = false;
 
     public enum DoorToSpawnAt
     {
@@ -25,5 +26,17 @@ public class DoorTriggerInteraction : TriggerInteractionBase
         Debug.Log("Use Door");
         SceneSwapManager.Instance.SwapSceneFromDoorUse(sceneToLoad, doorToSpawnAt);
         InputManager.Instance.EnablePlayerInput(false);
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+        if (!autoTransition) return;
+
+        if (collision.CompareTag("Player"))
+        {
+            SceneSwapManager.Instance.SwapSceneFromDoorUse(sceneToLoad, doorToSpawnAt);
+            InputManager.Instance.EnablePlayerInput(false);
+        }
     }
 }

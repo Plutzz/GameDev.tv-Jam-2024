@@ -19,4 +19,14 @@ public class StorageRoomInteract : TriggerInteractionBase
             DialogueManager.Instance.StartDialogue(dialogue);
         }
     }
+
+    public void SwitchActionMapCutscene()
+    {
+        InputManager.Instance.SwitchActionMap("Cutscene");
+    }
+
+    public void SwitchActionMapPlayer()
+    {
+        InputManager.Instance.SwitchActionMap("Player");
+    }
 }

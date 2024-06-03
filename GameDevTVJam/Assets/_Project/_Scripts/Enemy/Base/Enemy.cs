@@ -30,7 +30,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
 
     protected virtual void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = InputManager.Instance.gameObject;
         damageFlash = GetComponent<DamageFlash>();
         SetupInstances();
         currentHealth = maxHealth;
@@ -63,7 +63,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
 
   
@@ -84,6 +84,11 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
         canBeKnockedBack = false;
     }
 
+
+    public virtual void Die()
+    {
+        Destroy(gameObject);
+    }
     #endregion
 
     #region Trigger Checks Functions
