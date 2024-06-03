@@ -13,6 +13,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private SceneField MeteorScene;
 
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject playerLight;
+    [SerializeField] private GameObject planetLight;
+    [SerializeField] private GameObject shipLight;
+    [SerializeField] private GameObject dustParticles;
+
     [SerializeField] private int planetYRes; // Default 131
 
     // Player progress variables
@@ -41,6 +46,8 @@ public class GameManager : Singleton<GameManager>
     {
         if (_scene.name == TutorialScene.SceneName)
         {
+            playerLight.SetActive(true);
+            shipLight.SetActive(true);
         }
         else if( _scene.name == StorageScene.SceneName) 
         {
@@ -52,6 +59,10 @@ public class GameManager : Singleton<GameManager>
         else if( _scene.name == GameplayScene.SceneName)
         {
             ChangePixelCamera(planetYRes);
+            planetLight.SetActive(true);
+            playerLight.SetActive(true);
+            dustParticles.SetActive(true);
+            shipLight.SetActive(false);
         }
         else if(_scene.name == MeteorScene.SceneName)
         {

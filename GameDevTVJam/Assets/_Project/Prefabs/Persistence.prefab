@@ -508,7 +508,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 0
   m_CastsShadows: 1
   m_SelfShadows: 1
-  m_ApplyToSortingLayers: ed4a46a20000000075b3dc74
+  m_ApplyToSortingLayers: 0000000013933e0a
   m_ShapePath:
   - {x: 0.23905706, y: 0.04684484, z: -5.4611675e-13}
   - {x: 0.17629194, y: 0.018046856, z: 0}
@@ -533,7 +533,7 @@ MonoBehaviour:
   - {x: 0.10359788, y: 0.064306736, z: 0}
   m_ShapePathHash: -657154787
   m_Mesh: {fileID: 0}
-  m_InstanceId: -185168
+  m_InstanceId: -1906
   m_LocalBounds:
     m_Center: {x: 0.048788786, y: 0.46866918, z: 0}
     m_Extent: {x: 0.19026828, y: 0.45723093, z: 0}
@@ -1010,7 +1010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3322698848110679880
 Transform:
   m_ObjectHideFlags: 0
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_Intensity: 0.78
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: ed4a46a2000000004bf0336875b3dc74
+  m_ApplyToSortingLayers: ed4a46a20000000075b3dc74
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

@@ -32,7 +32,7 @@ public class SceneSwapManager : Singleton<SceneSwapManager>
 
     public void SwapSceneFromDoorUse(SceneField _scene, DoorTriggerInteraction.DoorToSpawnAt _doorToSpawnAt)
     {
-        if(GameManager.Instance.MeteorSpawned && _scene.SceneName == tutorialScene.SceneName)
+        if(GameManager.Instance != null && GameManager.Instance.MeteorSpawned && _scene.SceneName == tutorialScene.SceneName)
         {
             _scene = meteorScene;
         }
@@ -45,7 +45,7 @@ public class SceneSwapManager : Singleton<SceneSwapManager>
         StartCoroutine(FadeOutThenChangeScene(_scene));
     }
 
-    public IEnumerator FadeOutThenChangeScene(SceneField myScene, DoorTriggerInteraction.DoorToSpawnAt _doorToSpawnAt = DoorTriggerInteraction.DoorToSpawnAt.None)
+    private IEnumerator FadeOutThenChangeScene(SceneField myScene, DoorTriggerInteraction.DoorToSpawnAt _doorToSpawnAt = DoorTriggerInteraction.DoorToSpawnAt.None)
     {
         Debug.Log("Start Fade Out");
         SceneFadeManager.Instance.StartFadeOut();

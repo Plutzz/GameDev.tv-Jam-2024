@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Ship Scenes/Storage Room.unity
     guid: 66ef1ddd9e5d0204fadac1c4d5e09519
   - enabled: 1
+    path: Assets/_Project/Scenes/ComicScene.unity
+    guid: 80139dd312d1fd741b40f3e6c90ea71b
+  - enabled: 1
     path: Assets/_Project/Scenes/Ship Scenes/Meteor Scene.unity
     guid: 9263673669a17ab4cb1e805037c3c497
   - enabled: 1
