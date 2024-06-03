@@ -59,6 +59,9 @@ TagManager:
   - name: Interactables
     uniqueID: 1111001723
     locked: 0
+  - name: Detection
+    uniqueID: 243583339
+    locked: 0
   - name: Foreground
     uniqueID: 1960620917
     locked: 0
