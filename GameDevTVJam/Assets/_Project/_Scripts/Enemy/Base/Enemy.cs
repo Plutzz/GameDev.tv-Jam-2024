@@ -30,7 +30,7 @@ public class Enemy: StateMachineCore, IDamageable, ITriggerCheckable
 
     protected virtual void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = InputManager.Instance.gameObject;
         damageFlash = GetComponent<DamageFlash>();
         SetupInstances();
         currentHealth = maxHealth;

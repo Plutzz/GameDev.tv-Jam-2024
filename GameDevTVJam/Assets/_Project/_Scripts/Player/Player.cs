@@ -123,6 +123,7 @@ public class Player : StateMachineCore, IDamageable
     private void PlayerDeath()
     {
         currentHealth = maxHealth;
+        healthBar.fillAmount = currentHealth / maxHealth;
         SceneSwapManager.Instance.SwapSceneFromDoorUse(SceneSwapManager.Instance.meteorScene, DoorTriggerInteraction.DoorToSpawnAt.One);
     }
     #endregion

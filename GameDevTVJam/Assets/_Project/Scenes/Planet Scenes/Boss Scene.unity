@@ -461,6 +461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Destructable Stage Objects
       objectReference: {fileID: 0}
+    - target: {fileID: 7605185138572617613, guid: a4275a871aeda8f418e11148a08e0efe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8413923457249763697, guid: a4275a871aeda8f418e11148a08e0efe, type: 3}
       propertyPath: m_SortingOrder
       value: 8
