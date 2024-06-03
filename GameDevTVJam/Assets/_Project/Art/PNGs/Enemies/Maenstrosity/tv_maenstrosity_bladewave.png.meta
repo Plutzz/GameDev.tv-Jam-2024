@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dcf1faf93d234a943b06da55fee43226
+guid: 1cc9f81aad0554e40b8c15dfa277a29f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,253 +110,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tv_button_ui_0
+      name: tv_maenstrosity_bladewave_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 240
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f24b610796137a946aedd29e77ee69b7
-      internalID: -38406877
+      spriteID: 6f280a193a6a9a442a0a6a2490ffccd8
+      internalID: 72187862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_1
+      name: tv_maenstrosity_bladewave_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 16
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 112
+        y: 240
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d3612596e765c4b9ccbf18a8a20b31
-      internalID: 2031430477
+      spriteID: f4abeba564332e744b1874a8a8b6859d
+      internalID: 1783560379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_2
+      name: tv_maenstrosity_bladewave_2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 16
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 224
+        y: 240
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d33dfdea411d2346819a3f6a9c3523b
-      internalID: -1976629579
+      spriteID: d6d17354e5f87ac4ea2525576235c12f
+      internalID: 190854951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_3
+      name: tv_maenstrosity_bladewave_3
       rect:
         serializedVersion: 2
-        x: 36
-        y: 15
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 336
+        y: 240
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 032e97d25e9c03e47857bcfcc0b66060
-      internalID: -1193352558
+      spriteID: b0b8c68c966121e4aa1c99908d20eb1b
+      internalID: 204326764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 15
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65bed4510b7d1e240af18076fa57215f
-      internalID: 355033233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tv_button_ui_5
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 15
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7897563fd4c5d24a9b1f274fb8cde08
-      internalID: 1014292680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tv_button_ui_6
+      name: tv_maenstrosity_bladewave_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 160
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fc305a152daa7b44b651f07572d12e8
-      internalID: -1640941809
+      spriteID: 2e8530bb5e8fe5c4abdb36d977a27fe5
+      internalID: 2004473570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_7
+      name: tv_maenstrosity_bladewave_5
       rect:
         serializedVersion: 2
-        x: 12
-        y: 2
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 112
+        y: 160
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43a0bae4c9ff2c64e921b5a1f25c7fc6
-      internalID: 62804129
+      spriteID: 436ee816948afca40bc29baff31b9f84
+      internalID: -1869941670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_8
+      name: tv_maenstrosity_bladewave_6
       rect:
         serializedVersion: 2
-        x: 24
-        y: 2
-        width: 11
-        height: 13
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 224
+        y: 160
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec5270849bb56b2449f9da14bfdfc5e3
-      internalID: 869007568
+      spriteID: b73bd36118ac15545953e70eca8559db
+      internalID: 737901371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_9
+      name: tv_maenstrosity_bladewave_7
       rect:
         serializedVersion: 2
-        x: 36
+        x: 336
+        y: 160
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b586ca8089534b44b52539fea7b0abe
+      internalID: -2069568217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_maenstrosity_bladewave_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002ee73a807e6db4d8de01f59940b280
+      internalID: 1839247288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_maenstrosity_bladewave_9
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472d0b7caacc1304fb2c3898ec2a3124
+      internalID: 428752635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_maenstrosity_bladewave_10
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbced0212b37b6d4c9fdc7e66ebef72b
+      internalID: 1046490260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_maenstrosity_bladewave_11
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195a32f59eea5dd46bc02a500f316c75
+      internalID: -2127618790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_maenstrosity_bladewave_12
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b1732e4147bd2341a84452877e32ee8
-      internalID: 591117190
+      spriteID: 6533fca2e3d6a9046a0ab22faeddad70
+      internalID: 838726756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_10
+      name: tv_maenstrosity_bladewave_13
       rect:
         serializedVersion: 2
-        x: 48
+        x: 112
         y: 0
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 270dbc84dec245e4e9f1881e6aee732a
-      internalID: -1641369465
+      spriteID: c7562b066cee6854e93e63ada57398b6
+      internalID: 635311286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tv_button_ui_11
+      name: tv_maenstrosity_bladewave_14
       rect:
         serializedVersion: 2
-        x: 60
+        x: 224
         y: 0
-        width: 11
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21d497988c22369418ff99e0e49c9317
-      internalID: -1851761359
+      spriteID: e072ae104ad7dda4c9480942f0cf74b3
+      internalID: 1585949425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_maenstrosity_bladewave_15
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 80
+      alignment: 9
+      pivot: {x: 0.62, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6336705bbd3642049ab9c1ed4cc916e1
+      internalID: 1683931820
       vertices: []
       indices: 
       edges: []
@@ -365,25 +449,29 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tv_button_ui_0: -38406877
-      tv_button_ui_1: 2031430477
-      tv_button_ui_10: -1641369465
-      tv_button_ui_11: -1851761359
-      tv_button_ui_2: -1976629579
-      tv_button_ui_3: -1193352558
-      tv_button_ui_4: 355033233
-      tv_button_ui_5: 1014292680
-      tv_button_ui_6: -1640941809
-      tv_button_ui_7: 62804129
-      tv_button_ui_8: 869007568
-      tv_button_ui_9: 591117190
+      tv_maenstrosity_bladewave_0: 72187862
+      tv_maenstrosity_bladewave_1: 1783560379
+      tv_maenstrosity_bladewave_10: 1046490260
+      tv_maenstrosity_bladewave_11: -2127618790
+      tv_maenstrosity_bladewave_12: 838726756
+      tv_maenstrosity_bladewave_13: 635311286
+      tv_maenstrosity_bladewave_14: 1585949425
+      tv_maenstrosity_bladewave_15: 1683931820
+      tv_maenstrosity_bladewave_2: 190854951
+      tv_maenstrosity_bladewave_3: 204326764
+      tv_maenstrosity_bladewave_4: 2004473570
+      tv_maenstrosity_bladewave_5: -1869941670
+      tv_maenstrosity_bladewave_6: 737901371
+      tv_maenstrosity_bladewave_7: -2069568217
+      tv_maenstrosity_bladewave_8: 1839247288
+      tv_maenstrosity_bladewave_9: 428752635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
