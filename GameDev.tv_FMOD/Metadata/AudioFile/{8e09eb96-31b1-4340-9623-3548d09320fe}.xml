@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8e09eb96-31b1-4340-9623-3548d09320fe}">
+		<property name="assetPath">
+			<value>Music/Escape.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>62.270249999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{485d90d8-742f-4d52-a1c9-aff97aaf3510}</destination>
+		</relationship>
+	</object>
+</objects>

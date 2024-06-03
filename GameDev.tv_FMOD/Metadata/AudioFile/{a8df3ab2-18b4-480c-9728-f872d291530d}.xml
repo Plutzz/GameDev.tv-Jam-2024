@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{a8df3ab2-18b4-480c-9728-f872d291530d}">
 		<property name="assetPath">
-			<value>tv_swing_1.wav</value>
+			<value>Player/tv_swing_1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

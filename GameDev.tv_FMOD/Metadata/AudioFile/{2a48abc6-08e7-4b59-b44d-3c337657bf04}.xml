@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2a48abc6-08e7-4b59-b44d-3c337657bf04}">
+		<property name="assetPath">
+			<value>UI/kryon_talk.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.2000000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{485d90d8-742f-4d52-a1c9-aff97aaf3510}</destination>
+		</relationship>
+	</object>
+</objects>
