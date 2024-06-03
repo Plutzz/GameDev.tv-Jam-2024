@@ -40,7 +40,7 @@ public class MaenstrosityUp : EnemyState
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.95f && !IsUp)
         {
-            core.stateMachine.ChangeState(core.states["Idle"]);
+            core.stateMachine.ChangeState(core.states["Attack"]);
             enemy.knockbackEnabled = true;
         }
     }
