@@ -89,10 +89,17 @@ public class Player : StateMachineCore, IDamageable
     public void TakeDamage(int damage, float knockback, float xPos)
     {
 
-        if (currentHealth == 0 || invincible)
+        if (invincible)
         {
+            if(currentHealth == 0)
+            {
+                PlayerDeath();
+            }
+
             return;
         }
+
+
 
         currentHealth -= damage;
         healthBar.fillAmount = currentHealth/maxHealth;
@@ -111,6 +118,11 @@ public class Player : StateMachineCore, IDamageable
             yield return new WaitForSeconds(invincibleTime / numBlinks / 2);
             graphics.enabled = true;
         }
+    }
+
+    private void PlayerDeath()
+    {
+        SceneSwapManager.Instance.SwapSceneFromDoorUse(SceneSwapManager.Instance.meteorScene, DoorTriggerInteraction.DoorToSpawnAt.One);
     }
     #endregion
 }
