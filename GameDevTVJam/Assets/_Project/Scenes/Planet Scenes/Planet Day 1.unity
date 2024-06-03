@@ -2874,7 +2874,7 @@ PolygonCollider2D:
       - {x: 4.7812963, y: -2.3458133}
       - {x: 4.6985927, y: 0.84494394}
   m_UseDelaunayMesh: 0
---- !u!43 &1797401611
+--- !u!43 &1786847423
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3495,6 +3495,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.016
       objectReference: {fileID: 0}
+    - target: {fileID: 373657460660788938, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
+      propertyPath: m_Radius
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: animator
       value: 
@@ -3503,6 +3507,14 @@ PrefabInstance:
       propertyPath: <maxHealth>k__BackingField
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
+      propertyPath: <states>k__BackingField._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ce586881bd878748951d5e9e88d105a, type: 2}
+    - target: {fileID: 1481078503274983092, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
+      propertyPath: <states>k__BackingField._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 11400000, guid: 1aea0555330fd694d894949256a0294a, type: 2}
     - target: {fileID: 4326009796753613826, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: m_Name
       value: Charger
@@ -3550,6 +3562,10 @@ PrefabInstance:
     - target: {fileID: 6728783708721918276, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731444432032055707, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
+      propertyPath: m_Radius
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7237000392397658072, guid: 9e6a2353b69298449b8c4006603f9561, type: 3}
       propertyPath: points.Array.data[0]

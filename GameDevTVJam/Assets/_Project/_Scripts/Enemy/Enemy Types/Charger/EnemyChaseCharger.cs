@@ -27,6 +27,8 @@ public class EnemyChargeCharger : EnemyState
 
         if (animator != null && stateAnimation != null)
             animator.Play(stateAnimation.name);
+
+        
     }
 
 
@@ -40,7 +42,8 @@ public class EnemyChargeCharger : EnemyState
     {
         base.DoUpdateState();
 
-        if(stateUptime > chargeTime)
+
+        if (stateUptime > chargeTime)
         {
             //parent.stateMachine.ChangeState(parent.states["Windup"]);
             core.stateMachine.ChangeState(core.states["Attack"]);

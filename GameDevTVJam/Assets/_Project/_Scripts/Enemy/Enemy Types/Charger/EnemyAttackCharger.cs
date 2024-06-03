@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy States/Charger/Aggro")]
+[CreateAssetMenu(menuName = "Enemy States/Charger/Attack")]
 public class EnemyAttackCharger : EnemyState
 {
-    [SerializeField] private float detectedTime = 0.66f;
+    [SerializeField] private float windupTime;
+    [SerializeField] private float dropAggroTime = 3f;
+    private float dropAggroTimer;
 
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
-        stateMachine.Initialize(states["Detected"]);
+        rb.velocity = Vector3.zero;
+        stateMachine.Initialize(states["Windup"]);
 
     }
 
@@ -18,9 +21,27 @@ public class EnemyAttackCharger : EnemyState
     {
         base.DoUpdateState();
 
-        if (stateUptime >= detectedTime && currentState == states["Detected"])
+
+        if (!enemy.IsAggroed)
         {
-            core.stateMachine.ChangeState(core.states["Attack"]);
+            dropAggroTimer -= Time.deltaTime;
         }
+        else
+        {
+            dropAggroTimer = dropAggroTime;
+        }
+
+        if (dropAggroTimer <= 0f)
+        {
+            core.stateMachine.ChangeState(core.states["Patrol"]);
+            return;
+        }
+
+        if (stateUptime > windupTime && currentState == states["Windup"])
+        {
+            stateMachine.ChangeState(states["Tongue Whip"]);
+        }
+
     }
+
 }

@@ -23,7 +23,7 @@ public class EnemyAggroCharger : EnemyState
 
         if (currentState == states["Detected"])
         {
-            core.stateMachine.ChangeState(states["Attack"]);
+            core.stateMachine.ChangeState(core.states["Attack"]);
             return;
         }
 
