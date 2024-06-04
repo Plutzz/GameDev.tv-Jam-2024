@@ -41,7 +41,7 @@ public class ComicController : MonoBehaviour
         //Debug.Log("Condition 1: " + (currentGroup == comicGroups.Length - 1));
         //Debug.Log("Condition 2: " + (currentPanel == comicGroups[currentGroup].panels.Length - 1));
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && currentGroup == comicGroups.Length - 1 && currentPanel == comicGroups[currentGroup].panels.Length - 1)
+        if (Input.anyKeyDown && currentGroup == comicGroups.Length - 1 && currentPanel == comicGroups[currentGroup].panels.Length - 1)
         {
             // Load next scene
             Debug.Log("Load Next Scene");
@@ -61,7 +61,7 @@ public class ComicController : MonoBehaviour
             timer = 0f;
             Mathf.Clamp(++currentPanel, 0, comicGroups[currentGroup].panels.Length - 1);
         }
-        else if(Input.GetKeyDown(KeyCode.Mouse0) && currentGroup < comicGroups.Length - 1)
+        else if(Input.anyKeyDown && currentGroup < comicGroups.Length - 1)
         {
             Debug.Log("3");
             // Show next group

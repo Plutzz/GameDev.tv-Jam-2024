@@ -20,6 +20,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject planetLight;
     [SerializeField] private GameObject shipLight;
     [SerializeField] private GameObject dustParticles;
+    [SerializeField] private GameObject mae;
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject PlayerHealthbar;
 
@@ -28,18 +29,25 @@ public class GameManager : Singleton<GameManager>
     // Player progress variables
     public bool MeteorSpawned = false;
     public bool TalkedToMae = false;
+    public bool LeftShipOnce = false;
 
     [SerializeField] private GameObject storageRoomInteract;
     [HideInInspector] public GameObject redLight;
 
     private StudioEventEmitter alarmEventEmitter;
+    public GameObject musicEventEmitter;
+    [HideInInspector]public StudioEventEmitter currentMusicEventEmitter;
+
+    public GameObject ambienceEventEmitter;
+    [HideInInspector]public StudioEventEmitter currentAmbienceEventEmitter;
 
     [Header("Dialogues")]
     [SerializeField] private DialogueSequence exitStorageSequence;
 
     private void Start()
     {
-        AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.MaeTheme);
+        currentMusicEventEmitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.NetworkSFXName.MaeTheme, musicEventEmitter);
+        currentMusicEventEmitter.Play();
     }
 
 
@@ -58,10 +66,13 @@ public class GameManager : Singleton<GameManager>
         if (_scene.name == TutorialScene.SceneName)
         {
             // Turn on ship ambience
+            currentAmbienceEventEmitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.NetworkSFXName.ShipAmbience, ambienceEventEmitter);
+            currentAmbienceEventEmitter.Play();
             playerLight.SetActive(true);
             shipLight.SetActive(true);
             PlayerHealthbar.SetActive(false);
-            AudioManager.Instance.musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            currentMusicEventEmitter?.Stop();
+            Destroy(musicEventEmitter.GetComponent<StudioEventEmitter>());
 
         }
         else if( _scene.name == StorageScene.SceneName) 
@@ -73,8 +84,8 @@ public class GameManager : Singleton<GameManager>
         }
         else if( _scene.name == GameplayScene.SceneName)
         {
-            AudioManager.Instance.musicEventInstance.start();
-            AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.Escape);
+            LeftShipOnce = true;
+            mae.SetActive(false);
             ChangePixelCamera(planetYRes);
             Player.SetActive(true);
             planetLight.SetActive(true);
@@ -85,9 +96,17 @@ public class GameManager : Singleton<GameManager>
         }
         else if(_scene.name == MeteorScene.SceneName)
         {
-            AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.Escape);
-            AudioManager.Instance.musicEventInstance.start();
-            // Turn on ship ambience if not on
+            mae.SetActive(true);
+            if(!LeftShipOnce)
+            {
+                Destroy(musicEventEmitter.GetComponent<StudioEventEmitter>());
+                currentMusicEventEmitter?.Stop();
+                currentMusicEventEmitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.NetworkSFXName.Escape, musicEventEmitter);
+                currentMusicEventEmitter.Play();
+                currentAmbienceEventEmitter?.Stop();
+                currentAmbienceEventEmitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.NetworkSFXName.ShipAmbience, ambienceEventEmitter);
+                currentAmbienceEventEmitter.Play();
+            }
             PlayAlarmSfx();
             ChangePixelCamera(132);
             // Load meteor scene
@@ -103,7 +122,7 @@ public class GameManager : Singleton<GameManager>
         else if(_scene.name == ComicScene.SceneName) 
         {
             // Turn off ship ambience
-            //AudioManager.Instance.SetAmbienceParameter();
+            currentAmbienceEventEmitter?.Stop();
             alarmEventEmitter.Stop();
             alarmEventEmitter = null;
             Player.SetActive(false);

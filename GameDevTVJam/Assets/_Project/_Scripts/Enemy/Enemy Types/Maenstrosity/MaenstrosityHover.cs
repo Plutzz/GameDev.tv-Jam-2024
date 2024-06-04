@@ -31,6 +31,13 @@ public class MaenstrosityHover : EnemyState
             direction = 1;
         }
 
+        if ((enemy.player.transform.position.x < enemy.transform.position.x && isFacingRight) ||
+enemy.player.transform.position.x > enemy.transform.position.x && !isFacingRight)
+        {
+            enemy.FlipSprite();
+        }
+
+
         rb.AddForce(new Vector2(moveSpeed * direction, 0), ForceMode2D.Force);
 
         if(stateUptime > moveTime)

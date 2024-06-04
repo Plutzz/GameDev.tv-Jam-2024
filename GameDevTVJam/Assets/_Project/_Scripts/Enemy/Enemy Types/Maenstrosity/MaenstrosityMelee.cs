@@ -17,6 +17,11 @@ public class MaenstrosityMelee : EnemyState
         rb.velocity = Vector3.zero;
         animator.Play(stateAnimation.name);
         hasAttacked = false;
+        if ((enemy.player.transform.position.x < enemy.transform.position.x && isFacingRight) ||
+   enemy.player.transform.position.x > enemy.transform.position.x && !isFacingRight)
+        {
+            enemy.FlipSprite();
+        }
     }
 
     public override void DoUpdateState()

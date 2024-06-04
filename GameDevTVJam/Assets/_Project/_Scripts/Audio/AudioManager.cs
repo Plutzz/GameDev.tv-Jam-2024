@@ -54,27 +54,27 @@ public class AudioManager : SingletonPersistent<AudioManager>
         UpdateVolume();
     }
 
-    public void Start()
-    {
-        StartCoroutine(WaitForLoadBanks());
-    }
+    //public void Start()
+    //{
+    //    StartCoroutine(WaitForLoadBanks());
+    //}
 
-    private IEnumerator WaitForLoadBanks()
-    {
-        foreach (var bank in Banks)
-        {
-            RuntimeManager.LoadBank(bank, true);
-        }
+    //private IEnumerator WaitForLoadBanks()
+    //{
+    //    foreach (var bank in Banks)
+    //    {
+    //        RuntimeManager.LoadBank(bank, true);
+    //    }
         
 
-        while (!RuntimeManager.HaveAllBanksLoaded)
-        {
-            yield return null;
-        }
+    //    while (!RuntimeManager.HaveAllBanksLoaded)
+    //    {
+    //        yield return null;
+    //    }
 
-        InitializeAmbience(FMODEvents.Instance.Ambience);
-        InitializeMusic(FMODEvents.Instance.Music);
-    }
+    //    InitializeAmbience(FMODEvents.Instance.Ambience);
+    //    InitializeMusic(FMODEvents.Instance.Music);
+    //}
 
     private void UpdateVolume()
     {
@@ -134,7 +134,7 @@ public class AudioManager : SingletonPersistent<AudioManager>
         return emitter;
     }
 
-    private void CleanUp()
+    public void CleanUp()
     {
         // stop and release any created instances
         foreach (EventInstance eventInstance in eventInstances)

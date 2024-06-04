@@ -1838,7 +1838,7 @@ MonoBehaviour:
     - {fileID: 1823974230}
     background: {fileID: 647488129}
     nextButton: {fileID: 1234039120}
-  duration: 0.5
+  duration: 1.5
   nextScene:
     m_SceneAsset: {fileID: 102900000, guid: b3f4876dee392e14f8d3c2f758124cbf, type: 3}
     m_SceneName: Planet Day 1

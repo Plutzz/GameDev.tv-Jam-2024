@@ -28,6 +28,10 @@ public class FMODEvents : Singleton<FMODEvents>
         Meteor,
         Alarm,
         DialogueTalk,
-        DialogueComplete
+        DialogueComplete,
+        MaeTheme,
+        Escape,
+        BossTheme,
+        ShipAmbience
     }
 }
