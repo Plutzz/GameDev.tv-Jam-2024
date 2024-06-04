@@ -23,6 +23,7 @@ public class DoorTriggerInteraction : TriggerInteractionBase
 
     public override void Interact()
     {
+        base.Interact();
         Debug.Log("Use Door");
         SceneSwapManager.Instance.SwapSceneFromDoorUse(sceneToLoad, doorToSpawnAt);
         InputManager.Instance.EnablePlayerInput(false);

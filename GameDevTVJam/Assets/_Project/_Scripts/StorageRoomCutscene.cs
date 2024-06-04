@@ -13,6 +13,7 @@ public class StorageRoomCutscene : MonoBehaviour
     [SerializeField] private Color redColor;
     [SerializeField] private float redIntensity;
     [SerializeField] private GameObject redLight;
+    [SerializeField] private FMODEvents.NetworkSFXName meteorSFX;
     public void CameraShake()
     {
         CinemachineShake.Instance.ShakeCamera(shakeIntensity, shakeTime, shakeEase);
@@ -40,5 +41,15 @@ public class StorageRoomCutscene : MonoBehaviour
     public void SwitchActionMapPlayer()
     {
         InputManager.Instance.SwitchActionMap("Player");
+    }
+
+    public void PlayMeteorOneShot()
+    {
+        AudioManager.Instance.PlayOneShot(meteorSFX, transform.position);
+    }
+
+    public void PlayAlarmOneShot()
+    {
+        GameManager.Instance.PlayAlarmSfx();
     }
 }

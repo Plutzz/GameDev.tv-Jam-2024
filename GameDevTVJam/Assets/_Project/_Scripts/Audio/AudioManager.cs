@@ -1,3 +1,4 @@
+using FMOD;
 using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
@@ -6,6 +7,10 @@ using UnityEngine;
 
 public class AudioManager : SingletonPersistent<AudioManager>
 {
+    // List of Banks to load
+    [FMODUnity.BankRef]
+    public List<string> Banks = new List<string>();
+
     [Header("Volume")]
     [Range(0, 1)]
     public float masterVolume;
@@ -24,8 +29,8 @@ public class AudioManager : SingletonPersistent<AudioManager>
     public List<EventInstance> eventInstances {  get; private set; }
     public List<StudioEventEmitter> eventEmitters { get; private set; }
 
-    private EventInstance ambienceEventInstance;
-    private EventInstance musicEventInstance;
+    public EventInstance ambienceEventInstance;
+    public EventInstance musicEventInstance;
 
 
 
@@ -33,16 +38,13 @@ public class AudioManager : SingletonPersistent<AudioManager>
     {        
         base.Awake();
 
-        //masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        //musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        //ambienceVolume = PlayerPrefs.GetFloat("AmbienceVolume", 1f);
-        //SFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        ambienceVolume = PlayerPrefs.GetFloat("AmbienceVolume", 1f);
+        SFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
 
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
-
-        InitializeAmbience(FMODEvents.Instance.Ambience);
-        InitializeMusic(FMODEvents.Instance.Music);
 
         masterBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
@@ -50,6 +52,28 @@ public class AudioManager : SingletonPersistent<AudioManager>
         sfxBus = RuntimeManager.GetBus("bus:/SFX");
 
         UpdateVolume();
+    }
+
+    public void Start()
+    {
+        StartCoroutine(WaitForLoadBanks());
+    }
+
+    private IEnumerator WaitForLoadBanks()
+    {
+        foreach (var bank in Banks)
+        {
+            RuntimeManager.LoadBank(bank, true);
+        }
+        
+
+        while (!RuntimeManager.HaveAllBanksLoaded)
+        {
+            yield return null;
+        }
+
+        InitializeAmbience(FMODEvents.Instance.Ambience);
+        InitializeMusic(FMODEvents.Instance.Music);
     }
 
     private void UpdateVolume()
@@ -128,9 +152,9 @@ public class AudioManager : SingletonPersistent<AudioManager>
 
     public enum MusicArea
     {
-        Menu,
-        Lobby,
-        Level
+        MaeTheme,
+        Escape,
+        Boss
     }
 
     public void SetMasterVolume(float volume)

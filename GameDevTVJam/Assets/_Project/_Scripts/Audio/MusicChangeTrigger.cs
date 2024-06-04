@@ -9,7 +9,7 @@ public class MusicChangeTrigger : MonoBehaviour
     {
         if (GetComponent<Collider>().tag.Equals("Player"))
         {
-            AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.Menu);
+            AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.Boss);
         }
     }
 }

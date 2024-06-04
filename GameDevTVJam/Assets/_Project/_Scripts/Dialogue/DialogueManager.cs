@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -17,7 +18,7 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Image characterImage;
     private InputManager inputManager;
-
+    private StudioEventEmitter eventEmitter;
     private DialogueSequence currentSequence;
     private int currentSequenceIndex;
 
@@ -29,7 +30,6 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         base.Awake();
         sentences = new Queue<string>();
-
     }
 
 
@@ -77,6 +77,8 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         InputManager.Instance.playerInput.SwitchCurrentActionMap("Cutscene");
 
+        AudioManager.Instance.PlayOneShot(FMODEvents.NetworkSFXName.DialogueComplete, transform.position);
+
         currentDialogue = dialogue;
 
         dialogueBox.SetActive(true);
@@ -114,6 +116,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void DisplayNextSentence()
     {
+        
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -121,6 +124,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
 
         string sentence = sentences.Dequeue();
+        eventEmitter?.Stop();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -128,11 +132,14 @@ public class DialogueManager : Singleton<DialogueManager>
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
+        eventEmitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.NetworkSFXName.DialogueTalk, gameObject);
+        eventEmitter.Play();
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(textDelay);
         }
+        eventEmitter.Stop();
     }
 
     public void EndDialogue()

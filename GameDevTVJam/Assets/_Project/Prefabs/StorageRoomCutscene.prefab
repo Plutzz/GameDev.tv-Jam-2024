@@ -224,6 +224,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3462908272632143229}
+        m_TargetAssemblyTypeName: StorageRoomCutscene, Assembly-CSharp
+        m_MethodName: PlayMeteorOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3462908272632143229}
+        m_TargetAssemblyTypeName: StorageRoomCutscene, Assembly-CSharp
+        m_MethodName: PlayAlarmOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   actionOnComplete:
     m_PersistentCalls:
       m_Calls:
@@ -394,3 +418,4 @@ MonoBehaviour:
   redColor: {r: 1, g: 0, b: 0, a: 0}
   redIntensity: 0.3
   redLight: {fileID: 1100643117226721154}
+  meteorSFX: 5

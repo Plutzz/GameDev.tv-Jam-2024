@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,15 @@ using UnityEngine;
 public class PlayerMoving : PlayerState
 {
     [SerializeField] private float speed = 1f;
+    [SerializeField] private FMODEvents.NetworkSFXName footstepSfx;
+    private StudioEventEmitter eventEmitter;
 
     public override void DoEnterLogic()
     {
         base.DoEnterLogic();
         core.animator.Play("PlayerWalk");
+        eventEmitter = AudioManager.Instance?.InitializeEventEmitter(footstepSfx, core.gameObject);
+        eventEmitter.Play();
     }
     public override void DoUpdateState()
     {
@@ -37,5 +42,11 @@ public class PlayerMoving : PlayerState
             core.stateMachine.ChangeState(core.states["Idle"]);
         }
 
+    }
+
+    public override void DoExitLogic()
+    {
+        base.DoExitLogic();
+        eventEmitter.Stop();
     }
 }

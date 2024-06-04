@@ -71,11 +71,12 @@ public class PlayerAttacks : MonoBehaviour
 
             if (Time.time - lastAttackTime >= attackCooldown)
             {
-
+                attackHitbox.sfxName = combo[comboCounter].sfxName;
                 stateMachine.ChangeState(player.states["Attack"]);
                 anim.runtimeAnimatorController = combo[comboCounter].animatorOV;
                 attackHitbox.damage = combo[comboCounter].damage;
                 attackHitbox.knockback = combo[comboCounter].knockback;
+                
                 anim.Play("Attack", 0, 0);
                 comboCounter++;
                 if(comboCounter == combo.Count - 1)

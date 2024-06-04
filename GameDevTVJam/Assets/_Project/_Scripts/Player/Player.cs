@@ -91,22 +91,23 @@ public class Player : StateMachineCore, IDamageable
 
         if (invincible)
         {
-            if(currentHealth == 0)
-            {
-                PlayerDeath();
-            }
+            
 
             return;
         }
 
-
-
         currentHealth -= damage;
+
         healthBar.fillAmount = currentHealth/maxHealth;
         CinemachineShake.Instance?.ShakeCamera(cameraShakeIntensity, cameraShakeTime, cameraShakeEase);
         TimeFreezer.Instance?.StopTime();
         invincible = true;
         StartCoroutine(InvincibleBlink());
+
+        if (currentHealth <= 0)
+        {
+            PlayerDeath();
+        }
     }
 
     private IEnumerator InvincibleBlink()

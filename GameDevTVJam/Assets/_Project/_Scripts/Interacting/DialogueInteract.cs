@@ -7,6 +7,7 @@ public class DialogueInteract : TriggerInteractionBase
     [SerializeField] DialogueSequence sequence;
     public override void Interact()
     {
+        base.Interact();
         sequence.StartSelf();
     }
 }

@@ -9,6 +9,7 @@ public class BossTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Instantiate(boss, spawnpoint.position, Quaternion.identity);
+        AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.Boss);
         Destroy(gameObject);
     }
 }

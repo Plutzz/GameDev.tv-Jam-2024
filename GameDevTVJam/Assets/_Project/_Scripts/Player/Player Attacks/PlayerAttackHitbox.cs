@@ -8,16 +8,19 @@ public class PlayerAttackHitbox : MonoBehaviour
     private Collider2D hitbox;
     [HideInInspector] public int damage;
     [HideInInspector] public float knockback;
+    [HideInInspector] public FMODEvents.NetworkSFXName sfxName;
 
     private void Awake()
     {
         previousHits = new List<Collider2D>();
-        hitbox = GetComponent<Collider2D>();    
+        hitbox = GetComponent<Collider2D>();
+        sfxName = FMODEvents.NetworkSFXName.BladeSwing1;
     }
     private void OnEnable()
     {
         previousHits.Clear();
         hitbox.enabled = true;
+        AudioManager.Instance.PlayOneShot(sfxName, transform.position);
     }
     private void OnDisable()
     {

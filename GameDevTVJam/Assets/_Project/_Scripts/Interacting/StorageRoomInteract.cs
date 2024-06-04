@@ -8,6 +8,7 @@ public class StorageRoomInteract : TriggerInteractionBase
     [SerializeField] private Dialogue dialogue;
     public override void Interact()
     {
+        base.Interact();
         if(GameManager.Instance.TalkedToMae)
         {
             Instantiate(storageRoomCutscene, CutsceneManager.Instance.transform);

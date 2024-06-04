@@ -8,9 +8,11 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
 
     protected SpriteRenderer spriteRenderer;
     [SerializeField] protected Material outlines;
+    private FMODEvents.NetworkSFXName sfxName;
 
     private void Start()
     {
+        sfxName = FMODEvents.NetworkSFXName.Interact;
         spriteRenderer = GetComponent<SpriteRenderer>();
         outlines = Instantiate(outlines);
         if(spriteRenderer != null)
@@ -45,5 +47,5 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
             CanInteract = false;
         }
     }
-    public virtual void Interact() { }
+    public virtual void Interact() { AudioManager.Instance.PlayOneShot(sfxName, transform.position); }
 }

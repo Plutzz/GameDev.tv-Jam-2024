@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,9 +32,15 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject storageRoomInteract;
     [HideInInspector] public GameObject redLight;
 
+    private StudioEventEmitter alarmEventEmitter;
 
     [Header("Dialogues")]
     [SerializeField] private DialogueSequence exitStorageSequence;
+
+    private void Start()
+    {
+        AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.MaeTheme);
+    }
 
 
     private void OnEnable()
@@ -50,9 +57,12 @@ public class GameManager : Singleton<GameManager>
     {
         if (_scene.name == TutorialScene.SceneName)
         {
+            // Turn on ship ambience
             playerLight.SetActive(true);
             shipLight.SetActive(true);
             PlayerHealthbar.SetActive(false);
+            AudioManager.Instance.musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
         }
         else if( _scene.name == StorageScene.SceneName) 
         {
@@ -63,6 +73,8 @@ public class GameManager : Singleton<GameManager>
         }
         else if( _scene.name == GameplayScene.SceneName)
         {
+            AudioManager.Instance.musicEventInstance.start();
+            AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.Escape);
             ChangePixelCamera(planetYRes);
             Player.SetActive(true);
             planetLight.SetActive(true);
@@ -73,6 +85,10 @@ public class GameManager : Singleton<GameManager>
         }
         else if(_scene.name == MeteorScene.SceneName)
         {
+            AudioManager.Instance.SetMusicArea(AudioManager.MusicArea.Escape);
+            AudioManager.Instance.musicEventInstance.start();
+            // Turn on ship ambience if not on
+            PlayAlarmSfx();
             ChangePixelCamera(132);
             // Load meteor scene
             exitStorageSequence.StartSelf();
@@ -86,6 +102,10 @@ public class GameManager : Singleton<GameManager>
         }
         else if(_scene.name == ComicScene.SceneName) 
         {
+            // Turn off ship ambience
+            //AudioManager.Instance.SetAmbienceParameter();
+            alarmEventEmitter.Stop();
+            alarmEventEmitter = null;
             Player.SetActive(false);
         }
         else if(_scene.name == EndScene.SceneName)
@@ -109,5 +129,13 @@ public class GameManager : Singleton<GameManager>
     {
         mainCamera.GetComponent<PixelPerfectCamera>().refResolutionY = _yRes;
     }
-    
+
+    public void PlayAlarmSfx()
+    {
+        if (alarmEventEmitter != null) return;
+
+        alarmEventEmitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.NetworkSFXName.Alarm, gameObject);
+        alarmEventEmitter.Play();
+    }
+
 }

@@ -13,12 +13,12 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
-        masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
-        AudioManager.Instance?.SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume", 1f));
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        AudioManager.Instance?.SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", 1f));
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
-        AudioManager.Instance?.SetSFXVolume(PlayerPrefs.GetFloat("SFXVolume", 1f));
+        masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", .5f);
+        AudioManager.Instance?.SetMasterVolume(PlayerPrefs.GetFloat("MasterVolume", .5f));
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", .5f);
+        AudioManager.Instance?.SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume", .5f));
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", .5f);
+        AudioManager.Instance?.SetSFXVolume(PlayerPrefs.GetFloat("SFXVolume", .5f));
     }
 
     public void StartGame()

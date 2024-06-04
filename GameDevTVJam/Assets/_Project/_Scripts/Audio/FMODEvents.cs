@@ -20,7 +20,14 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference[] SfxArray { get; private set; }
     public enum NetworkSFXName
     {
-        CompleteOrder,
-        ItemPickup,
+        ShipFootsteps,
+        BladeSwing1,
+        BladeSwing2,
+        BladeSwing3,
+        Interact,
+        Meteor,
+        Alarm,
+        DialogueTalk,
+        DialogueComplete
     }
 }
